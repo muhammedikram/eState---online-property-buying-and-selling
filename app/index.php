@@ -62,12 +62,12 @@ $di->set('flash', function() {
     ));
 });
 
-//session setup 
-$di->set('session', function() {
-    $session = new Phalcon\Session\Adapter\Files();
-    $session->start();
-    return $session;
-});
+// //session setup 
+// $di->set('session', function() {
+//     $session = new Phalcon\Session\Adapter\Files();
+//     $session->start();
+//     return $session;
+// });
 
 
 $di->set('flash', function(){
