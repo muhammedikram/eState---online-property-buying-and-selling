@@ -2,13 +2,14 @@
 <?php $this->flash->output() ?>
 {{ partial('index/partials/welcome') }}
 
-{{ partial('index/partials/gettingstarted') }}
+<!-- Remvoved { } from the partials below.  -->
+<!-- { partial('index/partials/gettingstarted') }
 
-{{ partial('index/partials/tools') }}
+{ partial('index/partials/tools') }
 
-{{ partial('index/partials/social') }}
+{ partial('index/partials/social') }
 
-
+ -->
 <div class="container">
 <br><br><br>
 <select id="deneme">

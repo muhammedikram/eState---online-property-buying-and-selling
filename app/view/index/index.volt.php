@@ -2,13 +2,13 @@
 <?php $this->flash->output() ?>
 <?php echo $this->partial('index/partials/welcome'); ?>
 
-<?php echo $this->partial('index/partials/gettingstarted'); ?>
+<!-- { partial('index/partials/gettingstarted') }
 
-<?php echo $this->partial('index/partials/tools'); ?>
+{ partial('index/partials/tools') }
 
-<?php echo $this->partial('index/partials/social'); ?>
+{ partial('index/partials/social') }
 
-
+ -->
 <div class="container">
 <br><br><br>
 <select id="deneme">
