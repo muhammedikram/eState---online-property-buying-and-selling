@@ -49,7 +49,7 @@ use Phalcon\Events\Manager as EventsManager;
             "host" => "localhost",
             "username" => "root",
             "password" => "",
-            "dbname" => "property"
+            "dbname" => "estate"
         ));
     });
      
