@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'duncan3dc\\Helpers\\' => array($vendorDir . '/duncan3dc/fork-helper/src'),
+    'Phalcon\\' => array($vendorDir . '/phalcon/incubator/Library/Phalcon'),
 );

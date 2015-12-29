@@ -2,7 +2,7 @@ server{
 		listen 80;
 #		listen 443 dafault_server ssl;
 
-		set $root_path '/estate/public';
+		set $root_path '/veryproperty/public';
 
 		client_max_body_size 600m;
 
@@ -11,7 +11,7 @@ server{
 		root $root_path;
 
 		# Make site accessible form http://localhost/
-		server_name estate.local www.estate.local;
+		server_name veryproperty.local www.veryproperty.local;
 
 		charset utf-8;
 		sendfile off;
@@ -35,7 +35,7 @@ location @rewrite{
 }
 
 location ~ \.php{
-		fastcgi_pass 127.0.0.1:9000;
+		fastcgi_pass unix:/var/run/php5-fpm.sock;
 		fastcgi_index /index.php;
 
 		include /etc/nginx/fastcgi_params;

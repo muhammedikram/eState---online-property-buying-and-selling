@@ -2,6 +2,7 @@
 <?php $this->flash->output() ?>
 <?php echo $this->partial('index/partials/welcome'); ?>
 
+<!-- Remvoved { } from the partials below.  -->
 <!-- { partial('index/partials/gettingstarted') }
 
 { partial('index/partials/tools') }
