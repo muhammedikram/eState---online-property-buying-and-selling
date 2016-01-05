@@ -11,21 +11,21 @@
               <form  action="signup/clientRegister" method="post"role="form">
                   <div class="col-lg-12">
                       <div class="form-group">
-                          <label for="name">Enter Name</label>
+                          <label for="name">Name</label>
                           <div class="input-group">
                               <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" required="required">
                               <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="email">Enter Email</label>
+                          <label for="email">Email</label>
                           <div class="input-group">
                               <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required="required">
                               <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="InputPassword">Enter Password</label>
+                          <label for="InputPassword">Password</label>
                           <div class="input-group">
                               <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required="required">
                               <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
@@ -41,7 +41,7 @@
                   </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-primary offer-submit">Register</button>
+                      <button type="submit" class="btn btn-success offer-submit">Register</button>
                     </div>
               </form>
             </div>

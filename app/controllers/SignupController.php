@@ -38,11 +38,30 @@
         $user -> setEmail($this->request->getPost('email'));
         $user -> setpassword($this->request->getPost('password'));
         $user -> setconfirm_password($this->request->getPost('confirm_password'));
-        $user->save();
-        $this->flash->success("Thanks for registering!");
-    }
 
-        return $this->response->redirect("/signup");
+        //before saving user, check if the email already exists in system
+         $existinguser = \MemberRegister::findfirst(
+                array(
+                    'email = :email:',
+                    'bind' => array(
+                        'email' => ($this->request->getPost('email'))
+                        )
+                    )
+                );
+            if($existinguser)
+            {
+                $this->flashSession->error($user->email=("This email &nbsp".$this->request->getPost('email')). " "." is already been taken by another user");
+            }else{
+              //save the user
+                $user->save();
+
+                //output success message 
+                 $this->flash->success("Thanks for registering!");
+
+                 //take new user to the login page.
+                return $this->response->redirect("/signup");
+        }
+      }
     }
 
 

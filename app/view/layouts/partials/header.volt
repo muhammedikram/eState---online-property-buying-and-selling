@@ -5,7 +5,7 @@
         $name = $auth['name'];
   ?>
 
-<nav class="navbar navbar-default">
+<nav class="navbar topbar">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -35,12 +35,28 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $name;?> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/signup/end">Sign Out</a></li>
-            <li><a href="#">Another action</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<style>
+  /*  first nav bar*/
+.topbar{
+  background-color: #44b645;
+  color: white;
+}
+.topbar ul h4{
+  color: white;
+}
+.nav .navbar-nav>li a{
+  color: white;
+}
+.dropdown-toggle{
+  color: white;
+}
+</style>

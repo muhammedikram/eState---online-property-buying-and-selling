@@ -188,7 +188,7 @@
             </div>
             </div>
 
-                 <div class="col-md-4">
+<!--     <div class="col-md-4">
            <div class="jumbtron topJumbtron">
             <div class="row">
               <div class="col-sm-12">
@@ -203,15 +203,15 @@
                            <h4 >
                             <a href="/index/propertydetails/<?php echo $entry->getPropertyID(); ?>">
                                 <?php echo ucwords($entry->getStreet()); ?>, <!--Put first letter as capital -->
-                                <?php echo $entry->getTown(); ?>
-                            </a>
-                        </h4>
-                      </td>
-                      </tr>
-                    <?php } ?>
-                      </table>
+                                
+                     <!--          </a>
+                          </h4>
+                        </td>
+                        </tr>
+                      <?php } ?>
+                        </table> -->
                 </div>
-              </div>
+              </div> -->
             </div>
             </div>
           </div>

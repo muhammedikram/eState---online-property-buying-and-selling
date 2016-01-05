@@ -188,7 +188,7 @@
             </div>
             </div>
 
-                 <div class="col-md-4">
+<!--     <div class="col-md-4">
            <div class="jumbtron topJumbtron">
             <div class="row">
               <div class="col-sm-12">
@@ -203,15 +203,15 @@
                            <h4 >
                             <a href="/index/propertydetails/{{entry.getPropertyID()}}">
                                 {{ entry.getStreet()|capitalize}}, <!--Put first letter as capital -->
-                                {{ entry.getTown()}}
-                            </a>
-                        </h4>
-                      </td>
-                      </tr>
-                    {% endfor %}
-                      </table>
+                                
+                     <!--          </a>
+                          </h4>
+                        </td>
+                        </tr>
+                      {% endfor %}
+                        </table> -->
                 </div>
-              </div>
+              </div> -->
             </div>
             </div>
           </div>
