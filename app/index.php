@@ -142,6 +142,7 @@ $di->set(
         $router->add('/dashboard/approveproperty/{propertyID:[A-Za-z0-9-]+}',               'dashboard::approveproperty');
         $router->add('/dashboard/approverentproperty/{propertyID:[A-Za-z0-9-]+}',               'dashboard::approverentproperty');
         $router->add('/index/rentpropertydetails/{propertyID:[A-Za-z0-9-]+}',               'index::rentpropertydetails');
+        //$router->add('/index/searchforproperty/{propertyID:[A-Za-z0-9-]+}',               'index::searchforproperty');
 
         return $router;
     }

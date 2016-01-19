@@ -10,7 +10,7 @@
 { partial('index/partials/social') }
 
  -->
-<div class="container">
+<!-- <div class="container">
 <br><br><br>
 <select id="deneme">
     <option id='Value1'>keyboard</option>
@@ -39,7 +39,7 @@
 	<input class="btn btn-success" id="step2button" type="submit" name="step2submit" value="Yes">
 	<input class="btn btn-danger" id="nobutton" type="submit" name="nobutton" value="No">
 </span>
-
+ -->
 
 
 

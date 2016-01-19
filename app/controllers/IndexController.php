@@ -118,7 +118,7 @@ class IndexController extends ControllerBase
         $products = Properties::find($parameters);
 
         if (count($products) == 0) {
-            $this->flash->notice('No products are been found');
+            $this->flash->notice('No properties are been found based on your search');
             return $this->forward("index");
         }
 
@@ -437,8 +437,25 @@ public function rentpropertydetailsaction()
 
         // }
 
-   
 
+        public function mysearchAction()
+        {
+                $sap = new \SAP();
+        
+            if($this->request->isPost()) {
+
+                $town=$this->request->getPost('town');
+                $type=$this->request->getPost('type');
+                $price=$this->request->getPost('price');
+    
+                $properties= $sap->getpropertySearch($town,$type, $price);
+
+                $this->view->propertysearch=$properties;
+        
+            }
+            
+        }
+   
 }//end of class
 
 

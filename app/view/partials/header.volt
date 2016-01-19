@@ -82,8 +82,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="mainlogo" src="/images/logo.png" alt="log"/>
-    </div>
+<!--       <img class="mainlogo" src="/images/logo.png" alt="log"/>
+ -->    </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -116,19 +116,8 @@
 </div>
   </header>
 
-
-
-
-
        <p class="flashOutput"><?php $this->flash->output() ?></p> 
-       <div class="hidden-lg hidden-md, hidden-sm">
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group ">
-              <input type="text" class="form-control" placeholder="Search" style="width: 235px; ">
-            </div>
-            <button type="submit" class="btn btn-default ">Submit</button>
-          </form>
-       </div>
+
     <style>
 
     .style input{

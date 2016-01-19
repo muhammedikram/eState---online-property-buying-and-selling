@@ -64,6 +64,27 @@
                         </select> 
                      </div> 
                     </div>
+
+       <!--              <div class="selectType">
+                      <div class="col-sm-5 formLabel">
+                       <i class="fa fa-money fa-2x icon"></i>
+                        <select  type="text"name='type' class='form-control dropdown'>
+                         <option >Select price</option>
+                          <option>up to £10,000</option>
+                          <option>up to £20,000</option>
+                          <option>up to £30,000</option>
+                          <option>up to £40,000</option>
+                          <option>up to £50,000</option>
+                          <option>up to £60,000</option>
+                          <option>up to £70,000</option>
+                          <option>up to £80,000</option>
+                          <option>up to £90,000</option>
+                          <option>up to £100,000</option>
+                          <option>up to £110,000</option>
+                          <option>up to £120,000</option>
+                        </select> 
+                     </div> 
+                    </div>  -->
               </div> 
               <input type="submit" name="submit" id="searchSubmit"value="submit" class="btn btn-success formLabel">
             </form>
@@ -188,6 +209,7 @@
             </div>
             </div>
 
+
 <!--     <div class="col-md-4">
            <div class="jumbtron topJumbtron">
             <div class="row">
@@ -211,19 +233,63 @@
                       {% endfor %}
                         </table> -->
                 </div>
-              </div> -->
+              </div> 
             </div>
             </div>
           </div>
        </header>
-
-
-
-
-
     </div>
   </div>
 </div><!-- closing row    -->
+
+</div>
+
+<form action="index/mysearch" method="post">
+          <div class="row">
+                   
+                      <div class="col-sm-5 formLabel">
+                      <select  type="text"name='town' class='form-control dropdown' >
+                          <option required>Select City</option>
+                          {% for entry in properties %}
+                         <option value="{{entry.getTown()}}">{{entry.getTown()}}</option>
+                          {% endfor %}
+                      </select> 
+                      </div>
+      
+                   
+
+   
+                      <div class="col-sm-5 formLabel">
+                        <select  type="text"name='type' class='form-control dropdown'>
+                          <option>Select Type</option>
+                            {% for entry in propertyType %}
+                           <option name="text"value="{{entry.getType()}}">{{entry.getType()}}</option>
+                          {% endfor %}
+                        </select> 
+                     </div> 
+                
+
+
+                      <div class="col-sm-5 formLabel">
+                        <select  type="text"name='price' class='form-control dropdown'>
+                          <option>Max price</option>
+                           <option>10</option>
+                           <option>20</option>
+                           <option>30</option>
+                           <option>40</option>
+                           <option>50</option>
+                           <option>60</option>
+                           <option>70</option>
+                           <option>80</option>
+                           <option>90</option>
+                           <option>100</option>
+                        </select> 
+                     </div> 
+          
+              </div>
+               <input type="submit" name="submit" id="searchSubmit"value="submit" class="btn btn-success formLabel">
+</form>
+
 
 
 <style>
@@ -240,6 +306,9 @@
   margin-top: 19px;
 }
 
+.form-control{
+  width: 86%;
+}
 
 .image-background .jumbotron {
     margin-bottom: 0px;
@@ -247,7 +316,7 @@
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 425px;
+    height: 450px;
     margin-top: -20px;
 }
 
@@ -271,7 +340,7 @@
   margin-top: -10%;
 }
 .selectType .dropdown{
-  margin-left: 15%;
+  margin-left: 13%;
   margin-top: -10%;
 }
 .selectBedroom .dropdown{
