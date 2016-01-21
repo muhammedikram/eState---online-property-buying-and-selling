@@ -285,6 +285,18 @@
                            <option>100</option>
                         </select> 
                      </div> 
+
+                      <div class="">
+                      <div class="col-sm-5 formLabel">
+                       <i class="fa fa-bed fa-2x icon"></i>
+                        <select  type="text"name='bedroom' class='form-control dropdown'>
+                          <option>Select Bedroom</option>
+                            <?php foreach ($propertybedroom as $entry) { ?>
+                           <option name="text"value="<?php echo $entry->getBedroom(); ?>"><?php echo $entry->getBedroom(); ?></option>
+                          <?php } ?>
+                        </select> 
+                     </div> 
+                    </div>
           
               </div>
                <input type="submit" name="submit" id="searchSubmit"value="submit" class="btn btn-success formLabel">
