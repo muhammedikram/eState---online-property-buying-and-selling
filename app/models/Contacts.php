@@ -54,6 +54,12 @@ public function initialize()
 			public function setEmail($email) {
 				$this->name = $email;
 			}
+			
+				public function setNumber($number) {
+				$this->name = $number;
+			}
+			
+
 			public function setMessage($message) {
 				$this->name = $message;
 			}
