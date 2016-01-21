@@ -359,6 +359,8 @@ public function rentpropertydetailsaction()
             $cemail = $request->getPost('email');
             $cNumber = $request->getPost('number');
             $cMessage = $request->getPost('message');
+
+            die(var_dump($cName));
       
             $user = new Contacts();
         
