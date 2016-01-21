@@ -125,6 +125,11 @@ class AccountController extends ControllerBase
             $pDescription = $request->getPost('description');
             $pPrice = $request->getPost('price');
             $pValidUntil = $request->getPost('validUntil');
+            $kitchen = $request->getPost('kitchen');
+            $reception = $request->getPost('reception');
+            $bathroom = $request->getPost('bathroom');
+            $parking= $request->getPost('parking');
+            $space=$request->getPost('space');
              // var_dump($_FILES);
            // Check if the user has uploaded files
         if ($this->request->hasFiles() == true) {
@@ -144,6 +149,7 @@ class AccountController extends ControllerBase
             if($pPurpose == 'rent'){
             $user = new Rents();
             }
+
             $user->propertyID = $pPropertyID;
             $user->street = $pStreet;
             $user->town = $pTown;
@@ -152,6 +158,11 @@ class AccountController extends ControllerBase
             $user->bedroom = $pBedrooms;
             $user->description = $pDescription;
             $user->validUntil = $pValidUntil;
+            $user->kitchen =$kitchen;
+            $user->reception=$reception;
+            $user->bathroom=$bathroom;
+            $user->parking=$parking;
+            $user->space=$space;
             $user->image1 = $file->getName();
              
             $file->moveTo($baseLocation . $file->getName());
