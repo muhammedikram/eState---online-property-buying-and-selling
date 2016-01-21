@@ -24,6 +24,11 @@ class Properties extends \Phalcon\Mvc\Model
 	protected $created;
 	protected $validUntil;
 	protected $enabled;
+	protected $kitchen;
+	protected $bathroom;
+	protected $parking;
+	protected $space;
+	protected $reception;
 
 
 
@@ -118,6 +123,26 @@ class Properties extends \Phalcon\Mvc\Model
 	public function getEnabled(){
 	  return $this->enabled;
 	}
+	public function getKitchen(){
+	  return $this->kitchen;
+	}
+	public function getReception(){
+	  return $this->reception;
+	}
+	public function getBathroom(){
+	  return $this->bathroom;
+	}
+	public function getParking(){
+	  return $this->parking;
+	}
+	public function getSpace(){
+	  return $this->space;
+	}
+	
+	
+	
+	
+	
 
 //setters 
 	public function setpropertyID($propertyID){
@@ -167,6 +192,21 @@ class Properties extends \Phalcon\Mvc\Model
 	}
 	public function setEnabled($enabled){
 		$this->enabled=$enabled;
+	}
+	public function setKitchen($kitchen){
+		$this->kitchen=$kitchen;
+	}
+	public function setReception($reception){
+		$this->reception=$reception;
+	}
+	public function setBathroom($bathroom){
+		$this->bathroom=$bathroom;
+	}
+	public function setParking($parking){
+		$this->parking=$parking;
+	}
+	public function setSpace($space){
+		$this->space=$space;
 	}
 
 
