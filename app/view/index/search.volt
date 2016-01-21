@@ -54,7 +54,7 @@
 
           <div class="jumbotron">
                   <p>
-                      Sorry no houses availables at this time!
+                      No properties found based on your criteria's. Try refining your search to find properties.  
                   </p>
                   {% endif %}
           </div>

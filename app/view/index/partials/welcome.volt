@@ -245,51 +245,6 @@
 
 </div>
 
-<form action="index/mysearch" method="post">
-          <div class="row">
-                   
-                      <div class="col-sm-5 formLabel">
-                      <select  type="text"name='town' class='form-control dropdown' >
-                          <option required>Select City</option>
-                          {% for entry in properties %}
-                         <option value="{{entry.getTown()}}">{{entry.getTown()}}</option>
-                          {% endfor %}
-                      </select> 
-                      </div>
-      
-                   
-
-   
-                      <div class="col-sm-5 formLabel">
-                        <select  type="text"name='type' class='form-control dropdown'>
-                          <option>Select Type</option>
-                            {% for entry in propertyType %}
-                           <option name="text"value="{{entry.getType()}}">{{entry.getType()}}</option>
-                          {% endfor %}
-                        </select> 
-                     </div> 
-                
-
-
-                      <div class="col-sm-5 formLabel">
-                        <select  type="text"name='price' class='form-control dropdown'>
-                          <option>Max price</option>
-                           <option>10</option>
-                           <option>20</option>
-                           <option>30</option>
-                           <option>40</option>
-                           <option>50</option>
-                           <option>60</option>
-                           <option>70</option>
-                           <option>80</option>
-                           <option>90</option>
-                           <option>100</option>
-                        </select> 
-                     </div> 
-          
-              </div>
-               <input type="submit" name="submit" id="searchSubmit"value="submit" class="btn btn-success formLabel">
-</form>
 
 
 

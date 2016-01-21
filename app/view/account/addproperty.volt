@@ -4,7 +4,7 @@
 <div class="container">
 	<h3>Add a property</h3>
 	<div class="row" style="margin-top:3%;">
-		<div class="col-sm-10">
+		<div class="col-md-8 addform">
 			<form action="addproperty" method="post" enctype="multipart/form-data">
 			<label>* Purpose</label>
 				<label class="radio-inline selltype" name="purpose" style="margin-left:20%;" >
@@ -143,4 +143,37 @@
 #radio1{
 	margin-right: 30%;
 }
+
+.addform{
+	margin-left: 10%;
+}
+
+.addform .form-group input{
+	height: 50px;
+}
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
