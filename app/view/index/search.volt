@@ -2,6 +2,7 @@
 *Search result page
 *
 *-->
+
 <div class="container">
   <div class="row">
     <div class="col-md-3 jumbotron">
@@ -10,59 +11,43 @@
      </div>     
 
      <div class="col-md-8"> 
-      <h4><?php echo ($this->length($page->items)) ?> Result</h4>
-            {% if page.items|length > 0 %}
+      <h4><?php echo ($this->length($propertysearch)) ?> properties found</h4>
+            {% if propertysearch|length > 0 %}
                 <table class="table table-valign-middle">
                   <tbody>
-                    {% for product in page.items %}
+                    {% for row in propertysearch %}
                     
                      <tr>
                 <!-- Getting  Image-->
                     <td>
-                      <a href="/index/propertydetails/{{product.getPropertyID()}}">
-                          <img src="/images/{{ product.getImage1() }}" width="150" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{ product.getPropertyID()}}" /></a>
+                      <a href="/index/propertydetails/{{row['propertyID']}}">
+                          <img src="/images/{{ row['image1'] }}" width="150" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{ row['image1']}}" /></a>
                       </td>
                      
                  <!-- Getting Address-->
                       <td >
                           <h4 class="addressOne">
-                            <a href="/index/propertydetails/{{product.getPropertyID()}}">
-                                {{ product.getStreet()}}
+                            <a href="/index/propertydetails/{{row['propertyID']}}">
+                                {{ row['street']}}
                             </a>
                         </h4>
                       </td>
 
                 <!-- Getting  Type-->
                        <td itemprop="type" >
-                             {{ product.getType()}}   
+                             {{ row['type']}}   
                        </td>
 
 
                         <!-- Getting  Price-->
                       <td itemprop="description" >
-                              {{ product.getPrice()}}     
+                              {{ row['price']}}     
                       </td>
-                      <!--
-                        <td>
-                            {{ link_to("index/propertydetails/" ~ product.getpropertyID(), '<i class="glyphicon glyphicon-edit"></i> View Details', "class": "btn btn-primary") }}
-
-                        </td>
-                      -->
+                  
                        </tr>
               {% endfor %}
           </tbody>
           <tbody>
-        <tr>
-            <td colspan="7" align="left">
-                <div class="btn-group">
-                    {{ link_to("index/search", '<i class="icon-fast-backward"></i> First', "class": "btn") }}
-                    {{ link_to("index/search?page=" ~ page.before, '<i class="glyphicon glyphicon-chevron-left"></i> Previous', "class": "btn") }}
-                    {{ link_to("index/search?page=" ~ page.next, 'Next <i class="glyphicon glyphicon-chevron-right"></i> ', "class": "btn") }}
-                    {{ link_to("index/search?page=" ~ page.last, '<i class="icon-fast-forward"></i> Last', "class": "btn") }}
-                    <span class="help-inline pull-left">{{ page.current }} of {{ page.total_pages }}</span>
-                </div>
-            </td>
-        </tr>
     </tbody>
       </table>
 {% else %}

@@ -24,7 +24,7 @@
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                <form action="index/search" method="GET">
+                <form action="index/search" method="post">
                  <div class="row">
                      <div class="selectTown">
                       <div class="col-sm-5 formLabel">
@@ -65,26 +65,27 @@
                      </div> 
                     </div>
 
-       <!--              <div class="selectType">
+               <div class="selectType">
                       <div class="col-sm-5 formLabel">
                        <i class="fa fa-money fa-2x icon"></i>
-                        <select  type="text"name='type' class='form-control dropdown'>
-                         <option >Select price</option>
-                          <option>up to £10,000</option>
-                          <option>up to £20,000</option>
-                          <option>up to £30,000</option>
-                          <option>up to £40,000</option>
-                          <option>up to £50,000</option>
-                          <option>up to £60,000</option>
-                          <option>up to £70,000</option>
-                          <option>up to £80,000</option>
-                          <option>up to £90,000</option>
-                          <option>up to £100,000</option>
-                          <option>up to £110,000</option>
-                          <option>up to £120,000</option>
+                        <select  type="text"name='price' class='form-control dropdown'>
+                         <option >Max Price</option>
+                          <option>10000</option>
+                          <option>20000</option>
+                          <option>30000</option>
+                          <option>40000</option>
+                          <option>50000</option>
+                          <option>60000</option>
+                          <option>70000</option>
+                          <option>80000</option>
+                          <option>90000</option>
+                          <option>100000</option>
+                          <option>110000</option>
+                          <option>120000</option>
                         </select> 
                      </div> 
-                    </div>  -->
+                    </div>  
+
               </div> 
               <input type="submit" name="submit" id="searchSubmit"value="submit" class="btn btn-success formLabel">
             </form>

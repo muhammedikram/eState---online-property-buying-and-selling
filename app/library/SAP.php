@@ -132,18 +132,22 @@ public function getCategory()
 
 
 
-	public function getpropertySearch($town, $type, $price)
+	public function getpropertySearch($town, $type, $price, $bedroom)
 	{
 		$mysql=$this->query(
 				'SELECT  
+				properties.propertyID AS "propertyID",
 				properties.town AS "town",
 				properties.type AS "type",
 				properties.street AS "street",
-				properties.price AS "price"
+				properties.price AS "price",
+				properties.bedroom AS "bedroom",
+				properties.image1 AS "image1"
 				From properties
 				Where properties.town = "'.$town.'" 
 				AND properties.type = "'.$type.'"
 				AND properties.price <=   "'.$price.'"
+				AND properties.bedroom = "'.$bedroom.'"
 				');
 			$propertySearch =$mysql->fetchAll();
 			return $propertySearch;

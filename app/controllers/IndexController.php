@@ -100,37 +100,25 @@ class IndexController extends ControllerBase
                 );
          $this->view->latestP=$latestproperties;
 
+         //search for properties 
 
-    //search for the properties
-        $numberPage = (int) $_GET["page"];
-        if ($this->request->getQuery()) {
-            $query = Criteria::fromInput($this->di, "Properties", $this->request->getQuery());
-            $this->persistent->searchParams = $query->getParams();
-        } else {
-            $numberPage = $this->request->getQuery("page", "int");
-        }
+         //go p sap file
+        $sap = new \SAP();
+        
+        //if reruest is post
+            if($this->request->isPost()) {
 
-        $parameters = array();
-        if ($this->persistent->searchParams) {
-            $parameters = $this->persistent->searchParams;
-        }
+                $town=$this->request->getPost('town');
+                $type=$this->request->getPost('type');
+                $price=$this->request->getPost('price');
+                $bedroom= $this->request->getPost('bedroom');
+    
+                $properties= $sap->getpropertySearch($town,$type, $price, $bedroom);
 
-        $products = Properties::find($parameters);
+        
+            }
 
-        if (count($products) == 0) {
-            $this->flash->notice('No properties are been found based on your search');
-            return $this->forward("index");
-        }
-
-        $paginator = new Paginator(array(
-            "data"  => $products,
-            "limit" => 5,
-            "page"  => $numberPage
-        ));
-
-        $this->view->page = $paginator->getPaginate();
-        $this->view->products = $products;
-
+                $this->view->propertysearch=$properties;
 
 
         

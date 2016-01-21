@@ -1,5 +1,5 @@
   <h4>Refine your search</h4>
-   <form action="/index/search" method="GET">   
+   <form action="/index/search" method="post">   
    
    <!-- GEt the property types -->
         <div class="form-group">
@@ -30,6 +30,29 @@
               {% endfor %}
           </select>
       </div>
+
+
+
+         <!-- show price varience  -->
+        <div class="form-group">
+          <select  type="text"name='price' class='form-control'>
+             <option >Max Price</option>
+                  <option>10000</option>
+                  <option>20000</option>
+                  <option>30000</option>
+                  <option>40000</option>
+                  <option>50000</option>
+                  <option>60000</option>
+                  <option>70000</option>
+                  <option>80000</option>
+                  <option>90000</option>
+                  <option>100000</option>
+                  <option>110000</option>
+                  <option>120000</option>
+                
+          </select>
+      </div>
+
       
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
