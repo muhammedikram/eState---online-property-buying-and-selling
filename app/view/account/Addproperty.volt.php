@@ -175,7 +175,7 @@
 				    <label for="exampleInputAmount">Price</label>
 				    <div class="input-group">
 				      <div class="input-group-addon">£</div>
-				      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price">
+				      <input type="text" class="form-control" id="exampleInputAmount" name="price" placeholder="Price">
 				    </div>
 				  </div>
 			  </div>
