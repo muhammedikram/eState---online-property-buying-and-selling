@@ -115,8 +115,9 @@
 </nav>
 </div>
   </header>
-
+<div class="container">
        <p class="flashOutput"><?php $this->flash->output() ?></p> 
+</div>
 
     <style>
 

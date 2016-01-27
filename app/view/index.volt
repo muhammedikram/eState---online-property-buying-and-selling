@@ -21,6 +21,7 @@
         {{ javascript_include('js/jquery-2.0.3.min.js') }}
         <script src="/js/summernote.js"></script>
         <script src="/js/fault.js"></script>
+         <script src="/js/dropzone.js"></script>
 
         {{ javascript_include('js/bootstrap.min.js') }}
        

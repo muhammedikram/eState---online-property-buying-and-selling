@@ -133,7 +133,7 @@ class AccountController extends ControllerBase
              // var_dump($_FILES);
            // Check if the user has uploaded files
         if ($this->request->hasFiles() == true) {
-            $baseLocation = '/veryproperty/public/images/';
+            $baseLocation = '/estate/public/images/';
 
             // Print the real file names and sizes
             foreach ($this->request->getUploadedFiles() as $file) {
@@ -159,6 +159,7 @@ class AccountController extends ControllerBase
             $user->description = $pDescription;
             $user->validUntil = $pValidUntil;
             $user->kitchen =$kitchen;
+            $user->price=$pPrice;
             $user->reception=$reception;
             $user->bathroom=$bathroom;
             $user->parking=$parking;

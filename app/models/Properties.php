@@ -40,7 +40,7 @@ class Properties extends \Phalcon\Mvc\Model
 
         $this->belongsTo("idprices", "prices", "idprices");
 
-        $this->belongsTo("idimages", "images", "idimages");
+        $this->belongsTo("propertyID", "images", "propertyID");
         
         $this->hasMany('propertyID', 'Favurites', 'propertyID');
 
