@@ -49,7 +49,7 @@
 		</div>
 
 		<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-8">
 					
 						<h2 class="text2">
 
@@ -73,6 +73,10 @@
 					
 					
 
+				</div>
+
+				<div class="col-md-4">
+					<iframe width="370" height="350" src="https://maps.google.co.uk/maps?q=<?php echo $part->getPostcode(); ?>&amp;output=embed"></iframe>
 				</div>
 				<?php } ?>
 		</div>
@@ -135,6 +139,8 @@
 		<hr>
 
 
+
+<hr>
 		<div class="row">
 				<div class="col-sm-10">
 					    <h3>Customers reviews</h3>
@@ -215,7 +221,6 @@
 
 
 	
-
 
 
 

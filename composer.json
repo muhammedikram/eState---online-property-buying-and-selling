@@ -1,5 +1,7 @@
 {
     "require-dev": {
-        "phalcon/incubator": "dev-master"
+        "phalcon/incubator": "dev-master",
+        "kartik-v/bootstrap-fileinput": "dev-master"
+
     }
 }
