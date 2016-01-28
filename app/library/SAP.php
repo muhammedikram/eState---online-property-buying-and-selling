@@ -142,12 +142,14 @@ public function getCategory()
 				properties.street AS "street",
 				properties.price AS "price",
 				properties.bedroom AS "bedroom",
-				properties.image1 AS "image1"
+				properties.image1 AS "image1",
+				properties.enabled AS "enabled"
 				From properties
 				Where properties.town = "'.$town.'" 
 				AND properties.type = "'.$type.'"
 				AND properties.price <=   "'.$price.'"
 				AND properties.bedroom = "'.$bedroom.'"
+				AND properties.enabled = "1"
 				');
 			$propertySearch =$mysql->fetchAll();
 			return $propertySearch;

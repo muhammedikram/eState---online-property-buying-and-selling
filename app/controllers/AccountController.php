@@ -158,6 +158,7 @@ class AccountController extends ControllerBase
             $user->bedroom = $pBedrooms;
             $user->description = $pDescription;
             $user->validUntil = $pValidUntil;
+            $user->enabled= 0;
             $user->kitchen =$kitchen;
             $user->price=$pPrice;
             $user->reception=$reception;
