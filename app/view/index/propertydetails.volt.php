@@ -13,7 +13,7 @@
 				<div class="col-md-8">
 				<?php foreach ($properties as $part) { ?>
 					<div class="hidden-xs">
-						<img src="/images/<?php echo $part->getImages()->getImage1(); ?>"  width="740" height="450" style="margin-left: 10px;" alt="" title="<?php echo $part->getPropertyID(); ?>" />
+						<img src="/images/<?php echo $part->getImage1(); ?>"  width="740" height="450" style="margin-left: 10px;" alt="" title="<?php echo $part->getPropertyID(); ?>" />
 					</div>
 				</div>
 

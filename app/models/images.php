@@ -1,6 +1,6 @@
 <?php
 
-class images extends \Phalcon\Mvc\Model
+class Images extends \Phalcon\Mvc\Model
  
 {
 
@@ -8,10 +8,11 @@ class images extends \Phalcon\Mvc\Model
 			 protected $image1;
 			 protected $image2;
 			 protected $image3;
+			 protected $propertyID;
 	
 public function initialize()
     {
-        $this->hasMany('idimages', 'properties', 'idimages', array(
+        $this->hasMany('propertyID', 'properties', 'propertyID', array(
         	'foreignKey' => array(
         		'message' => 'Product Type cannot be deleted because it\'s used in Products'
         	)
@@ -35,6 +36,12 @@ public function initialize()
 			{
 				return $this->$image3;
 			}
+
+			public function getPropertyID()
+			{
+				return $this->$propertyID;
+			}
+
 			public function setidimages($idprices) {
 				$this->id = $idimages;
 			}
@@ -48,6 +55,9 @@ public function initialize()
 			}
 			public function setimage3($image3) {
 				$this->name = $image3;
+			}
+			public function setPropertyID($propertyID) {
+				$this->name = $propertyID;
 			}
 
    

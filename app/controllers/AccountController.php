@@ -165,6 +165,10 @@ class AccountController extends ControllerBase
             $user->parking=$parking;
             $user->space=$space;
             $user->image1 = $file->getName();
+            // $user->image1 = $file->getName();
+            // $user->image1 = $file->getName();
+
+
              
             $file->moveTo($baseLocation . $file->getName());
            
@@ -178,7 +182,7 @@ class AccountController extends ControllerBase
                     )
                 );
 
-             $exitProperty = \Rents::findfirst(
+             $exitrentProperty = \Rents::findfirst(
                 array(
                     'street = :street:',
                     'bind' => array(
@@ -186,7 +190,7 @@ class AccountController extends ControllerBase
                         )
                     )
                 );
-            if($exitProperty)
+            if($exitProperty or $exitrentProperty)
             {
                 $this->flashSession->error($user->street=$pStreet. " "."already exists in system");
             }else{

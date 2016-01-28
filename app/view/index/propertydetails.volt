@@ -13,7 +13,7 @@
 				<div class="col-md-8">
 				{% for part in properties %}
 					<div class="hidden-xs">
-						<img src="/images/{{ part.getImages().getImage1() }}"  width="740" height="450" style="margin-left: 10px;" alt="" title="{{ part.getPropertyID()  }}" />
+						<img src="/images/{{ part.getImage1() }}"  width="740" height="450" style="margin-left: 10px;" alt="" title="{{ part.getPropertyID()  }}" />
 					</div>
 				</div>
 
