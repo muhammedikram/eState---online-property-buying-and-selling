@@ -136,14 +136,17 @@ public function getCategory()
 	{
 		$mysql=$this->query(
 				'SELECT  
-				properties.propertyID AS "propertyID",
-				properties.town AS "town",
-				properties.type AS "type",
-				properties.street AS "street",
-				properties.price AS "price",
-				properties.bedroom AS "bedroom",
-				properties.image1 AS "image1",
-				properties.enabled AS "enabled"
+				properties.propertyID 		AS "propertyID",
+				properties.town 			AS "town",
+				properties.type 			AS "type",
+				properties.street 			AS "street",
+				properties.price 			AS "price",
+				properties.bedroom 			AS "bedroom",
+				properties.image1 			AS "image1",
+				properties.enabled 			AS "enabled",
+				properties.description 		AS "description",
+				properties.reception 		AS "reception",
+				properties.bathroom 		AS "bathroom"
 				From properties
 				Where properties.town = "'.$town.'" 
 				AND properties.type = "'.$type.'"
