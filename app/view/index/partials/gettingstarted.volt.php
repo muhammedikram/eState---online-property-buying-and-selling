@@ -1,5 +1,5 @@
 <div class="container">
-	  <h3 class="searchtitle">Are you looking to sell?</h3>
+	  <h3 class="lookingtosell">Are you looking to sell?</h3>
 
 <div class="row">
 		<div class="col-md-4 sellingHouse">
@@ -155,10 +155,15 @@
 	width: 98.1%;
 
 }
-.searchtitle{
+.lookingtosell{
   margin-left: 3%;
   font-size: 25px;
   letter-spacing: 3px;
+}
+@media screen and (max-width: 480px) {
+    .lookingtosell {
+        margin-top: 180px;
+    }
 }
 
 .servicesForSmallScreens {

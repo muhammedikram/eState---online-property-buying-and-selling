@@ -30,7 +30,7 @@
                       <div class="col-sm-5 formLabel">
                         <i class="fa fa-map-marker fa-2x icon"></i>
                       <select  type="text"name='town' class='form-control dropdown' >
-                          <option required>Select City</option>
+                          <option><li classs="disabled">Select City</li></option>
                           {% for entry in properties %}
                          <option value="{{entry.getTown()}}">{{entry.getTown()}}</option>
                           {% endfor %}
@@ -211,28 +211,23 @@
             </div>
 
 
-<!--     <div class="col-md-4">
+    <div class="col-md-4 hidden-xs hidden-md">
            <div class="jumbtron topJumbtron">
-            <div class="row">
-              <div class="col-sm-12">
-                  <h5 class="fa fa-list fa-2x searchtitle">Latest Properties</h5>
-              </div>
-            </div>
-          
-              <table class="table table-valign-middle">
+              <h5 class="fa fa-list fa-2x searchtitle">Latest Properties</h5>
+                 <table class="table table-valign-middle">
                   {% for entry in latestP %}
                     <tr>
-                            <td >
-                           <h4 >
-                            <a href="/index/propertydetails/{{entry.getPropertyID()}}">
+                      <td >
+                       <h4 >
+                        <a href="/index/propertydetails/{{entry.getPropertyID()}}">
                                 {{ entry.getStreet()|capitalize}}, <!--Put first letter as capital -->
                                 
-                     <!--          </a>
+                           </a>
                           </h4>
                         </td>
-                        </tr>
-                      {% endfor %}
-                        </table> -->
+                      </tr>
+                    {% endfor %}
+                  </table> 
                 </div>
               </div> 
             </div>
@@ -282,6 +277,13 @@
   margin-top: -10px;
 
 }
+@media screen and (max-width: 480px) {
+   
+.image-background .jumbotron {
+        height: 620px;
+    }
+}
+
  .formLabel{
   margin-top: 20px;
   margin-left: 20px;

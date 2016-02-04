@@ -15,9 +15,10 @@
   
     
         {{ content() }}
-  <body>  
+  <body>         
+   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
         {{ javascript_include('js/jquery-2.0.3.min.js') }}
         <script src="/js/summernote.js"></script>

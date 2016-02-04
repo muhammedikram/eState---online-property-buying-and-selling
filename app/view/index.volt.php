@@ -15,9 +15,10 @@
   
     
         <?php echo $this->getContent(); ?>
-  <body>  
+  <body>         
+   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
         <?php echo $this->tag->javascriptInclude('js/jquery-2.0.3.min.js'); ?>
         <script src="/js/summernote.js"></script>
