@@ -59,9 +59,10 @@
                 <span class="glyphicon glyphicon-save"></span>
                 
                 Update
-            </button>
+            </button><br><br>
     
 <?php echo $this->tag->endForm(); ?>
 		 
 	</div>
+</div>
 </div>

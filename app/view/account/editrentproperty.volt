@@ -59,9 +59,10 @@
                 <span class="glyphicon glyphicon-save"></span>
                 
                 Update
-            </button>
+            </button><br><br>
     
 {{ end_form() }}
 		 
 	</div>
+</div>
 </div>

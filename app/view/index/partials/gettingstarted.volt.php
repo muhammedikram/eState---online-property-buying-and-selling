@@ -162,7 +162,7 @@
 }
 @media screen and (max-width: 480px) {
     .lookingtosell {
-        margin-top: 180px;
+        margin-top: 10px;
     }
 }
 

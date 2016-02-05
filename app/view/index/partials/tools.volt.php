@@ -2,14 +2,14 @@
 	<div class="container">
 		<div class="row">
 		<h3>How it works?</h3>
-			<div class="col-md-12">
-			<img src="images/add2.png" height="200px;" width="200px;">
-			<img src="images/arrow.png" height="100px;" width="90;" style="margin-left:1%;">
-			<img src="images/add6.png" height="200px;" width="200px;">
-			<img src="images/arrow.png" height="100px;" width="90;" style="margin-left:1%;">
-			<img src="images/add4.png" height="200px;" width="200px;">
-			<img src="images/arrow.png" height="100px;" width="90;" style="margin-left:1%;">
-			<img src="images/add7.png" height="200px;" width="200px;">	
+			<div class="col-md-12 hidden-xs">
+			<img src="images/service1.png" height="200px;" width="200px;">
+			<img src="images/service5.png" height="100px;" width="70;" style="margin-left:1%;">
+			<img src="images/service2.png" height="200px;" width="200px;">
+			<img src="images/service5.png" height="100px;" width="70;" style="margin-left:1%;">
+			<img src="images/service3.png" height="200px;" width="200px;">
+			<img src="images/service5.png" height="100px;" width="7	0;" style="margin-left:1%;">
+			<img src="images/service4.png" height="200px;" width="200px;">	
 			</div>
 			<div class="row">
 				<div class="col-md-3">

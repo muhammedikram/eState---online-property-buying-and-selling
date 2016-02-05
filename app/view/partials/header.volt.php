@@ -1,4 +1,4 @@
-<?php echo $this->partial('partials/customerRegister'); ?>
+  <?php echo $this->partial('partials/customerRegister'); ?>
 
 <header>
  <div class="navbar yamm  topbar  hidden-xs hidden-sm">
@@ -87,8 +87,10 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <img src="/images/logo2.png" class="logo">
       <ul class="nav navbar-nav">
-        <li><a href="/index">Home</a></li>
+       
+         <li><a href="/index">Home</a></li>
         <li><a href="/">Valuation</a></li>
         <li><a href="/">Contact</a></li>
         <li><a href="/about">About</a></li>
@@ -124,6 +126,12 @@
     .style input{
       height: 30px;
       width: 300px;
+    }
+    .logo{
+
+    width: 16%;
+    height: 13%;
+    float: left;
     }
     .dropdown-menu {
       z-index: 9999;
