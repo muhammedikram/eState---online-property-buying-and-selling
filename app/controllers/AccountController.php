@@ -38,9 +38,15 @@ class AccountController extends ControllerBase
 
             $name = $this->request->getPost('name');
             $email = $this->request->getPost('email');
+            $password = $this->request->getPost('password');
+            //$cpassword = $this->request->getPost('confirm_password');
+
+
 
             $user->name = $name;
             $user->email = $email;
+            $user->password=$password;
+            $user -> setconfirm_password($this->request->getPost('confirm_password'));
             $user->save();
            $this->flash->success(
             "Your profile is been updated successfully");

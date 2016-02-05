@@ -83,7 +83,7 @@
             $name = $this->request->getPost('name');
 
             $password = $this->request->getPost('password');
-            $password = sha1($password);
+            $password = $password;
 
            $name = $this->request->getPost('name');
             $user = MemberRegister::findFirst("name='$name' AND password='$password' ");
@@ -97,7 +97,7 @@
        
             }else{
 
-            $this->flash->notice('Wrong email/password');
+            $this->flash->error('Please enter correct login details');
         }
 
            //return $this->response->redirect("index");

@@ -8,7 +8,7 @@
 			<img src="images/service2.png" height="200px;" width="200px;">
 			<img src="images/service5.png" height="100px;" width="70;" style="margin-left:1%;">
 			<img src="images/service3.png" height="200px;" width="200px;">
-			<img src="images/service5.png" height="100px;" width="7	0;" style="margin-left:1%;">
+			<img src="images/service5.png" height="100px;" width="70;" style="margin-left:1%;">
 			<img src="images/service4.png" height="200px;" width="200px;">	
 			</div>
 			<div class="row">

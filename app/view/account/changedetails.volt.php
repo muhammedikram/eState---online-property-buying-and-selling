@@ -14,10 +14,22 @@
                     <label for="email">* Email</label>
                     <?php echo $this->tag->textField(array('email', 'class' => 'form-control')); ?>
                  </div>
+
+                 <div class="form-group">
+                    <label for="password">* New Password</label>
+                    <?php echo $this->tag->textField(array('password', 'class' => 'form-control')); ?>
+                 </div>
+
+                 <div class="form-group">
+                    <label for="confirm_password">* Confirm New Password</label>
+                    <?php echo $this->tag->textField(array('password', 'class' => 'form-control')); ?>
+                 </div>
+                 <hr>
+
                     <div class="clearfix">
-                    <input type="submit" value="Update" class="btn btn-primary btn-large btn-success">
-                &nbsp;
-                 <?php echo $this->tag->linkTo(array('account/index', 'Cancel')); ?>
+                    <input type="submit" value="Update" class="btn btn-primary btn-large btn-success">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $this->tag->linkTo(array('account/index', 'Cancel')); ?><br><br>
+                
+                 
                     </div>
                 </form>
             </div>

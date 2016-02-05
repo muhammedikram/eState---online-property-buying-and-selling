@@ -128,7 +128,6 @@
       width: 300px;
     }
     .logo{
-
     width: 16%;
     height: 13%;
     float: left;

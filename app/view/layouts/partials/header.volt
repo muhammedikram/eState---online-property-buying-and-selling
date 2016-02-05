@@ -15,7 +15,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <img src="/images/logo2.png" class="logo">
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,4 +59,14 @@
 .dropdown-toggle{
   color: white;
 }
+ .logo{
+    width: 48%;
+    height: 25%;
+    float: left;
+    background-color: white;
+    }
+
+     .navbar-toggle{
+      background-color: white;
+    }
 </style>

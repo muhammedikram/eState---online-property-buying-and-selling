@@ -14,10 +14,22 @@
                     <label for="email">* Email</label>
                     {{ text_field("email",  "class": "form-control") }}
                  </div>
+
+                 <div class="form-group">
+                    <label for="password">* New Password</label>
+                    {{ text_field("password",  "class": "form-control") }}
+                 </div>
+
+                 <div class="form-group">
+                    <label for="confirm_password">* Confirm New Password</label>
+                    {{ text_field("password",  "class": "form-control") }}
+                 </div>
+                 <hr>
+
                     <div class="clearfix">
-                    <input type="submit" value="Update" class="btn btn-primary btn-large btn-success">
-                &nbsp;
-                 {{ link_to('account/index', 'Cancel') }}
+                    <input type="submit" value="Update" class="btn btn-primary btn-large btn-success">&nbsp;&nbsp;&nbsp;&nbsp;{{ link_to('account/index', 'Cancel') }}<br><br>
+                
+                 
                     </div>
                 </form>
             </div>
