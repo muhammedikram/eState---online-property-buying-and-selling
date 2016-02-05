@@ -1,5 +1,7 @@
 
 <div class="container">
+<?php echo $this->partial('dashboard/partials/dashboardNavBar'); ?>
+
 	<h3>Add a property</h3>
 	<div class="row" style="margin-top:3%;">
 		<div class="col-sm-10">

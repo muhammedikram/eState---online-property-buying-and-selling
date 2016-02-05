@@ -1,4 +1,6 @@
 <div class="container">
+{{ partial('dashboard/partials/dashboardNavBar') }}
+
 	<h1>Properties awaiting for approvel</h1>
 
 

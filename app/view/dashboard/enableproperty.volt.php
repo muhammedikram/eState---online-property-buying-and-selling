@@ -1,4 +1,6 @@
 <div class="container">
+<?php echo $this->partial('dashboard/partials/dashboardNavBar'); ?>
+
 	<h1>Properties awaiting for approvel</h1>
 
 

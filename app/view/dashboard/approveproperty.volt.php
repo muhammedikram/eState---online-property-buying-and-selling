@@ -1,4 +1,6 @@
 <div class="container">
+<?php echo $this->partial('dashboard/partials/dashboardNavBar'); ?>
+
 	<h1>Approve property  <?php echo $ud->getPropertyID(); ?></h1>
 
     <p>Please check the detals and ensure thar are correct before you approve the property.</p>

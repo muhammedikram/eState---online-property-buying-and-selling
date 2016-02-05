@@ -6,6 +6,7 @@ class Valuation extends \Phalcon\Mvc\Model
 	protected $propertyID;
 	protected $date;
 	protected $enabled;
+	protected $userID;
 
 	public function getValuationID(){
 	    return $this->valuationID;
@@ -14,10 +15,13 @@ class Valuation extends \Phalcon\Mvc\Model
          return $this->propertyID;
 	}
 	public function getDate(){
-		return $this->date(DD "/" MM "/" YY);
+		return $this->date;
 	}
 	public function getEnabled(){
 	  return $this->enabled;
+	}
+	public function getuserID(){
+	  return $this->userID;
 	}
 
 	public function setValuationID($valuationID){
@@ -33,6 +37,9 @@ class Valuation extends \Phalcon\Mvc\Model
 	}
 	public function setEnabled($enabled){
 	$this->enabled=$enabled;
+	}
+	public function setuserID($userID){
+	$this->enabled=$userID;
 	}
 
 	

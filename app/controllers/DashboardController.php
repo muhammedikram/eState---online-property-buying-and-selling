@@ -293,6 +293,11 @@ class DashboardController extends ControllerBase
         }
 		
  
+
+    public function valuationAction()
+    {
+        
+    }
  		
 }
 

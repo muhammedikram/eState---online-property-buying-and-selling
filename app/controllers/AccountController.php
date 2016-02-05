@@ -136,6 +136,8 @@ class AccountController extends ControllerBase
             $bathroom = $request->getPost('bathroom');
             $parking= $request->getPost('parking');
             $space=$request->getPost('space');
+            $valuation = $request->getPost('valuation');
+
              // var_dump($_FILES);
            // Check if the user has uploaded files
         if ($this->request->hasFiles() == true) {
@@ -217,7 +219,7 @@ class AccountController extends ControllerBase
             $listining->save();
             }
 
-               //add entry in listining table
+        //add entry in rent table
             if($pPurpose == "rent")
             {
             $listining = new RentsListinings();
@@ -227,6 +229,17 @@ class AccountController extends ControllerBase
             $listining->save();
             }
             
+
+            //if customer require valuation, Add entry in valuation tabele
+
+            if($valuation=="Yes") {
+                $val = new valuation();
+                $val->propertyID=$pPropertyID;
+                $val->userID=$loggedInUser;
+                $val->enabled=0;
+                $val->date->date;
+                $val->save();
+            }
         
             $this->flash->success($user->street=$pStreet. " "."has been successfully saved");
             
@@ -415,6 +428,7 @@ public function editrentpropertyAction() {
             $this->view->rd = $rd;  
     }
 
+  
 }//end of class
 
 

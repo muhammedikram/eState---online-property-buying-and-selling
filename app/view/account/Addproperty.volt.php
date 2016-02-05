@@ -185,8 +185,8 @@
 				 <label for="county" name="valuation" id="type">Do you require free valuation</label>
 						<select class="form-control" name="valuation">
 								<option>Free valuation</option>
-								<option>Yes</option>
-								<option>No</option>	
+								<option name= "yes">Yes</option>
+								<option name="no">No</option>	
 					</select>
 				</div>
 			  </div>
