@@ -296,8 +296,51 @@ class DashboardController extends ControllerBase
 
     public function valuationAction()
     {
+        $propertyID = $this->dispatcher->getParam('propertyID');
+
             $valuatonproperties = Valuation::find();
             $this->view->valuationproperties = $valuatonproperties;
+
+            $request = $this->request;
+                if ($request->isPost()) {
+            
+            //get the property ID and save the price in properties table
+            $valprice = Properties::findFirst(
+            array(
+                'propertyID = :propertyID:',
+                'bind' => array (
+                    'propertyID' => $propertyID
+                    )
+                )
+            );
+
+            $valprice->setPrice($this->request->getPost('price'));
+            $valprice->setEnabled(1);
+            $valprice->save();
+
+            //Also enable the property in Valuation table
+               //get the property ID and save the price in properties table
+            $valpriceenable = Valuation::findFirst(
+            array(
+                'propertyID = :propertyID:',
+                'bind' => array (
+                    'propertyID' => $propertyID
+                    )
+                )
+            );
+            $valpriceenable->setEnabled(1);
+            $valpriceenable->save();
+
+
+            $this->flashSession->success(
+                    'Property ref:'.$valprice->getPropertyID() . ' price has been added.'
+                );
+
+
+        }
+
+
+
     }
  		
 }
