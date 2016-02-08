@@ -1,4 +1,4 @@
-<div class="container">
+	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
 			<!-- Assigining property code to variable, which will be used in related properties-->
@@ -54,13 +54,13 @@
 						<h2 class="text2">
 
 							<?php $price =$part->getPrice(); ?>
-								<?php if(isset($price) && $price >= 0 ) 
+								<?php if($price) 
 							{ ?>
 							&pound;
 							<?php
 								echo number_format (($price),2);
 							}else {
-								echo "No Price";
+								echo "Price Not Available <button class='btn btn-success'>Request Price</button>";
 							}
 						?>
 
@@ -240,8 +240,9 @@
 
 
 <style>
+	
 	.text2{
-		color: green;
+		font-size: 20px;
 	}
 	.details{
 		margin-left: -9%;

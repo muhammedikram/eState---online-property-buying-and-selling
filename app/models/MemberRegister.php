@@ -28,6 +28,12 @@ class MemberRegister extends \Phalcon\Mvc\Model
         		'message' => 'Product Type cannot be deleted because it\'s used in Products'
         	)
         ));
+
+          $this->hasMany('id', 'Valuation', 'userID', array(
+        	'foreignKey' => array(
+        		'message' => 'Product Type cannot be deleted because it\'s used in Products'
+        	)
+        ));
     }
 			  
              public function getId(){

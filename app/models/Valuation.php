@@ -1,4 +1,7 @@
 <?php
+
+use Phalcon\Mvc\Model\Behavior\Timestampable;
+
 class Valuation extends \Phalcon\Mvc\Model
 {
 	
@@ -7,6 +10,22 @@ class Valuation extends \Phalcon\Mvc\Model
 	protected $date;
 	protected $enabled;
 	protected $userID;
+
+
+public function initialize()
+    {
+
+        $this->belongsTo("userID", "MemberRegister", "id");
+
+        $this->addBehavior(new Timestampable(
+        array(
+            'beforeCreate'  => array(
+                'field'     => 'date',
+                'format'    => 'd-m-y'
+            )
+        )
+    ));
+    }
 
 	public function getValuationID(){
 	    return $this->valuationID;

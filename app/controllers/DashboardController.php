@@ -296,7 +296,8 @@ class DashboardController extends ControllerBase
 
     public function valuationAction()
     {
-        
+            $valuatonproperties = Valuation::find();
+            $this->view->valuationproperties = $valuatonproperties;
     }
  		
 }
