@@ -23,8 +23,7 @@ class DashboardController extends ControllerBase
             }
 
             public function addpropertyAction()
-            
-    {
+  {
 
             //get active session
              $auth = $this->session->get('auth');
@@ -46,10 +45,17 @@ class DashboardController extends ControllerBase
             $pDescription = $request->getPost('description');
             $pPrice = $request->getPost('price');
             $pValidUntil = $request->getPost('validUntil');
+            $kitchen = $request->getPost('kitchen');
+            $reception = $request->getPost('reception');
+            $bathroom = $request->getPost('bathroom');
+            $parking= $request->getPost('parking');
+            $space=$request->getPost('space');
+            $valuation = $request->getPost('valuation');
+
              // var_dump($_FILES);
            // Check if the user has uploaded files
         if ($this->request->hasFiles() == true) {
-            $baseLocation = '/veryproperty/public/images/';
+            $baseLocation = '/estate/public/images/';
 
             // Print the real file names and sizes
             foreach ($this->request->getUploadedFiles() as $file) {
@@ -65,6 +71,7 @@ class DashboardController extends ControllerBase
             if($pPurpose == 'rent'){
             $user = new Rents();
             }
+
             $user->propertyID = $pPropertyID;
             $user->street = $pStreet;
             $user->town = $pTown;
@@ -73,7 +80,18 @@ class DashboardController extends ControllerBase
             $user->bedroom = $pBedrooms;
             $user->description = $pDescription;
             $user->validUntil = $pValidUntil;
+            $user->enabled= 0;
+            $user->kitchen =$kitchen;
+            $user->price=$pPrice;
+            $user->reception=$reception;
+            $user->bathroom=$bathroom;
+            $user->parking=$parking;
+            $user->space=$space;
             $user->image1 = $file->getName();
+            // $user->image1 = $file->getName();
+            // $user->image1 = $file->getName();
+
+
              
             $file->moveTo($baseLocation . $file->getName());
            
@@ -87,7 +105,7 @@ class DashboardController extends ControllerBase
                     )
                 );
 
-             $exitProperty = \Rents::findfirst(
+             $exitrentProperty = \Rents::findfirst(
                 array(
                     'street = :street:',
                     'bind' => array(
@@ -95,7 +113,7 @@ class DashboardController extends ControllerBase
                         )
                     )
                 );
-            if($exitProperty)
+            if($exitProperty or $exitrentProperty)
             {
                 $this->flashSession->error($user->street=$pStreet. " "."already exists in system");
             }else{
@@ -115,7 +133,7 @@ class DashboardController extends ControllerBase
             $listining->save();
             }
 
-               //add entry in listining table
+        //add entry in rent table
             if($pPurpose == "rent")
             {
             $listining = new RentsListinings();
@@ -125,6 +143,17 @@ class DashboardController extends ControllerBase
             $listining->save();
             }
             
+
+            //if customer require valuation, Add entry in valuation tabele
+
+            if($valuation=="Yes") {
+                $val = new valuation();
+                $val->propertyID=$pPropertyID;
+                $val->userID=$loggedInUser;
+                $val->enabled=0;
+                $val->date->date;
+                $val->save();
+            }
         
             $this->flash->success($user->street=$pStreet. " "."has been successfully saved");
             
@@ -136,10 +165,6 @@ class DashboardController extends ControllerBase
 
     }
 }
-
-
-     
-
     
         public function enablePropertyAction()
         {
