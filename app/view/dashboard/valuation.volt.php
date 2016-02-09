@@ -26,16 +26,7 @@
 					<button type="submit"data-toggle='modal' data-target='#valuationprice' class="btn btn-success registerButton">Add Price</button>
 					</td>
 				</tr>
-					<?php } ?>
-				<?php } else { ?>
-				<div class='jumbotron text-center'>No properties to be approved.</div>
-			<?php } ?>
-	<?php } ?>	
-	</table>
-
-		</div>
-	</div>
-</div>
+	
 
 <div class="modal fade" id="valuationprice">
   <div class="modal-dialog">
@@ -70,6 +61,55 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+				<?php } ?>
+				<?php } else { ?>
+				<div class='jumbotron text-center'>No properties to be valued.</div>
+			<?php } ?>
+	<?php } ?>	
+	</table>
+
+		</div>
+	</div>
+
+	
+		<!-- Prvious valuated properties -->
+		<h2>Previous valuated properties</h2>
+
+			<div class="col-md-12">
+		<table class="table table-hover">
+		<?php if (isset($valuedproperties)) { ?>
+			<?php if ($this->length($valuedproperties) > 0) { ?>
+				<tr>
+					<th>Valuation ID</th>
+					<th>Property ID</th>
+					<th>Customer Name</th>
+					<th>Date</th>
+					<th>Price</th>
+					<th></th>
+				</tr>
+			<?php foreach ($valuedproperties as $entry) { ?>
+				<tr class="alert alert-danger">
+					<td><?php echo $entry->getValuationID(); ?></td>
+					<td><?php echo $entry->getPropertyID(); ?></td>
+					<td><?php echo $entry->getMemberRegister()->getName(); ?></td>
+					<td><?php echo $entry->getDate(); ?></td>
+					<td><a  class="btn btn-primary" href="/index/propertydetails/<?php echo $entry->getpropertyID(); ?>">More Details</a>
+					</td>
+
+					<td>Remove</td>
+				</tr>
+					<?php } ?>
+				<?php } else { ?>
+				<div class='jumbotron text-center'>No previous properties been valued.</div>
+			<?php } ?>
+	<?php } ?>	
+	</table>
+
+		</div>
+</div>
+
+
 
 <style>
 	.price{

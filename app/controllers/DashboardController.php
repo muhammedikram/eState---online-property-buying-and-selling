@@ -323,7 +323,15 @@ class DashboardController extends ControllerBase
     {
         $propertyID = $this->dispatcher->getParam('propertyID');
 
-            $valuatonproperties = Valuation::find();
+        //show the properties that require valuation
+            $valuatonproperties = Valuation::find(
+                array(
+                     'enabled = :enabled:',
+                      'bind'=>array(
+                        'enabled' => 0
+                         )                  
+                    )
+                );
             $this->view->valuationproperties = $valuatonproperties;
 
             $request = $this->request;
@@ -364,6 +372,16 @@ class DashboardController extends ControllerBase
 
         }
 
+        //show the properties that were previously evulated
+         $evproperties = Valuation::find(
+                array(
+                     'enabled = :enabled:',
+                      'bind'=>array(
+                        'enabled' => 1
+                         )                  
+                    )
+                );
+            $this->view->valuedproperties = $evproperties;
 
 
     }

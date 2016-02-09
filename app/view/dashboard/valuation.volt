@@ -26,16 +26,7 @@
 					<button type="submit"data-toggle='modal' data-target='#valuationprice' class="btn btn-success registerButton">Add Price</button>
 					</td>
 				</tr>
-					{% endfor %}
-				{% else %}
-				<div class='jumbotron text-center'>No properties to be approved.</div>
-			{% endif %}
-	{% endif %}	
-	</table>
-
-		</div>
-	</div>
-</div>
+	
 
 <div class="modal fade" id="valuationprice">
   <div class="modal-dialog">
@@ -70,6 +61,55 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+				{% endfor %}
+				{% else %}
+				<div class='jumbotron text-center'>No properties to be valued.</div>
+			{% endif %}
+	{% endif %}	
+	</table>
+
+		</div>
+	</div>
+
+	
+		<!-- Prvious valuated properties -->
+		<h2>Previous valuated properties</h2>
+
+			<div class="col-md-12">
+		<table class="table table-hover">
+		{% if valuedproperties is defined %}
+			{% if valuedproperties|length > 0 %}
+				<tr>
+					<th>Valuation ID</th>
+					<th>Property ID</th>
+					<th>Customer Name</th>
+					<th>Date</th>
+					<th>Price</th>
+					<th></th>
+				</tr>
+			{% for entry in valuedproperties %}
+				<tr class="alert alert-danger">
+					<td>{{entry.getValuationID()}}</td>
+					<td>{{entry.getPropertyID()}}</td>
+					<td>{{entry.getMemberRegister().getName()}}</td>
+					<td>{{entry.getDate()}}</td>
+					<td><a  class="btn btn-primary" href="/index/propertydetails/<?php echo $entry->getpropertyID(); ?>">More Details</a>
+					</td>
+
+					<td>Remove</td>
+				</tr>
+					{% endfor %}
+				{% else %}
+				<div class='jumbotron text-center'>No previous properties been valued.</div>
+			{% endif %}
+	{% endif %}	
+	</table>
+
+		</div>
+</div>
+
+
 
 <style>
 	.price{
