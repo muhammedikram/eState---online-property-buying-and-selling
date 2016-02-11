@@ -50,7 +50,7 @@
                   </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-success offer-submit">Set Price</button>
+                      <button type="submit" name="setprice" value="settheprice"class="btn btn-success offer-submit">Set Price</button>
                     </div>
                     <div class="alert alert-info" role="alert">Please Note: Setting price will automatically enable property in system</div>
 
@@ -97,7 +97,13 @@
 					<td><a  class="btn btn-primary" href="/index/propertydetails/<?php echo $entry->getpropertyID(); ?>">More Details</a>
 					</td>
 
-					<td>Remove</td>
+					<td>
+					<form  action="/dashboard/valuation/<?php echo $entry->getpropertyID(); ?>"method="post" >
+						<button type="submit" name="remove" value="removebadenable" class="btn btn-success">Remove</button>
+						</form>
+
+
+					</td>
 				</tr>
 					<?php } ?>
 				<?php } else { ?>

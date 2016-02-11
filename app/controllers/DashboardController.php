@@ -335,8 +335,8 @@ class DashboardController extends ControllerBase
             $this->view->valuationproperties = $valuatonproperties;
 
             $request = $this->request;
-                if ($request->isPost()) {
-            
+            if($this->request->getPost('setprice') == 'settheprice')  {
+
             //get the property ID and save the price in properties table
             $valprice = Properties::findFirst(
             array(
@@ -383,10 +383,28 @@ class DashboardController extends ControllerBase
                 );
             $this->view->valuedproperties = $evproperties;
 
+        //delete the property
 
-    }
+        //check if the remove button is been clicked
+        if($this->request->getPost('remove') == 'removebadenable')  {
+
+        $propertyID = $this->dispatcher->getParam('propertyID');
+    
+          $valproperty= valuation::find(
+             array(
+                    'propertyID = :propertyID:',
+                     'bind' => array(
+                         'propertyID' => $propertyID
+               )
+            ));
+            $valproperty->delete();
+
+        }
  		
-}
+    }
+
+
+} //end of Valuation
 
 
 ?>
