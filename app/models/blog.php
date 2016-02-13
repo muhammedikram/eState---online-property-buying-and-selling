@@ -1,4 +1,7 @@
 <?php
+
+use Phalcon\Mvc\Model\Behavior\Timestampable;
+
 class Blog extends \Phalcon\Mvc\Model
 {
 	
@@ -10,6 +13,20 @@ class Blog extends \Phalcon\Mvc\Model
 	protected $description;
 	protected $image1;
 	protected $image2;
+
+public function initialize()
+    {
+
+
+        $this->addBehavior(new Timestampable(
+        array(
+            'beforeCreate'  => array(
+                'field'     => 'date',
+                'format'    => 'd-m-y'
+            )
+        )
+    ));
+    }
 
 //getters for blog
 	public function getblogID(){

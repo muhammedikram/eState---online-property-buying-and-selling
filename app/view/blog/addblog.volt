@@ -3,10 +3,12 @@
 <link rel='stylesheet' href="/css/summernote.css" />
 
 <div class="container">
+{{ partial('dashboard/partials/dashboardNavBar') }}
+
 	<h3>Add a Blog</h3>
 	<div class="row">
 		<div class="col-md-8">
-				<form class="form-horizontal" action="/blog/addblog" method="post">
+				<form class="form-horizontal" action="/blog/addblog" method="post" enctype="multipart/form-data">
 				  <div class="form-group">
 				    <label for="name" class="col-sm-2 control-label">Your Nmae</label>
 				    <div class="col-sm-10">
@@ -43,18 +45,18 @@
 						
 
 
-<script>
+// <script>
 
-$(document).ready(function(){
-	$('#description').summernote({
-		  height: 200,   //set editable area's height
-		  codemirror: { // codemirror options
-		    theme: 'monokai'
-		  },
-		  focus : true
-		});
-});
-</script>
+// $(document).ready(function(){
+// 	$('#description').summernote({
+// 		  height: 200,   //set editable area's height
+// 		  codemirror: { // codemirror options
+// 		    theme: 'monokai'
+// 		  },
+// 		  focus : true
+// 		});
+// });
+// </script>
 
 
 

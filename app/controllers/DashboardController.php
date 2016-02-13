@@ -403,8 +403,17 @@ class DashboardController extends ControllerBase
  		
     }
 
+        //this function is to remove blog.
+        //add blog has seperte ccontroller
+    public function removeblogAction()
+    {
+                $showblogs = Blog::find();
+                
+                $this->view->blog = $showblogs;
+    }
 
-} //end of Valuation
+
+} 
 
 
 ?>
