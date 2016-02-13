@@ -18,34 +18,33 @@ USE `estate`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `offices`
+-- Table structure for table `blog`
 --
 
-DROP TABLE IF EXISTS `offices`;
+DROP TABLE IF EXISTS `blog`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `offices` (
-  `officeCode` varchar(10) NOT NULL,
-  `city` varchar(50) NOT NULL,
-  `phone` varchar(50) NOT NULL,
-  `addressLine1` varchar(50) NOT NULL,
-  `addressLine2` varchar(50) DEFAULT NULL,
-  `state` varchar(50) DEFAULT NULL,
-  `country` varchar(50) NOT NULL,
-  `postalCode` varchar(15) NOT NULL,
-  `territory` varchar(10) NOT NULL,
-  PRIMARY KEY (`officeCode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `blog` (
+  `blogID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL,
+  `title` varchar(45) DEFAULT NULL,
+  `date` varchar(45) DEFAULT NULL,
+  `description` text,
+  `image1` varchar(45) DEFAULT NULL,
+  `image2` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`blogID`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `offices`
+-- Dumping data for table `blog`
 --
 
-LOCK TABLES `offices` WRITE;
-/*!40000 ALTER TABLE `offices` DISABLE KEYS */;
-INSERT INTO `offices` VALUES ('1','San Francisco','+1 650 219 4782','100 Market Street','Suite 300','CA','USA','94080','NA'),('2','Boston','+1 215 837 0825','1550 Court Place','Suite 102','MA','USA','02107','NA'),('3','NYC','+1 212 555 3000','523 East 53rd Street','apt. 5A','NY','USA','10022','NA'),('4','Paris','+33 14 723 4404','43 Rue Jouffroy D\'abbans',NULL,NULL,'France','75017','EMEA'),('5','Tokyo','+81 33 224 5000','4-1 Kioicho',NULL,'Chiyoda-Ku','Japan','102-8578','Japan'),('6','Sydney','+61 2 9264 2451','5-11 Wentworth Avenue','Floor #2',NULL,'Australia','NSW 2010','APAC'),('7','London','+44 20 7877 2041','25 Old Broad Street','Level 7',NULL,'UK','EC2N 1HN','EMEA');
-/*!40000 ALTER TABLE `offices` ENABLE KEYS */;
+LOCK TABLES `blog` WRITE;
+/*!40000 ALTER TABLE `blog` DISABLE KEYS */;
+INSERT INTO `blog` VALUES (14,'Muhammed Ikram',NULL,'First blog: project under development stages','13-02-16','This is new and exciting project; eState. now save thousands on selling your property online with us ','b.jpg',NULL),(15,'Muhammed Ikram',NULL,'our new logo is here. ','13-02-16','Our new logo is been designed and finalized. It looks great on our website and hope you guys will like it too. ','logo2.png',NULL);
+/*!40000 ALTER TABLE `blog` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-13  9:13:27
+-- Dump completed on 2016-02-13  9:13:19

@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -30,7 +32,7 @@ CREATE TABLE `contacts` (
   `message` varchar(100) DEFAULT NULL,
   `propertyID` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`contactID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +41,7 @@ CREATE TABLE `contacts` (
 
 LOCK TABLES `contacts` WRITE;
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
-INSERT INTO `contacts` VALUES (1,'144',NULL,NULL,NULL,NULL),(2,'muhammed bilal','bilal@bmail.com','46e5656fdgrtddfb','fgd','144');
+INSERT INTO `contacts` VALUES (1,'144',NULL,NULL,NULL,NULL),(2,'muhammed bilal','bilal@bmail.com','46e5656fdgrtddfb','fgd','144'),(3,'c','muhammed.pk@hotmail.com','kjhvv','khgv','147');
 /*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-21 22:41:06
+-- Dump completed on 2016-02-13  9:13:13

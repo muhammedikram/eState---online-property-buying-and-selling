@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -23,12 +25,13 @@ DROP TABLE IF EXISTS `images`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `images` (
-  `idimages` int(11) NOT NULL,
+  `idimages` int(11) NOT NULL AUTO_INCREMENT,
   `image1` varchar(200) DEFAULT NULL,
   `image2` varchar(200) DEFAULT NULL,
   `image3` varchar(100) DEFAULT NULL,
+  `propertyID` int(11) DEFAULT NULL,
   PRIMARY KEY (`idimages`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +40,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,'../images/2.jpeg',NULL,NULL),(2,'/images/2.jpg',NULL,NULL),(3,'/images/3.jpg',NULL,NULL),(4,'/images/4.jpg',NULL,NULL),(5,'/images/5.jpg',NULL,NULL),(6,'/images/6.jpg',NULL,NULL),(7,'/images/7.jpg',NULL,NULL);
+INSERT INTO `images` VALUES (1,'house-for-sale.jpg',NULL,NULL,108),(2,NULL,NULL,NULL,127),(3,'',NULL,NULL,181);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-21 22:41:02
+-- Dump completed on 2016-02-13  9:13:09

@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -29,7 +31,7 @@ CREATE TABLE `favurites` (
   PRIMARY KEY (`favuriteID`),
   KEY `favurites_idx` (`propertyID`),
   CONSTRAINT `favurites` FOREIGN KEY (`propertyID`) REFERENCES `properties` (`propertyID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-21 22:41:07
+-- Dump completed on 2016-02-13  9:13:14

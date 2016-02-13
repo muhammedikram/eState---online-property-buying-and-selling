@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -58,7 +60,7 @@ CREATE TABLE `properties` (
 
 LOCK TABLES `properties` WRITE;
 /*!40000 ALTER TABLE `properties` DISABLE KEYS */;
-INSERT INTO `properties` VALUES (144,'House','New house for to sell','26 low road','','wf13 3ps','Dewsbury','10000',3,NULL,2016,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(145,'Flat','weqe','7 a lane',NULL,'wf24 rg','Wakefield','20000',2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(146,'Flat','werewr','8 b lane',NULL,'wf35 rd','Wakefield','30000',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(147,'Flat','erewr','9 c lane',NULL,'3432','Wakefield','25000',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(162,'Bungalows','This is newely built house. It is an excellen','Door Lane','','WF13 3PS','Leeds','60000',5,NULL,2016,NULL,'',NULL,NULL,'Kitchen(galley)','10','5','Garage','Balcony');
+INSERT INTO `properties` VALUES (128,'House','','54 new hey road','','WF61jg','Normanton','3434',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(134,'House','','asfewgwegqw',NULL,'','','',2,NULL,NULL,'0','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(142,'House','','223','','22','2','34344',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(151,'Bungalows','','123','','','Halifax','66666',5,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(161,'House','','dddd',NULL,'','','56565',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(167,'House','','84 new hey road',NULL,'WF61jg','Normanton','60000',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(171,'House','','54 newry road',NULL,'WF61jg','Normanton','989',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(173,'House','','eefgqregfwd',NULL,'','','',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(179,'House','','etyes',NULL,'','dfdsdf','888888',3,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(182,'House','','dvsdfb',NULL,'','wet2','34342',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(183,'Flat','','retetwrq3',NULL,'','','555',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(191,'House','','lghjgiuy',NULL,'dsf','sdfdsfsd','456',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(200,'Flat','','efherherymt',NULL,'','','235436',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...');
 /*!40000 ALTER TABLE `properties` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -71,4 +73,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-21 22:41:04
+-- Dump completed on 2016-02-13  9:13:11
