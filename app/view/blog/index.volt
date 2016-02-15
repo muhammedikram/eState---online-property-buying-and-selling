@@ -1,5 +1,4 @@
 <div class="container">
-	<h1>Blog</h1>
 	
 	<div class="col-md-8">
 			{% if blog is defined %}
