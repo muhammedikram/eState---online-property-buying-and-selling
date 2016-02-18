@@ -1,0 +1,13 @@
+#remove the vagrant files.
+vendor
+vendor/*
+
+
+
+#remove the vagrant files.
+.vagrant
+.vagrant/*
+
+#remove the vagrant files.
+Vagrantfile
+
