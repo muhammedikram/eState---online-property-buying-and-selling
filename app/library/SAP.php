@@ -146,16 +146,73 @@ public function getCategory()
 				properties.enabled 			AS "enabled",
 				properties.description 		AS "description",
 				properties.reception 		AS "reception",
-				properties.bathroom 		AS "bathroom"
+				properties.bathroom 		AS "bathroom",
+				properties.purpose 			AS "purpose"
 				From properties
 				Where properties.town = "'.$town.'" 
 				AND properties.type = "'.$type.'"
 				AND properties.price <=   "'.$price.'"
 				AND properties.bedroom = "'.$bedroom.'"
 				AND properties.enabled = "1"
+				AND properties.purpose = "sell"
 				');
 			$propertySearch =$mysql->fetchAll();
 			return $propertySearch;
+
+	}
+		public function getrentSearch($town, $type, $price, $bedroom)
+	{
+		$mysql=$this->query(
+				'SELECT  
+				properties.propertyID 		AS "propertyID",
+				properties.town 			AS "town",
+				properties.type 			AS "type",
+				properties.street 			AS "street",
+				properties.price 			AS "price",
+				properties.bedroom 			AS "bedroom",
+				properties.image1 			AS "image1",
+				properties.enabled 			AS "enabled",
+				properties.description 		AS "description",
+				properties.reception 		AS "reception",
+				properties.bathroom 		AS "bathroom",
+				properties.purpose 			AS "purpose"
+				From properties
+				Where properties.town = "'.$town.'" 
+				AND properties.type = "'.$type.'"
+				AND properties.price <=   "'.$price.'"
+				AND properties.bedroom = "'.$bedroom.'"
+				AND properties.enabled = "1"
+				AND properties.purpose = "rent"
+				');
+			$propertySearch =$mysql->fetchAll();
+			return $propertySearch;
+
+	}
+
+		public function getrentpropertySearch($town, $type, $price, $bedroom)
+	{
+		$mysql=$this->query(
+				'SELECT  
+				rents.propertyID 		AS "propertyID",
+				rents.town 			AS "town",
+				rents.type 			AS "type",
+				rents.street 			AS "street",
+				rents.price 			AS "price",
+				rents.bedroom 			AS "bedroom",
+				rents.image1 			AS "image1",
+				rents.enabled 			AS "enabled",
+				rents.description 		AS "description",
+				rents.reception 		AS "reception",
+				rents.bathroom 		AS "bathroom"
+				From rents
+				Where rents.town = "'.$town.'" 
+				AND rents.type = "'.$type.'"
+				AND rents.price <=   "'.$price.'"
+				AND rents.bedroom = "'.$bedroom.'"
+				AND rents.enabled = "1"
+				');
+			$rentpropertySearch =$mysql->fetchAll();
+			return $rentpropertySearch;
 
 
 	}

@@ -100,9 +100,13 @@ class IndexController extends ControllerBase
                 );
          $this->view->latestP=$latestproperties;
 
+ 
+
+        if($this->request->getPost('purpose') == 'sell')  {
+
          //search for properties 
 
-         //go p sap file
+         //go to sap file
         $sap = new \SAP();
         
         //if reruest is post
@@ -115,8 +119,31 @@ class IndexController extends ControllerBase
     
                 $properties= $sap->getpropertySearch($town,$type, $price, $bedroom);
 
+               // die(var_dump($properties));
+
         
             }
+        }
+
+                if($this->request->getPost('submit') == 'rent')  {
+
+
+                         //go p sap file
+                        $sap = new \SAP();
+                        
+                        //if reruest is post
+                            if($this->request->isPost()) {
+
+                                $town=$this->request->getPost('town');
+                                $type=$this->request->getPost('type');
+                                $price=$this->request->getPost('price');
+                                $bedroom= $this->request->getPost('bedroom');
+                    
+                                $properties= $sap->getrentSearch($town,$type, $price, $bedroom);
+
+                        
+                            }
+                }
 
                 $this->view->propertysearch=$properties;
 
@@ -135,13 +162,13 @@ class IndexController extends ControllerBase
         $bedroom = Rents::find(array('group'=>'bedroom'
             )
         );
-        $this->view->propertybedroom=$bedroom;
+        $this->view->rentpropertybedroom=$bedroom;
 
         $type = Rents::find(array('group'=>'type'
             )
         );
 
-         $this->view->propertyType=$type;
+         $this->view->rentpropertyType=$type;
 
 
          $latestproperties = Rents::find(
@@ -152,42 +179,29 @@ class IndexController extends ControllerBase
                 );
          $this->view->latestP=$latestproperties;
 
+        //search for properties 
 
-    //search for the properties
-        $numberPage = (int) $_GET["page"];
-        if ($this->request->getQuery()) {
-            $query = Criteria::fromInput($this->di, "Rents", $this->request->getQuery());
-            $this->persistent->searchParams = $query->getParams();
-        } else {
-            $numberPage = $this->request->getQuery("page", "int");
-        }
+         //go to sap file
+        $sap = new \SAP();
+        
+        //if reruest is post
+            if($this->request->isPost()) {
 
-        $parameters = array();
-        if ($this->persistent->searchParams) {
-            $parameters = $this->persistent->searchParams;
-        }
-
-        $products = Rents::find($parameters);
-
-        if (count($products) == 0) {
-            $this->flash->notice('No products are been found');
-            return $this->forward("index");
-        }
-
-        $paginator = new Paginator(array(
-            "data"  => $products,
-            "limit" => 5,
-            "page"  => $numberPage
-        ));
-
-        $this->view->page = $paginator->getPaginate();
-        $this->view->products = $products;
-
-
+                $town=$this->request->getPost('town');
+                $type=$this->request->getPost('type');
+                $price=$this->request->getPost('price');
+                $bedroom= $this->request->getPost('bedroom');
+    
+                $properties= $sap->getrentpropertySearch($town,$type, $price, $bedroom);
 
         
-    }
+            }
 
+                $this->view->rentpropertysearch=$properties;
+
+
+
+        }
     }
 
 /**
@@ -320,28 +334,28 @@ public function rentpropertydetailsaction()
              }          
              //checks if the send button is been clicked..If it's clicked, go to the next step, otherwise ourput error
 
-             if($this->request->getPost('newEmail') == 'email') 
-                {
-                    $property = Rents::findFromURL($propertyID);
+             // if($this->request->getPost('newEmail') == 'email') 
+             //    {
+             //        $property = Rents::findFromURL($propertyID);
     
-                     $send= $this->request->getPost('sendEmail');
+             //         $send= $this->request->getPost('sendEmail');
 
-                //Get email address to send to 
-                    $mail = new \Mail\Mail();
+             //    //Get email address to send to 
+             //        $mail = new \Mail\Mail();
 
-                    $mail->setFrom('admin@properties.com', 'Muhammed Ikram');
+             //        $mail->setFrom('admin@properties.com', 'Muhammed Ikram');
 
-                    $mail->setTo($send);
+             //        $mail->setTo($send);
 
-                    $mail->setSubject('Property details');
+             //        $mail->setSubject('Property details');
 
-                    $mail->setBodyText("Property ID". " "    .$property->getpropertyID());
+             //        $mail->setBodyText("Property ID". " "    .$property->getpropertyID());
 
-                    $mail->send();
+             //        $mail->send();
 
-                    $this->flash->success('Email been sent'); 
+             //        $this->flash->success('Email been sent'); 
 
-                }//Close emailing
+             //    }//Close emailing
             
         }//end of propertydetails function
 
@@ -384,6 +398,57 @@ public function rentpropertydetailsaction()
                     //get the email of person who added the listining and email them
                     $mail->setTo($property->getListinings()->getMemberRegister()->getEmail());
 
+                    $mail->setSubject('Property details');
+
+                    $mail->setBodyText($cMessage);
+
+                    $mail->send();
+
+                    $this->flash->success('Email been sent'); 
+            
+                    return $this->forward("index/propertydetails/".$propertyID);
+            
+                }
+        }
+
+        //rent
+           public function rentcontactAction()
+    {
+        $propertyID= $this->dispatcher->getParam("propertyID");
+        
+
+        //once the form is completed and sent, add entry in database.
+        $request = $this->request;
+        if ($request->isPost()) {
+
+            $cName = $request->getPost('name');
+            $cemail = $request->getPost('email');
+            $cNumber = $request->getPost('number');
+            $cMessage = $request->getPost('message');
+      
+            $user = new Contacts();
+        
+            $user->name = $cName;
+            $user->email = $cemail;
+            $user->number = $cNumber;
+            $user->message = $cMessage;
+            $user->propertyID = $propertyID;
+
+            $user->save(); 
+
+            //send email here.
+            //send from email would be email address from above form. 
+            //send to address would be get the propertyID from url, check which ure added it and get his email address.
+                
+                $property = Rents::findFromURL($propertyID);
+               
+                //Get email address to send to 
+                    $mail = new \Mail\Mail();
+
+                    $mail->setFrom($cemail ,$cemail);//gets email from the form sent
+
+                    //get the email of person who added the listining and email them
+                    $mail->setTo($property->getRentsListinings()->getMemberRegister()->getEmail());
 
                     $mail->setSubject('Property details');
 
@@ -393,9 +458,9 @@ public function rentpropertydetailsaction()
 
                     $this->flash->success('Email been sent'); 
             
-            return $this->forward("index/propertydetails/".$propertyID);
+                    return $this->forward("index/propertydetails/".$propertyID);
             
-                }
+            }
         }
 
   

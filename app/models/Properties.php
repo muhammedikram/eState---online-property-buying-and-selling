@@ -29,6 +29,7 @@ class Properties extends \Phalcon\Mvc\Model
 	protected $parking;
 	protected $space;
 	protected $reception;
+	protected $purpose;
 
 
 
@@ -47,6 +48,9 @@ class Properties extends \Phalcon\Mvc\Model
         $this->belongsTo("propertyID", "Listinings", "propertyID");
 
          $this->belongsTo("propertyID", "RentsListinings", "propertyID");
+
+         $this->hasOne("propertyID", "Valuation", "propertyID");
+
 
         $this->addBehavior(new Timestampable(
         array(
@@ -138,7 +142,9 @@ class Properties extends \Phalcon\Mvc\Model
 	public function getSpace(){
 	  return $this->space;
 	}
-	
+	public function getPurpose(){
+	  return $this->purpose;
+	}
 	
 	
 	
@@ -187,7 +193,7 @@ class Properties extends \Phalcon\Mvc\Model
 	public function setValidUntil($validUntil){
 		$this->validUntil=$validUntil;
 	}
-	public function SetPrice($price){
+	public function setPrice($price){
 		$this->price=$price;
 	}
 	public function setEnabled($enabled){
@@ -207,6 +213,9 @@ class Properties extends \Phalcon\Mvc\Model
 	}
 	public function setSpace($space){
 		$this->space=$space;
+	}
+	public function setPurpose($purpose){
+		$this->purpose=$purpose;
 	}
 
 

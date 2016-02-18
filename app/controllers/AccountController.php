@@ -68,7 +68,7 @@ class AccountController extends ControllerBase
         //get the active user. properties will be display based on his ID
            $user = $auth['id'];
 
-//this for favurite properties
+        //this for favurite properties
 
         //get the properteis saved by this user and display them
             $getfavurites = Favurites::find(
@@ -147,18 +147,11 @@ class AccountController extends ControllerBase
             foreach ($this->request->getUploadedFiles() as $file) {
                
             $file->moveTo($baseLocation . $file->getName());
-
-            //if the user is selling property, add the entry in properties table.
-            if($pPurpose == 'sell'){
+        
             $user = new Properties();
-            }
-
-            //if the user is selling for rent, add the entry in rents table. 
-            if($pPurpose == 'rent'){
-            $user = new Rents();
-            }
 
             $user->propertyID = $pPropertyID;
+            $user->purpose = $pPurpose;
             $user->street = $pStreet;
             $user->town = $pTown;
             $user->postcode = $pPostcode;
@@ -177,8 +170,6 @@ class AccountController extends ControllerBase
             // $user->image1 = $file->getName();
             // $user->image1 = $file->getName();
 
-
-             
             $file->moveTo($baseLocation . $file->getName());
            
             //Before Save, Check if this property already exists in the system
@@ -191,15 +182,8 @@ class AccountController extends ControllerBase
                     )
                 );
 
-             $exitrentProperty = \Rents::findfirst(
-                array(
-                    'street = :street:',
-                    'bind' => array(
-                        'street' => $pStreet
-                        )
-                    )
-                );
-            if($exitProperty or $exitrentProperty)
+
+            if($exitProperty)
             {
                 $this->flashSession->error($user->street=$pStreet. " "."already exists in system");
             }else{
@@ -208,10 +192,8 @@ class AccountController extends ControllerBase
             //save property
              $user->save();
 
+             //add entry to listining table
 
-             //add entry in listining table
-            if($pPurpose == "sell")
-            {
             $listining = new Listinings();
             $listining->propertyID = $pPropertyID;
             $listining->userID = $loggedInUser;
@@ -220,14 +202,14 @@ class AccountController extends ControllerBase
             }
 
         //add entry in rent table
-            if($pPurpose == "rent")
-            {
-            $listining = new RentsListinings();
-            $listining->propertyID = $pPropertyID;
-            $listining->userID = $loggedInUser;
-            $listining->enabled = 0;
-            $listining->save();
-            }
+            // if($pPurpose == "rent")
+            // {
+            // $listining = new RentsListinings();
+            // $listining->propertyID = $pPropertyID;
+            // $listining->userID = $loggedInUser;
+            // $listining->enabled = 0;
+            // $listining->save();
+            // }
             
 
             //if customer require valuation, Add entry in valuation tabele
@@ -250,7 +232,6 @@ class AccountController extends ControllerBase
           }   
 
     }
-}
 
         /* This function shows users properties on their dashboard
         * 
@@ -275,17 +256,17 @@ class AccountController extends ControllerBase
         ) 
     );
 
-        //get information from RentsListinings table.
-          $myRentsListinings = RentsListinings:: find(
-           array(
-           'userID = :userID:',
-           'bind' => array(
-            'userID' => $activeUser
-            )
-        ) 
-    );
+    //     //get information from RentsListinings table.
+    //       $myRentsListinings = RentsListinings:: find(
+    //        array(
+    //        'userID = :userID:',
+    //        'bind' => array(
+    //         'userID' => $activeUser
+    //         )
+    //     ) 
+    // );
         $this->view->mySaleProperties = $myListinings;
-        $this->view->myRentProperties = $myRentsListinings;
+       // $this->view->myRentProperties = $myRentsListinings;
 
     }
 

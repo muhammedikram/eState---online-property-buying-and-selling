@@ -23,6 +23,7 @@
 					<td><?php echo $row->getDate(); ?></td>
 					<td><a  class="btn btn-primary" href="/index/propertydetails/<?php echo $row->getpropertyID(); ?>">More Details</a></td>
 					<td>
+					<form method="post" action="/dashboard/addprice/<?php echo $row->getpropertyID(); ?>">
 					<button type="submit"data-toggle='modal' data-target='#valuationprice' class="btn btn-success registerButton">Add Price</button>
 					</td>
 				</tr>

@@ -43,7 +43,7 @@
 							Add by: {{row.getMemberRegister().getName()}}
 						</div>
 						<div class="col-md-3 forSale">
-							For Sale
+							For {{row.getProperties().getPurpose()}}
 						</div>
 					</div>
 				</div>
@@ -55,53 +55,6 @@
 		{% endif %}
 	{% endif %}
 
-
-	{% if myRentProperties is defined %}
-		{% if myRentProperties|length > 0 %}
-			{% for row in myRentProperties%}
-				<div class='jumbotron style'>
-					<div class="row">
-						<div class="col-md-4">
-							<img src="{{ row.getRents().getImage1() }}" width="160" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{ row.getRents().getPropertyID()  }}" />
-						</div>
-						<div class="col-md-5">
-							<div class="display">
-									<h3>{{row.getRents().getStreet()}}</h3>
-									<h4>{{row.getRents().getTown()}}</h4>
-									<h4>{{ row.getRents().getType()}}</h4>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<form action="/account/deleteProperty" method="post">
-								  <input type="hidden" name="propertyID" value="{{row.getpropertyID()}}">
-								  <button type="submit" value="{{row.getpropertyID()}}" class="btn btn-danger glyphicon glyphicon-remove" title="{{row.getpropertyID()}}"> Remove</button>
-							</form>
-							<br><br>
-							<form action="/account/editrentproperty/{{row.getpropertyID()}}" method="post">
-								  <input type="hidden" name="propertyID" value="{{row.getpropertyID()}}">
-								  <button type="submit" value="{{row.getpropertyID()}}" class="btn btn-success glyphicon glyphicon-pencil" title="{{row.getpropertyID()}}" name="editProperty" value="edit"> Edit</button>
-							</form>	
-						</div>
-					</div>
-						<hr>
-					<div class="row">
-						<div class="col-md-3">
-							Created on:{{row.getCreated()}}
-						</div>
-						<div class="col-md-3">
-							Add No: {{row.getPropertyID()}}
-						</div>
-						<div class="col-md-3">
-							Add by: {{row.getMemberRegister().getName()}}
-						</div>
-						<div class="col-md-3 forSale">
-							For Rent
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-		{% endif %}
-	{% endif %}
 </div><!-- End of container -->
 
 

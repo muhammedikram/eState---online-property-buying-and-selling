@@ -16,6 +16,8 @@ public function initialize()
     {
 
         $this->belongsTo("userID", "MemberRegister", "id");
+       	$this->hasOne("propertyID", "Properties", "propertyID");
+
 
         $this->addBehavior(new Timestampable(
         array(

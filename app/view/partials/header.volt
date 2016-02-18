@@ -229,7 +229,9 @@ margin-bottom: 40px;
     color: white;
     float: right;
     font-size: 18px;
+
 }
+
 
 /*  second nav bar*/
 .secondnavbar{

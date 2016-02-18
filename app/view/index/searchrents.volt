@@ -2,77 +2,57 @@
 *Search result page
 *
 *-->
+
 <div class="container">
   <div class="row">
     <div class="col-md-3 jumbotron">
         <!-- get the refine search partial, which is saved in /views/index/partials/refinesearch -->
-        {{ partial('index/partials/refinesearch') }}
-     </div>     
+        {{ partial('index/partials/refinerentsearch') }}
+     </div>       
 
-     <div class="col-md-8"> 
-      <h4><?php echo ($this->length($page->items)) ?> Result</h4>
-            {% if page.items|length > 0 %}
-                <table class="table table-valign-middle">
-                  <tbody>
-                    {% for product in page.items %}
+     <div class="col-md-8">
+      <h4><?php echo ($this->length($rentpropertysearch)) ?> properties found</h4>
+      <hr>
+            {% if rentpropertysearch|length > 0 %}
+                    {% for row in rentpropertysearch %}
                     
-                     <tr>
                 <!-- Getting  Image-->
-                    <td>
-                      <a href="/index/rentpropertydetails/{{product.getPropertyID()}}">
-                          <img src="/images/{{ product.getImage1() }}" width="150" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{ product.getPropertyID()}}" /></a>
-                      </td>
-                     
-                 <!-- Getting Address-->
-                      <td >
-                          <h4 class="addressOne">
-                            <a href="/index/rentpropertydetails/{{product.getPropertyID()}}">
-                                {{ product.getStreet()}}
-                            </a>
-                        </h4>
-                      </td>
 
-                <!-- Getting  Type-->
-                       <td itemprop="type" >
-                             {{ product.getType()}}   
-                       </td>
+                    <div class="row">
+                      <div class="col-md-4">
+                      <h2 class="price">&pound;{{row['price']}}</h2>
+                            <a href="/index/rentpropertydetails/{{row['propertyID']}}">
+                            <img src="/images/{{ row['image1'] }}" width="200" height="180" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{ row['image1']}}" /></a>
+                      </div>
 
+                      <div class="col-md-6 street">
+                            <h4>{{row['street']}}, {{row['town']}}<h4>
+                            <h5>{{row['bedroom']}} Bedrom , {{row['bathroom']}} Bathroom</h5>
+                            <hr>
+                            <h4>{{row['description']}}</h4>
+                        </div>
+                    </div>
 
-                        <!-- Getting  Price-->
-                      <td itemprop="description" >
-                              {{ product.getPrice()}}     
-                      </td>
-                      <!--
-                        <td>
-                            {{ link_to("index/rentpropertydetails/" ~ product.getpropertyID(), '<i class="glyphicon glyphicon-edit"></i> View Details', "class": "btn btn-primary") }}
-
-                        </td>
-                      -->
-                       </tr>
+                    <hr>
+                  
+                       
               {% endfor %}
-          </tbody>
-          <tbody>
-        <tr>
-            <td colspan="7" align="left">
-                <div class="btn-group">
-                    {{ link_to("index/search", '<i class="icon-fast-backward"></i> First', "class": "btn") }}
-                    {{ link_to("index/search?page=" ~ page.before, '<i class="glyphicon glyphicon-chevron-left"></i> Previous', "class": "btn") }}
-                    {{ link_to("index/search?page=" ~ page.next, 'Next <i class="glyphicon glyphicon-chevron-right"></i> ', "class": "btn") }}
-                    {{ link_to("index/search?page=" ~ page.last, '<i class="icon-fast-forward"></i> Last', "class": "btn") }}
-                    <span class="help-inline pull-left">{{ page.current }} of {{ page.total_pages }}</span>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-      </table>
 {% else %}
 
           <div class="jumbotron">
                   <p>
-                      Sorry no houses availables at this time!
+                      No properties found based on your criteria's. Try refining your search to find properties.  
                   </p>
                   {% endif %}
           </div>
         </div>
     </div>
 </div>
+
+<style> 
+  .price {
+    color: green;
+    margin-top: -5%;
+  }
+
+</style>

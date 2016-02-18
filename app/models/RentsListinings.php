@@ -9,7 +9,7 @@ class RentsListinings extends \Phalcon\Mvc\Model
  
 {
 
-	         
+	         PROTECTED $rentlistiningID;
 			 protected $propertyID;
 			 protected $userID;
 			 Protected $created;
@@ -20,10 +20,9 @@ class RentsListinings extends \Phalcon\Mvc\Model
 		public function initialize()
 		    {
 
-		        $this->belongsTo("userID", "MemberRegister", "id");
-				$this->belongsTo("propertyID", "Properties", "propertyID");	
-				$this->belongsTo("propertyID", "Rents", "propertyID");	
-
+		     $this->belongsTo("userID", "MemberRegister", "id");
+			$this->belongsTo("propertyID", "Properties", "propertyID");	
+			$this->belongsTo("propertyID", "Rents", "propertyID");	
 		        $this->addBehavior(new Timestampable(
 		        array(
 		            'beforeCreate'  => array(

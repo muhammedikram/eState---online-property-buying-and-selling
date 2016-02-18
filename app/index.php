@@ -128,8 +128,10 @@ $di->set(
     function () {
         $router = new \Phalcon\Mvc\Router;
 
+        $router->add('/index/rentpropertydetails/{propertyID:[A-Za-z0-9-]+}',               'index::rentpropertydetails');
         $router->add('/index/propertydetails/{propertyID:[A-Za-z0-9-]+}',               'index::propertydetails');
         $router->add('/index/contact/{propertyID:[A-Za-z0-9-]+}',               'index::contact');
+        $router->add('/index/rentcontact/{propertyID:[A-Za-z0-9-]+}',               'index::rentcontact');
         $router->add('/index/email/{propertyID:[A-Za-z0-9-]+}',               'index::email');
         $router->add('/index/favurite/{propertyID:[A-Za-z0-9-]+}',                       'index::favurite');
         $router->add('/index/favurite/{propertyID:[A-Za-z0-9-]+}',                       'account::favurite');
@@ -143,6 +145,7 @@ $di->set(
         $router->add('/dashboard/approverentproperty/{propertyID:[A-Za-z0-9-]+}',               'dashboard::approverentproperty');
         $router->add('/index/rentpropertydetails/{propertyID:[A-Za-z0-9-]+}',               'index::rentpropertydetails');
         $router->add('/dashboard/valuation/{propertyID:[A-Za-z0-9-]+}',               'dashboard::valuation');
+        $router->add('/dashboard/addprice/{propertyID:[A-Za-z0-9-]+}',               'dashboard::addprice');
 
         //$router->add('/index/searchforproperty/{propertyID:[A-Za-z0-9-]+}',               'index::searchforproperty');
 

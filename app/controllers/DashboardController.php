@@ -62,16 +62,9 @@ class DashboardController extends ControllerBase
                
             $file->moveTo($baseLocation . $file->getName());
 
-            //if the user is selling property, add the entry in properties table.
-            if($pPurpose == 'sell'){
+    
             $user = new Properties();
-            }
-
-            //if the user is selling for rent, add the entry in rents table. 
-            if($pPurpose == 'rent'){
-            $user = new Rents();
-            }
-
+            
             $user->propertyID = $pPropertyID;
             $user->street = $pStreet;
             $user->town = $pTown;
@@ -87,6 +80,7 @@ class DashboardController extends ControllerBase
             $user->bathroom=$bathroom;
             $user->parking=$parking;
             $user->space=$space;
+            $user->purpose=$pPurpose;
             $user->image1 = $file->getName();
             // $user->image1 = $file->getName();
             // $user->image1 = $file->getName();
@@ -105,15 +99,7 @@ class DashboardController extends ControllerBase
                     )
                 );
 
-             $exitrentProperty = \Rents::findfirst(
-                array(
-                    'street = :street:',
-                    'bind' => array(
-                        'street' => $pStreet
-                        )
-                    )
-                );
-            if($exitProperty or $exitrentProperty)
+            if($exitProperty)
             {
                 $this->flashSession->error($user->street=$pStreet. " "."already exists in system");
             }else{
@@ -122,27 +108,11 @@ class DashboardController extends ControllerBase
             //save property
              $user->save();
 
-
-             //add entry in listining table
-            if($pPurpose == "sell")
-            {
             $listining = new Listinings();
             $listining->propertyID = $pPropertyID;
             $listining->userID = $loggedInUser;
             $listining->enabled = 0;
             $listining->save();
-            }
-
-        //add entry in rent table
-            if($pPurpose == "rent")
-            {
-            $listining = new RentsListinings();
-            $listining->propertyID = $pPropertyID;
-            $listining->userID = $loggedInUser;
-            $listining->enabled = 0;
-            $listining->save();
-            }
-            
 
             //if customer require valuation, Add entry in valuation tabele
 
@@ -401,6 +371,57 @@ class DashboardController extends ControllerBase
 
         }
  		
+    }
+
+    public function addpriceAction()
+    {
+         $propertyID = $this->dispatcher->getParam('propertyID');
+
+           $ud = Valuation::findFirst(
+            array(
+                'propertyID = :propertyID:',
+                'bind' => array (
+                    'propertyID' => $propertyID
+                    )
+                )
+            );
+     
+            if ($this->request->getPost('price')) {
+                
+            $ud->setEnabled(1);
+       
+            $ud->save();
+
+            $yd = Properties::findFirst(
+            array(
+                'propertyID = :propertyID:',
+                'bind' => array (
+                    'propertyID' => $propertyID
+                    )
+                )
+            );
+
+            //die(var_dump($yd));
+
+            $yd->setPrice($this->request->getPost('price'));
+
+            $yd->save();
+
+
+
+            $this->flashSession->success(
+                    $yd->getStreet() . ' has been successfully updated.'
+                );
+
+             return $this->response->redirect(
+                 '/dashboard/valuation'
+                );
+    }
+
+                $this->view->ud = $ud;  
+
+
+
     }
 
         //this function is to remove blog.

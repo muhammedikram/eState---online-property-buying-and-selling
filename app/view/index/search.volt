@@ -31,8 +31,12 @@
                             <hr>
                             <h4>{{row['description']}}</h4>
                         </div>
-                    </div>
 
+                        <div class="col-md-2">
+                            <h4><strong>For {{row['purpose']}}</strong></h4>
+                        </div>
+                    </div>
+                    
                     <hr>
                   
                        

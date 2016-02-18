@@ -87,7 +87,7 @@
                     </div>  
 
               </div> 
-              <input type="submit" name="submit" id="searchSubmit"value="submit" class="btn btn-success formLabel">
+              <input type="submit" name="purpose" value="sell"id="searchSubmit" class="btn btn-success formLabel">
             </form>
                     </div>
                   </div>
@@ -104,14 +104,14 @@
                     <div class="panel-body">
 
             <!-- rent properties search. differnet function will handle this form -->
-            <form action="index/searchrents" method="GET">
-              <div class="row">
+                 <form action="index/search" method="post">
+                 <div class="row">
                      <div class="selectTown">
                       <div class="col-sm-5 formLabel">
                         <i class="fa fa-map-marker fa-2x icon"></i>
                       <select  type="text"name='town' class='form-control dropdown' >
-                          <option required>Select City</option>
-                          {% for entry in rentproperties %}
+                          <option><li classs="disabled">Select City</li></option>
+                          {% for entry in properties %}
                          <option value="{{entry.getTown()}}">{{entry.getTown()}}</option>
                           {% endfor %}
                       </select> 
@@ -124,7 +124,7 @@
                        <i class="fa fa-list fa-2x icon"></i>
                         <select  type="text"name='type' class='form-control dropdown'>
                           <option>Select Type</option>
-                            {% for entry in rentpropertyType %}
+                            {% for entry in propertyType %}
                            <option name="text"value="{{entry.getType()}}">{{entry.getType()}}</option>
                           {% endfor %}
                         </select> 
@@ -138,15 +138,37 @@
                        <i class="fa fa-bed fa-2x icon"></i>
                         <select  type="text"name='bedroom' class='form-control dropdown'>
                           <option>Select Bedroom</option>
-                            {% for entry in rentpropertybedroom %}
+                            {% for entry in propertybedroom %}
                            <option name="text"value="{{entry.getBedroom()}}">{{entry.getBedroom()}}</option>
                           {% endfor %}
                         </select> 
                      </div> 
                     </div>
+
+               <div class="selectType">
+                      <div class="col-sm-5 formLabel">
+                       <i class="fa fa-money fa-2x icon"></i>
+                        <select  type="text"name='price' class='form-control dropdown'>
+                         <option >Max Price</option>
+                          <option>10000</option>
+                          <option>20000</option>
+                          <option>30000</option>
+                          <option>40000</option>
+                          <option>50000</option>
+                          <option>60000</option>
+                          <option>70000</option>
+                          <option>80000</option>
+                          <option>90000</option>
+                          <option>100000</option>
+                          <option>110000</option>
+                          <option>120000</option>
+                        </select> 
+                     </div> 
+                    </div>  
+
               </div> 
-              <input type="submit" name="submit" id="searchSubmit"value="submit" class="btn btn-success formLabel">
-            </form> 
+              <input type="submit" name="submit" id="searchSubmit"value="rent" class="btn btn-success formLabel">
+            </form>
                     </div>
                   </div>
                 </div>

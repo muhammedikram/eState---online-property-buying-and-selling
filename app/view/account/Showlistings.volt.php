@@ -43,7 +43,7 @@
 							Add by: <?php echo $row->getMemberRegister()->getName(); ?>
 						</div>
 						<div class="col-md-3 forSale">
-							For Sale
+							For <?php echo $row->getProperties()->getPurpose(); ?>
 						</div>
 					</div>
 				</div>
@@ -55,53 +55,6 @@
 		<?php } ?>
 	<?php } ?>
 
-
-	<?php if (isset($myRentProperties)) { ?>
-		<?php if ($this->length($myRentProperties) > 0) { ?>
-			<?php foreach ($myRentProperties as $row) { ?>
-				<div class='jumbotron style'>
-					<div class="row">
-						<div class="col-md-4">
-							<img src="<?php echo $row->getRents()->getImage1(); ?>" width="160" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="<?php echo $row->getRents()->getPropertyID(); ?>" />
-						</div>
-						<div class="col-md-5">
-							<div class="display">
-									<h3><?php echo $row->getRents()->getStreet(); ?></h3>
-									<h4><?php echo $row->getRents()->getTown(); ?></h4>
-									<h4><?php echo $row->getRents()->getType(); ?></h4>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<form action="/account/deleteProperty" method="post">
-								  <input type="hidden" name="propertyID" value="<?php echo $row->getpropertyID(); ?>">
-								  <button type="submit" value="<?php echo $row->getpropertyID(); ?>" class="btn btn-danger glyphicon glyphicon-remove" title="<?php echo $row->getpropertyID(); ?>"> Remove</button>
-							</form>
-							<br><br>
-							<form action="/account/editrentproperty/<?php echo $row->getpropertyID(); ?>" method="post">
-								  <input type="hidden" name="propertyID" value="<?php echo $row->getpropertyID(); ?>">
-								  <button type="submit" value="<?php echo $row->getpropertyID(); ?>" class="btn btn-success glyphicon glyphicon-pencil" title="<?php echo $row->getpropertyID(); ?>" name="editProperty" value="edit"> Edit</button>
-							</form>	
-						</div>
-					</div>
-						<hr>
-					<div class="row">
-						<div class="col-md-3">
-							Created on:<?php echo $row->getCreated(); ?>
-						</div>
-						<div class="col-md-3">
-							Add No: <?php echo $row->getPropertyID(); ?>
-						</div>
-						<div class="col-md-3">
-							Add by: <?php echo $row->getMemberRegister()->getName(); ?>
-						</div>
-						<div class="col-md-3 forSale">
-							For Rent
-						</div>
-					</div>
-				</div>
-			<?php } ?>
-		<?php } ?>
-	<?php } ?>
 </div><!-- End of container -->
 
 
