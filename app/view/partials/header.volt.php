@@ -4,13 +4,13 @@
  <div class="navbar yamm  topbar  hidden-xs hidden-sm">
   <div class="container">
   <ul class="nav navbar-nav navbar-left">
-  <h4> <i class="fa fa-phone"></i> 0844 087 4896</h4>
+  <h3 class="number"> <i class="fa fa-phone number"></i> 0844 087 4896</h3>
   </ul>
 
       <ul class="nav navbar-nav navbar-right">
 
 
-        <li class="dropdown  yamm-fw">
+        <li class="dropdown  yamm-fw">  
          <a class=" dropdown-toggle fa fa-user fa-2x" data-toggle="dropdown"></a>
 
         <a class="fa fa-plus-circle fa-2x" href="/account/addproperty">&nbsp;Add Property</a>
@@ -87,7 +87,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <img src="/images/logo2.png" class="logo">
+      <img src="/images/logo.png" class="logo">
       <ul class="nav navbar-nav">
        
          <li><a href="/index">Home</a></li>
@@ -128,8 +128,8 @@
       width: 300px;
     }
     .logo{
-    width: 16%;
-    height: 13%;
+    width: 15%;
+    height: 50px;
     float: left;
     }
     .dropdown-menu {
@@ -167,7 +167,7 @@
     .login{
       margin-left: 80px;
      margin-top: 20px;
-     border-right: 1px solid silver
+     border-right: 1px solid silver;
     }
     .login input{
       width: 200px;
@@ -179,7 +179,11 @@
 }
 #bs-example-navbar-collapse-1{
   margin-top: 1%;
-  font-size: 15px;
+  font-size: 20px;
+}
+#bs-example-navbar-collapse-1 li{
+  font-size: 20px;
+  margin-left: 10px;
 }
 
     /*  Hover affect  */
@@ -243,6 +247,9 @@ height: 90px;
   width: 192px;
   margin-top: 1px;
   margin-bottom: -21px;
+}
+.number {
+  color: white;
 }
 
 </style>

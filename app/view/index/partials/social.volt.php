@@ -27,9 +27,21 @@
 				<div class="col-md-4">
 				<h2>News</h2>
 					<div class="panel panel-default	">
-		  				<div class="panel-body">
-		    				Panel content
-		  				</div>
+		  				<?php if (isset($blog)) { ?>
+						<?php if ($this->length($blog) > 0) { ?>
+				
+						<?php foreach ($blog as $entry) { ?>
+							<strong><?php echo $entry->getTitle(); ?></strong><br>
+								<span><?php echo $entry->getDescription(); ?></span><br>
+								
+								<hr>
+								<?php } ?> 
+
+							<?php } else { ?>
+							<div class='jumbotron text-center'>No blogs to show.</div>
+						<?php } ?>
+					<?php } ?>
+
 					</div>
 				</div>
 			</div>

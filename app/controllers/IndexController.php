@@ -69,6 +69,15 @@ class IndexController extends ControllerBase
         );
          $this->view->rentpropertyType=$type;
 
+         //blogs
+         $showblogs = Blog::find(
+            array(
+                'limit'=>3
+                )
+            );
+                
+         $this->view->blog = $showblogs;
+
 
     } 
 

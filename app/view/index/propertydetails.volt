@@ -119,25 +119,77 @@
 			{% endif %}
 			</div>
 		</div>
-
-		<hr>
-
+	<hr>
 		<div class="row">
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					    <h3>More Information & Bookings</h3>
-					    <p>If you require more information about this property or you would like to view this property, please contact <strong>{{part.getListinings().getMemberRegister().getName()}}</strong>
-					   by email on <strong><a href="mailto:{{part.getListinings().getMemberRegister().getEmail()}}">{{part.getListinings().getMemberRegister().getEmail()}}</a></strong></p>
+					    <p>For more information contact <strong>{{part.getListinings().getMemberRegister().getName()}}</strong> on <strong><a href="mailto:{{part.getListinings().getMemberRegister().getEmail()}}">{{part.getListinings().getMemberRegister().getEmail()}}</a></strong></p>
 
-					   <p>Alternatively, you can click contact seller above to send {{part.getListinings().getMemberRegister().getName()}} message directly from here. </p>
+					    <div class="jumbotron book">
+					    	<div class="bookform">
+						  		<h2>Book Viewing</h2>
+						  		
+				<div class="row">
+			   		<div class="col-md-6">
+			   			<div class="form-group">
+				   			 <label for="street">* Street</label>
+				    		 <input type="text" class="form-control" name="street" id="street" placeholder="Street Name">
+				 		</div>
+
+				 		 <div class="form-group">
+						    <label for="town">* Town</label>
+						    <input type="text" class="form-control" name="town" id="town" placeholder="Town Name">
+						 </div>
+
+						 <div class="form-group">
+				    		<label for="postcode">* Postcode</label>
+				    		<input type="text" class="form-control" name="postcode" id="postcode" placeholder="Postcode">
+				 		</div>
+
+			   		</div>
+
+			   				<div class="col-md-6">
+			   			<div class="form-group">
+				   			 <label for="street">* Street</label>
+				    		 <input type="text" class="form-control" name="street" id="street" placeholder="Street Name">
+				 		</div>
+
+				 		 <div class="form-group">
+						    <label for="town">* Town</label>
+						    <input type="text" class="form-control" name="town" id="town" placeholder="Town Name">
+						 </div>
+
+						 <div class="form-group">
+				    		<label for="postcode">* Postcode</label>
+				    		<input type="text" class="form-control" name="postcode" id="postcode" placeholder="Postcode">
+				 		</div>
+
+			   		</div>
+			   	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						  	</div>
+						</div>
 				</div>
 			</div>
-
-			<hr>
-
-
-
-
-
 
 		</div><!-- End of panel 1  -->
 
@@ -182,8 +234,6 @@
 
 			</div><!--END OF PANEL 2 -->
 		
-
-
 
 		</div><!--END OF ROW -->
 		{% endfor %}
@@ -292,6 +342,11 @@
 	height: 40px;
 	margin-left: 12%;
 	mar
+}
+
+.book .bookform {
+	margin-top: -9%;
+	margin-left: -9%;
 }
 
 </style>
