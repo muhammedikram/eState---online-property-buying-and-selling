@@ -127,43 +127,60 @@
 
 					    <div class="jumbotron book">
 					    	<div class="bookform">
-						  		<h2>Book Viewing</h2>
+						  		<h3>Would like to view this property</h3>
 						  		
 				<div class="row">
+				<div class="container">
+				<form action="/index/booking/{{part.getpropertyID()}}" method="post">
 			   		<div class="col-md-6">
 			   			<div class="form-group">
-				   			 <label for="street">* Street</label>
-				    		 <input type="text" class="form-control" name="street" id="street" placeholder="Street Name">
+				   			 <label for="propertyID">Property Reference</label>
+				    		 <input type="text" class="form-control" disabled name="propertyID" id="propertyID" placeholder="{{part.getpropertyID()}}">
+				 		</div>
+
+				 		<div class="form-group">
+				   			 <label for="name">* Name</label>
+				    		 <input type="text" class="form-control" name="name" id="name" placeholder="Name">
 				 		</div>
 
 				 		 <div class="form-group">
-						    <label for="town">* Town</label>
-						    <input type="text" class="form-control" name="town" id="town" placeholder="Town Name">
+						    <label for="email">* Email</label>
+						    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+						 </div>
+			   		</div>
+
+			   		<div class="col-md-6">
+						  <div class="form-group">
+						    <label for="telephone"> Telephone</label>
+						    <input type="text" class="form-control" name="telephone" id="telephone" placeholder="Telephone">
 						 </div>
 
 						 <div class="form-group">
-				    		<label for="postcode">* Postcode</label>
-				    		<input type="text" class="form-control" name="postcode" id="postcode" placeholder="Postcode">
+				    		<label for="date">* Preferred Date</label>
+				    		<input type="text" class="form-control" name="date" id="date" placeholder="Date">
+				 		</div>
+
+				 		<div class="form-group">
+				    		<label for="time">* Preferred Time</label>
+				    		<input type="text" class="form-control" name="time" id="time" placeholder="Time">
 				 		</div>
 
 			   		</div>
 
-			   				<div class="col-md-6">
-			   			<div class="form-group">
-				   			 <label for="street">* Street</label>
-				    		 <input type="text" class="form-control" name="street" id="street" placeholder="Street Name">
-				 		</div>
-
-				 		 <div class="form-group">
-						    <label for="town">* Town</label>
-						    <input type="text" class="form-control" name="town" id="town" placeholder="Town Name">
-						 </div>
-
+			   		<div class="col-md-12">
+			   			<p>Message</p>
+					<div class="row">
+						<div class="col-md-12">
 						 <div class="form-group">
-				    		<label for="postcode">* Postcode</label>
-				    		<input type="text" class="form-control" name="postcode" id="postcode" placeholder="Postcode">
-				 		</div>
+						    	<textarea type="text" class="form-control" rows="3" name="message" id="message" placeholder="Message"></textarea>
+						   </div>
+						</div>
+					</div>
+						<input type="hidden" name="userID" value="{{part.getListinings().getMemberRegister().getId()}}">
+							<button type="submit" class="btn btn-success">Submit request</button>
 
+			   		</div>  		                
+			   		</form>
 			   		</div>
 			   	</div>
 
@@ -346,7 +363,6 @@
 
 .book .bookform {
 	margin-top: -9%;
-	margin-left: -9%;
 }
 
 </style>

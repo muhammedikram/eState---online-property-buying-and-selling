@@ -25,6 +25,9 @@ public function initialize()
         $this->belongsTo("userID", "MemberRegister", "id");
 		$this->belongsTo("propertyID", "Properties", "propertyID");	
 		$this->belongsTo("propertyID", "Rents", "propertyID");	
+		$this->belongsTo("propertyID", "Viewings", "propertyID");
+
+
 
         $this->addBehavior(new Timestampable(
         array(

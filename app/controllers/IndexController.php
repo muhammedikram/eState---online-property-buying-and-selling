@@ -517,6 +517,50 @@ public function rentpropertydetailsaction()
             }
             
         }
+
+        public function bookingAction()
+        {
+            $propertyID= $this->dispatcher->getParam("propertyID");
+
+
+        //once the form is completed and sent, add entry in database.
+            $request = $this->request;
+            if ($request->isPost()) {
+
+                $bName = $request->getPost('name');
+                $bemail = $request->getPost('email');
+                $bNumber = $request->getPost('telephone');
+                $bMessage = $request->getPost('message');
+                $bDate = $request->getPost('date');
+                $bTime = $request->getPost('time');
+                $bUser = $request->getPost('userID');
+               // die(var_dump($bUser));
+
+
+          
+                $user = new Viewings();
+
+                 $user->propertyID = $propertyID;
+                $user->name = $bName;
+                $user->email = $bemail;
+                $user->telephone = $bNumber;
+                $user->message = $bMessage;
+                $user->date = $bDate;
+                $user->time= $bTime;
+                $user->enabled=0;
+                $user->userID= $bUser;
+
+                 $user->save(); 
+
+                 if ($user) {
+                     $this->flash->success('Your request has been sent to seller successfully for approvel.');
+                 }
+                               return $this->forward('/index/propertydetails/'.$propertyID);
+
+             }
+
+
+    }
    
 }//end of class
 

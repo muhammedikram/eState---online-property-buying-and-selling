@@ -51,6 +51,9 @@ class Properties extends \Phalcon\Mvc\Model
 
          $this->hasOne("propertyID", "Valuation", "propertyID");
 
+         $this->belongsTo("propertyID", "Viewings", "propertyID");
+
+
 
         $this->addBehavior(new Timestampable(
         array(

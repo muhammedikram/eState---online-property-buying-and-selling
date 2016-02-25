@@ -13,16 +13,16 @@ class Viewings extends \Phalcon\Mvc\Model
 			 Protected $message;
 			 protected $date;
 			 protected $time;
-			 Protected $enabled
+			 Protected $enabled;
+			 protected $userID;
 	
-public function initialize()
-    {
-        $this->hasMany('propertyID', 'properties', 'propertyID', array(
-        	'foreignKey' => array(
-        		'message' => 'Product Type cannot be deleted because it\'s used in Products'
-        	)
-        ));
-    }
+		public function initialize()
+		    {
+		               $this->belongsTo("propertyID", "Properties", "propertyID");
+		                $this->belongsTo("propertyID", "Listinings", "propertyID");
+
+
+		    }
 
 
 
@@ -56,6 +56,9 @@ public function initialize()
 			}
 			public function getEnabled(){
 				return $this->enabled;
+			}
+			public function getuserID(){
+				return $this->userID;
 			}
 
 
@@ -93,6 +96,9 @@ public function initialize()
 			}
 			public function setEnabled($enabled) {
 				$this->enabled = $enabled;
+			}
+			public function setuserID($userID) {
+				$this->userID = $userID;
 			}
 
    

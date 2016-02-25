@@ -146,6 +146,8 @@ $di->set(
         $router->add('/index/rentpropertydetails/{propertyID:[A-Za-z0-9-]+}',               'index::rentpropertydetails');
         $router->add('/dashboard/valuation/{propertyID:[A-Za-z0-9-]+}',               'dashboard::valuation');
         $router->add('/dashboard/addprice/{propertyID:[A-Za-z0-9-]+}',               'dashboard::addprice');
+        $router->add('/index/booking/{propertyID:[A-Za-z0-9-]+}',               'index::booking');
+        $router->add('/account/bookingrequests/{propertyID:[A-Za-z0-9-]+}',               'account::bookingrequests');
 
         //$router->add('/index/searchforproperty/{propertyID:[A-Za-z0-9-]+}',               'index::searchforproperty');
 

@@ -268,6 +268,17 @@ class AccountController extends ControllerBase
         $this->view->mySaleProperties = $myListinings;
        // $this->view->myRentProperties = $myRentsListinings;
 
+        // $viewviewings = Viewings::find(
+        //     array(
+        //     'propertyID= :propertyID:',
+        //     'bind' => array(
+        //         'propertyID' => $propertyID 
+        //         )
+        //     )
+        // );
+                
+        //         $this->view->viewings = $viewviewings;
+
     }
 
 
@@ -409,6 +420,64 @@ public function editrentpropertyAction() {
             $this->view->rd = $rd;  
     }
 
+
+    public function bookingrequestsAction()
+    {
+        //get the active user
+        $auth = $this->session->get('auth');
+     
+        //get the active user ID, for to save in database
+        $activeUser = $auth['id'];
+
+        //get information from listinings table
+        $views = Viewings:: find(
+           array(
+           'userID = :userID:',
+           'enabled = :enabled:',
+          'bind' => array(
+           // 'enabled' =>1,
+            'userID' => $activeUser
+          
+            )
+        ) 
+    );
+        $this->view->viewings = $views;
+
+
+              //if there are any requests; seller must approve viewongs requests
+              if($this->request->getPost('action') == 'approve')  {
+            
+                //get the property add that to be approved. 
+                $propertyID= $this->dispatcher->getParam("propertyID");
+
+                 if (isset($propertyID)) {
+                $approve = Viewings::findFirst(
+                    array(
+                            'propertyID = :propertyID:',
+                            'bind'=>array(
+                            'propertyID' => $this->dispatcher->getParam('propertyID')
+                            )
+                    )
+                );
+
+                $approve->enabled=1;
+                $approve->save();
+
+                 if ($approve) {
+                     $this->flash->success('You have successfully approved this property');
+                 }
+            } 
+        }
+    }
+
+
+
+
+
+    public function sentrequestsAction()
+    {
+
+    }
   
 }//end of class
 

@@ -87,10 +87,10 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <img src="/images/logo.png" class="logo">
+      <img src="/images/logo.png" class="logo hidden-sm hidden-xs">
       <ul class="nav navbar-nav">
        
-         <li><a href="/index">Home</a></li>
+         <li><a href="/index">Buy & Sell</a></li>
         <li><a href="/">Valuation</a></li>
         <li><a href="/">Contact</a></li>
         <li><a href="/about">About</a></li>
@@ -128,8 +128,8 @@
       width: 300px;
     }
     .logo{
-    width: 15%;
-    height: 50px;
+    width: 13%;
+    height: 44px;
     float: left;
     }
     .dropdown-menu {
