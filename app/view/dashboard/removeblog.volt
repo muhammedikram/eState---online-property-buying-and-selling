@@ -1,4 +1,6 @@
 <div class="container">
+{{ partial('dashboard/partials/dashboardNavBar') }}
+
 	<h1>Blogs</h1>
 <div class="row">
 			{% if blog is defined %}

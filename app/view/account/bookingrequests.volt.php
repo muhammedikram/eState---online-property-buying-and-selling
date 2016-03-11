@@ -1,4 +1,6 @@
 <div class="container">
+<?php echo $this->partial('account/partials/accountNavBar'); ?>
+
 	<h2>Viewings Requests</h2>
 <br><br>
 	<div class="col-md-12">

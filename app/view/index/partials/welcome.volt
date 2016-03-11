@@ -32,7 +32,7 @@
                       <select  type="text"name='town' class='form-control dropdown' >
                           <option><li classs="disabled">Select City</li></option>
                           {% for entry in properties %}
-                         <option value="{{entry.getTown()}}">{{entry.getTown()}}</option>
+                         <option value="{{entry.getTown()}}">{{entry.getTown()|capitalize}}</option>
                           {% endfor %}
                       </select> 
                       </div>
@@ -45,7 +45,7 @@
                         <select  type="text"name='type' class='form-control dropdown'>
                           <option>Select Type</option>
                             {% for entry in propertyType %}
-                           <option name="text"value="{{entry.getType()}}">{{entry.getType()}}</option>
+                           <option name="text"value="{{entry.getType()}}">{{entry.getType()|capitalize}}</option>
                           {% endfor %}
                         </select> 
                      </div> 
@@ -112,7 +112,7 @@
                       <select  type="text"name='town' class='form-control dropdown' >
                           <option><li classs="disabled">Select City</li></option>
                           {% for entry in properties %}
-                         <option value="{{entry.getTown()}}">{{entry.getTown()}}</option>
+                         <option value="{{entry.getTown()}}">{{entry.getTown()|capitalize}}</option>
                           {% endfor %}
                       </select> 
                       </div>
@@ -125,7 +125,7 @@
                         <select  type="text"name='type' class='form-control dropdown'>
                           <option>Select Type</option>
                             {% for entry in propertyType %}
-                           <option name="text"value="{{entry.getType()}}">{{entry.getType()}}</option>
+                           <option name="text"value="{{entry.getType()}}">{{entry.getType()|capitalize}}</option>
                           {% endfor %}
                         </select> 
                      </div> 
@@ -183,15 +183,15 @@
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body">
-                              <form action="index/search" method="GET">
-              <div class="row">
+                    <form action="index/search" method="GET">
+                    <div class="row">
                      <div class="selectTown">
                       <div class="col-sm-5 formLabel">
                         <i class="fa fa-map-marker fa-2x icon"></i>
                       <select  type="text"name='town' class='form-control dropdown' >
-                          <option required>Select City</option>
+                          <option><li classs="disabled">Select City</li></option>
                           {% for entry in properties %}
-                         <option value="{{entry.getTown()}}">{{entry.getTown()}}</option>
+                         <option value="{{entry.getTown()}}">{{entry.getTown()|capitalize}}</option>
                           {% endfor %}
                       </select> 
                       </div>
@@ -204,7 +204,7 @@
                         <select  type="text"name='type' class='form-control dropdown'>
                           <option>Select Type</option>
                             {% for entry in propertyType %}
-                           <option name="text"value="{{entry.getType()}}">{{entry.getType()}}</option>
+                           <option name="text"value="{{entry.getType()}}">{{entry.getType()|capitalize}}</option>
                           {% endfor %}
                         </select> 
                      </div> 
@@ -223,8 +223,31 @@
                         </select> 
                      </div> 
                     </div>
+
+               <div class="selectType">
+                      <div class="col-sm-5 formLabel">
+                       <i class="fa fa-money fa-2x icon"></i>
+                        <select  type="text"name='price' class='form-control dropdown'>
+                         <option >Max Price</option>
+                          <option>10000</option>
+                          <option>20000</option>
+                          <option>30000</option>
+                          <option>40000</option>
+                          <option>50000</option>
+                          <option>60000</option>
+                          <option>70000</option>
+                          <option>80000</option>
+                          <option>90000</option>
+                          <option>100000</option>
+                          <option>110000</option>
+                          <option>120000</option>
+                        </select> 
+                     </div> 
+                    </div>  
+
               </div> 
-              <input type="submit" name="submit" id="searchSubmit"value="submit" class="btn btn-success formLabel"></form> 
+              <input type="submit" name="submit" id="searchSubmit"value="rent" class="btn btn-success formLabel">
+                    </form> 
                     </div>
                   </div>
                 </div>

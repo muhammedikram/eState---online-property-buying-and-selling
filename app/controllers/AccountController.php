@@ -238,6 +238,113 @@ class AccountController extends ControllerBase
         * 
         */
 
+
+
+        public function roomforrentAction()
+        {
+            //get active session
+             $auth = $this->session->get('auth');
+           
+             //get the active user. properties will be display based on his ID
+             $loggedInUser = $auth['id'];
+
+             $request = $this->request;
+            if ($request->isPost()) {
+
+            $pPropertyID = rand(200,100);
+            $pPurpose = $request->getPost('purpose');
+            $pStreet = $request->getPost('street');
+            $pTown = $request->getPost('town');
+            $pPostcode = $request->getPost('postcode');
+            $pCounty = $request->getPost('county');
+            $pType = $request->getPost('type');
+            $pBedrooms = $request->getPost('bedroom');
+            $pDescription = $request->getPost('description');
+            $pPrice = $request->getPost('price');
+            $pValidUntil = $request->getPost('validUntil');
+            $parking= $request->getPost('parking');
+            $space=$request->getPost('space');
+            $ready=$request->getPost('ready');
+            $roomavailable=$request->getPost('roomavailable');
+            $roomsize=$request->getPost('roomsize');
+            $deposit=$request->getPost('deposit');
+            $petsallowed=$request->getPost('petsallowed');
+            $minimumcontract=$request->getPost('minimumcontract');
+            $smoaking=$request->getPost('smoaking');
+            $couple=$request->getPost('couple');
+
+            //  die(var_dump($roomsize));
+
+             // var_dump($_FILES);
+           // Check if the user has uploaded files
+        if ($this->request->hasFiles() == true) {
+            $baseLocation = '/estate/public/images/';
+
+            // Print the real file names and sizes
+            foreach ($this->request->getUploadedFiles() as $file) {
+               
+            $file->moveTo($baseLocation . $file->getName());
+        
+            $user = new Rooms();
+
+            $user->propertyID = $pPropertyID;
+            $user->purpose = $pPurpose;
+            $user->street = $pStreet;
+            $user->town = $pTown;
+            $user->postcode = $pPostcode;
+            $user->type = $pType;
+            $user->bedroom = $pBedrooms;
+            $user->description = $pDescription;
+            $user->validUntil = $pValidUntil;
+            $user->enabled= 0;
+            $user->price=$pPrice;
+            $user->parking=$parking;
+            $user->space=$space;
+            $user->userID=$loggedInUser;
+            $user->ready=$ready;
+            $user->roomavailable=$roomavailable;
+            $user->roomsize=$roomsize;
+            $user->deposit=$deposit;
+            $user->petsallowed=$petsallowed;
+            $user->minimumcontract=$minimumcontract;
+            $user->smoaking=$smoaking;
+            $user->couple=$couple;
+            $user->image1 = $file->getName();
+            // $user->image1 = $file->getName();
+            // $user->image1 = $file->getName();
+
+            $file->moveTo($baseLocation . $file->getName());
+           
+            //Before Save, Check if this property already exists in the system
+             $exitProperty = Rooms::findfirst(
+                array(
+                    'street = :street:',
+                    'bind' => array(
+                        'street' => $pStreet
+                        )
+                    )
+                );
+
+
+            if($exitProperty)
+            {
+                $this->flashSession->error($user->street=$pStreet. " "."already exists in system");
+            }else{
+
+
+            //save property
+             $user->save();
+                     $this->flashSession->success($user->street=$pStreet. " "."has been saved successfully and now will be approved by admin.");
+
+            
+        }
+    }
+}
+}
+
+
+}
+
     public function showlistingsAction() {
 
         //get the active user
@@ -471,13 +578,6 @@ public function editrentpropertyAction() {
     }
 
 
-
-
-
-    public function sentrequestsAction()
-    {
-
-    }
   
 }//end of class
 

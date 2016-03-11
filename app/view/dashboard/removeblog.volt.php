@@ -1,4 +1,6 @@
 <div class="container">
+<?php echo $this->partial('dashboard/partials/dashboardNavBar'); ?>
+
 	<h1>Blogs</h1>
 <div class="row">
 			<?php if (isset($blog)) { ?>

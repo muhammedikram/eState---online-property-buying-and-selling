@@ -11,16 +11,16 @@
 			<br>
 			<form action="addproperty" method="post" enctype="multipart/form-data">
 			<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12"><strong>
 				<label class="radio-inline selltype" name="purpose"  >
-			         <input type="radio" name="purpose" id="radio1" value="sell"> I'm selling property
+			         <input type="radio" name="purpose" id="radio1" value="sell"> Selling a property
 			     </label>
 			     <label class="radio-inline selltype" name="purpose">
-			         <input type="radio" name="purpose" id="radio2" value="rent"> I'm renting property
+			         <input type="radio" name="purpose" id="radio2" value="rent">Renting a property
 			      </label>
-			      <label class="radio-inline selltype" name="purpose">
-			         <input type="radio" name="purpose" id="radio3" value="student"> I'm renting spare room 
-			      </label><br><br>
+
+			      <a href="/account/roomforrent">Renting a room</a>
+			      </strong>
 			      </div>
 			      </div>
 
@@ -185,8 +185,8 @@
 				 <label for="county" name="valuation" id="type">Do you require free valuation</label>
 						<select class="form-control" name="valuation">
 								<option>Free valuation</option>
-								<option name= "yes">Yes</option>
-								<option name="no">No</option>	
+								<option>Yes</option>
+								<option>No</option>	
 					</select>
 				</div>
 			  </div>
