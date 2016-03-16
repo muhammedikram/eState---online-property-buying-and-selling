@@ -90,10 +90,12 @@
       <img src="/images/logo.png" class="logo hidden-sm hidden-xs">
       <ul class="nav navbar-nav">
        
-         <li><a href="/index">Buy & Sell</a></li>
+        <li><a href="/index">Home</a></li>
+        <li><a href="/index">Our Service</a></li>
         <li><a href="/">Valuation</a></li>
-        <li><a href="/">Contact</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/">Advice</a></li>
+        <li><a href="/">Students</a></li>
+        <li><a href="/about/contact">Contact Us</a></li>
 
       </ul>
       <!-- Form on the header -->

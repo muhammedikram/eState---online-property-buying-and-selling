@@ -22,6 +22,8 @@
         <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
         {{ javascript_include('js/jquery-2.0.3.min.js') }}
         <script src="/js/summernote.js"></script>
+        <script src="/js/monthly.js"></script>
+
         <script src="/js/fault.js"></script>
          <script src="/js/dropzone.js"></script>
          {{ javascript_include('js/custom.js') }}

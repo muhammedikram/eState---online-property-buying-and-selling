@@ -217,6 +217,36 @@ public function getCategory()
 
 	}
 
+			public function getroomSearch($town, $ready, $roomsize, $price)
+			{
+				$mysql=$this->query(
+						'SELECT  
+						rooms.propertyID 		AS "propertyID",
+						rooms.town 				AS "town",
+						rooms.type 				AS "type",
+						rooms.street 			AS "street",
+						rooms.price 			AS "price",
+						rooms.bedroom 			AS "bedroom",
+						rooms.image1 			AS "image1",
+						rooms.enabled 			AS "enabled",
+						rooms.description 		AS "description",
+						rooms.reception 		AS "reception",
+						rooms.ready 			AS "ready",
+						rooms.roomsize 			AS "roomsize",
+						rooms.bathroom 			AS "bathroom"
+						From rooms
+						Where rooms.town = "'.$town.'" 
+						AND rooms.ready = "'.$ready.'"
+						AND rooms.price <=   "'.$price.'"
+						AND rooms.roomsize = "'.$roomsize.'"
+						AND rooms.enabled = "1"
+						');
+					$roomSearch =$mysql->fetchAll();
+					return $roomSearch;
+
+
+			}
+
 
 
 }

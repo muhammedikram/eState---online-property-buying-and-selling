@@ -8,8 +8,10 @@
 				<div class="col-md-4">
 				<h2>Twitter</h2>
 					<div class="panel panel-default	">
-		  				<div class="panel-body">
-		    				Panel content
+		  				<div class="panel-body twitter">
+		    				<a class="twitter-timeline" href="https://twitter.com/estate7861" data-widget-id="709883980703776768">Tweets by @eState</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 		  				</div>
 					</div>
 				</div>
@@ -50,3 +52,8 @@
 	</div>
 
 
+<style>
+iframe.twitter-timeline {
+    height: 280px!important;
+}
+</style>

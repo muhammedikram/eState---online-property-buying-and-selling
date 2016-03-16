@@ -183,14 +183,14 @@
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body">
-                    <form action="index/search" method="GET">
+                    <form action="index/searchroom" method="get">
                     <div class="row">
                      <div class="selectTown">
                       <div class="col-sm-5 formLabel">
                         <i class="fa fa-map-marker fa-2x icon"></i>
                       <select  type="text"name='town' class='form-control dropdown' >
                           <option><li classs="disabled">Select City</li></option>
-                          {% for entry in properties %}
+                          {% for entry in roomforhire %}
                          <option value="{{entry.getTown()}}">{{entry.getTown()|capitalize}}</option>
                           {% endfor %}
                       </select> 
@@ -201,11 +201,10 @@
                    <div class="selectType">
                       <div class="col-sm-5 formLabel">
                        <i class="fa fa-list fa-2x icon"></i>
-                        <select  type="text"name='type' class='form-control dropdown'>
-                          <option>Select Type</option>
-                            {% for entry in propertyType %}
-                           <option name="text"value="{{entry.getType()}}">{{entry.getType()|capitalize}}</option>
-                          {% endfor %}
+                        <select  type="text"name='ready' class='form-control dropdown'>
+                          <option>Ready</option>
+                           <option>Furnished</option>
+                           <option>Non-Furnished</option>
                         </select> 
                      </div> 
                     </div> 
@@ -215,35 +214,27 @@
                  <div class="selectBedroom">
                       <div class="col-sm-5 formLabel">
                        <i class="fa fa-bed fa-2x icon"></i>
-                        <select  type="text"name='bedroom' class='form-control dropdown'>
-                          <option>Select Bedroom</option>
-                            {% for entry in propertybedroom %}
-                           <option name="text"value="{{entry.getBedroom()}}">{{entry.getBedroom()}}</option>
-                          {% endfor %}
+                        <select  type="text"name='roomsize' class='form-control dropdown'>
+                          <option>Bedroom Size</option>
+                           <option>Single</option>
+                           <option>Double</option>
                         </select> 
                      </div> 
                     </div>
 
-               <div class="selectType">
+   <!--             <div class="selectType">
                       <div class="col-sm-5 formLabel">
                        <i class="fa fa-money fa-2x icon"></i>
                         <select  type="text"name='price' class='form-control dropdown'>
-                         <option >Max Price</option>
-                          <option>10000</option>
-                          <option>20000</option>
-                          <option>30000</option>
-                          <option>40000</option>
-                          <option>50000</option>
-                          <option>60000</option>
-                          <option>70000</option>
-                          <option>80000</option>
-                          <option>90000</option>
-                          <option>100000</option>
-                          <option>110000</option>
-                          <option>120000</option>
+                         <option >Max Price / Month</option>
+                          <option>100</option>
+                          <option>200</option>
+                          <option>300</option>
+                          <option>400</option>
+                          <option>500</option>
                         </select> 
                      </div> 
-                    </div>  
+                    </div> -->  
 
               </div> 
               <input type="submit" name="submit" id="searchSubmit"value="rent" class="btn btn-success formLabel">

@@ -1,7 +1,3 @@
-<!--
-*Search result page
-*
-*-->
 
 <div class="container">
   <div class="row">
@@ -11,29 +7,28 @@
      </div>     
 
      <div class="col-md-8">
-      <h4><?php echo ($this->length($roomsearch)) ?> properties found</h4>
+      <h4><?php echo ($this->length($page->items)) ?> Result</h4>
       <hr>
-            {% if roomsearch|length > 0 %}
-                    {% for row in roomsearch %}
-                    
+            {% if page.items|length > 0 %}
+                {% for row in page.items %}                    
                 <!-- Getting  Image-->
 
                     <div class="row">
                       <div class="col-md-4">
-                      <h2 class="price">&pound;{{row['price']}}</h2>
-                            <a href="/index/propertydetails/{{row['propertyID']}}">
-                            <img src="/images/{{ row['image1'] }}" width="200" height="180" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{ row['image1']}}" /></a>
+                      <h2 class="price">&pound;{{row.getPrice()}} P/M</h2>
+                            <a href="/index/propertydetails/{{row.getPropertyID()}}">
+                            <img src="/images/{{ row.getImage1()}}" width="200" height="180" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{row.getImage1()}}" /></a>
                       </div>
 
                       <div class="col-md-6 street">
-                            <h4>{{row['street']}}, {{row['town']}}<h4>
-                            <h5>{{row['bedroom']}} Bedrom , {{row['bathroom']}} Bathroom</h5>
+                            <h4>{{row.getStreet() }},{{row.getTown()}}<h4>
+                            <h5>{{row.getRoomSize()}} Bedrom {{row.getReady()}}</h5>
                             <hr>
-                            <h4>{{row['description']}}</h4>
+                            <h4>{{row.getDescription()}}</h4>
                         </div>
 
                         <div class="col-md-2">
-                            <h4><strong>For {{row['purpose']}}</strong></h4>
+                            <h4><strong>For Rent</strong></h4>
                         </div>
                     </div>
                     

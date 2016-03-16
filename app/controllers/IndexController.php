@@ -79,6 +79,16 @@ class IndexController extends ControllerBase
          $this->view->blog = $showblogs;
 
 
+         //get the towns for room search form
+
+         $room = Rooms::find(
+            array(
+                'group'=>'town'
+                )
+            );
+         $this->view->roomforhire = $room;
+
+
     } 
 
     public function searchAction()
@@ -160,57 +170,38 @@ class IndexController extends ControllerBase
         
     }
 
-    public function searchrentsAction()
+    public function searchroomAction()
     {
-        {
-        //Get the properties types, towns and bedrooms for refine search function.
-          $allProperties = Rents::find(
-          array(
-            'group'=>'town'));
-             $this->view->properties = $allProperties;
-        $bedroom = Rents::find(array('group'=>'bedroom'
-            )
-        );
-        $this->view->rentpropertybedroom=$bedroom;
-
-        $type = Rents::find(array('group'=>'type'
-            )
-        );
-
-         $this->view->rentpropertyType=$type;
-
-
-         $latestproperties = Rents::find(
-                array(
-                    'limit' => 5,
-                    'order' => 'created DESC'
-                    )
-                );
-         $this->view->latestP=$latestproperties;
-
-        //search for properties 
-
-         //go to sap file
-        $sap = new \SAP();
-        
-        //if reruest is post
-            if($this->request->isPost()) {
-
-                $town=$this->request->getPost('town');
-                $type=$this->request->getPost('type');
-                $price=$this->request->getPost('price');
-                $bedroom= $this->request->getPost('bedroom');
-    
-                $properties= $sap->getrentpropertySearch($town,$type, $price, $bedroom);
-
-        
-            }
-
-                $this->view->rentpropertysearch=$properties;
-
-
-
+   
+           //search for the properties
+        $numberPage = (int) $_GET["page"];
+        if ($this->request->getQuery()) {
+            $query = Criteria::fromInput($this->di, "rooms", $this->request->getQuery());
+            $this->persistent->searchParams = $query->getParams();
+        } else {
+            $numberPage = $this->request->getQuery("page", "int");
         }
+
+        $parameters = array();
+        if ($this->persistent->searchParams) {
+            $parameters = $this->persistent->searchParams;
+        }
+
+        $products = Rooms::find($parameters);
+
+        if (count($products) == 0) {
+            $this->flash->notice('No products are been found');
+            return $this->forward("index");
+        }
+
+        $paginator = new Paginator(array(
+            "data"  => $products,
+            "limit" => 5,
+            "page"  => $numberPage
+        ));
+
+        $this->view->page = $paginator->getPaginate();
+        $this->view->products = $products;
     }
 
 /**
