@@ -38,19 +38,20 @@ class Rooms extends \Phalcon\Mvc\Model
 
 
 //getters 
-	public function initialize()
+public function initialize()
     {
- 
+
+        $this->belongsTo("userID", "MemberRegister", "id");
+
 
         $this->addBehavior(new Timestampable(
         array(
             'beforeCreate'  => array(
-                'field'     => 'created',
-                'format'    => 'Y-m-d'
+                'field'     => 'date',
+                'format'    => 'd-m-y'
             )
         )
     ));
-
     }
 
     public static function findFromURL($propertyID)
@@ -143,6 +144,9 @@ class Rooms extends \Phalcon\Mvc\Model
 
 	public function getUserID(){
 		return $this->userID;
+	}
+	public function getPetsallowed(){
+		return $this->petsallowed;
 	}
 
 

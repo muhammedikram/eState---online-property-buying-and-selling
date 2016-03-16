@@ -16,7 +16,7 @@
                     <div class="row">
                       <div class="col-md-4">
                       <h2 class="price">&pound;{{row.getPrice()}} P/M</h2>
-                            <a href="/index/propertydetails/{{row.getPropertyID()}}">
+                            <a href="/index/roomdetails/{{row.getPropertyID()}}">
                             <img src="/images/{{ row.getImage1()}}" width="200" height="180" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{row.getImage1()}}" /></a>
                       </div>
 

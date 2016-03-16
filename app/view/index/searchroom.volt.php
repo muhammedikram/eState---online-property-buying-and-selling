@@ -16,7 +16,7 @@
                     <div class="row">
                       <div class="col-md-4">
                       <h2 class="price">&pound;<?php echo $row->getPrice(); ?> P/M</h2>
-                            <a href="/index/propertydetails/<?php echo $row->getPropertyID(); ?>">
+                            <a href="/index/roomdetails/<?php echo $row->getPropertyID(); ?>">
                             <img src="/images/<?php echo $row->getImage1(); ?>" width="200" height="180" class="thumbnail" style="margin-bottom: 0;" alt="" title="<?php echo $row->getImage1(); ?>" /></a>
                       </div>
 

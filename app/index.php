@@ -127,7 +127,8 @@ $di->set(
     'router',
     function () {
         $router = new \Phalcon\Mvc\Router;
-
+        
+        $router->add('/index/roomdetails/{propertyID:[A-Za-z0-9-]+}',               'index::roomdetails');
         $router->add('/index/rentpropertydetails/{propertyID:[A-Za-z0-9-]+}',               'index::rentpropertydetails');
         $router->add('/index/propertydetails/{propertyID:[A-Za-z0-9-]+}',               'index::propertydetails');
         $router->add('/index/contact/{propertyID:[A-Za-z0-9-]+}',               'index::contact');

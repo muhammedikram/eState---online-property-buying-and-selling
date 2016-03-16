@@ -284,13 +284,13 @@ class IndexController extends ControllerBase
             
         }//end of propertydetails function
 
-public function rentpropertydetailsaction()
+public function roomdetailsaction()
         {   
 
              $propertyID = $this->dispatcher->getParam("propertyID");
              
              if (isset($propertyID)) {
-                $property = Rents::find(
+                $property = Rooms::find(
                     array(
                             'propertyID = :propertyID:',
                             'bind'=>array(
