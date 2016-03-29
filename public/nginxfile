@@ -1,0 +1,58 @@
+server{
+		listen 80;
+#		listen 443 dafault_server ssl;
+
+		set $root_path '/estate/public';
+
+		client_max_body_size 600m;
+
+
+		index index.php index.html index.htm;
+		root $root_path;
+
+		# Make site accessible form http://localhost/
+		server_name estate.local www.estate.local;
+
+		charset utf-8;
+		sendfile off;
+#		ssl on;
+#		ssl_certificate  /etc/nginx/server.crt;
+#		ssl_certificate_key /etc/nginx/ssl/server.key;
+
+		gzip on;
+		gzip_min_length 1100;
+		gzip_buffers	4 32k;
+		gzip_types	text/plain application/x-javascript text/javascript text/xml text/css;
+		gzip_vary	on;
+
+		error_page 403 /error/route403;
+		error_page 404 /error/route404;
+		error_page 405 /error/route503;
+
+		try_files $uri $uri/ @rewrite;
+location @rewrite{
+		rewrite ^/(.*)$ /index.php?_url=/$1;
+}
+
+location ~ \.php{
+		fastcgi_pass 127.0.0.1:9000;
+		fastcgi_index /index.php;
+
+		include /etc/nginx/fastcgi_params;
+
+		fastcgi_split_path_info   ^(.+\.php)(/.+)$;
+		fastcgi_param PATH_INFO   $fastcgi_path_info;
+		fastcgi_param PATH_TRANSLATED  $document_root$fastcgi_path_info;
+		fastcgi_param SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+		fastcgi_param APP_ENV		development;
+}
+location ~* \.(png|jpg|gif|bmp|ico|svg|eot|css|img|js|flv|swf|ttf|json|wff)$ {
+		root $root_path;
+#               expires 1w;
+}
+
+location ~ /\.ht{
+		deny all;	
+	}
+
+}
