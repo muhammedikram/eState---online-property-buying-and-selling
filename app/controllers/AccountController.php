@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 class AccountController extends ControllerBase
 
@@ -103,9 +103,9 @@ class AccountController extends ControllerBase
     }
 
 
-        /* This function add's properties to favurite
-        * 
-        * 
+        /* This function add's properties to system
+        *  Information will be passed through form
+        * get the information and store it.
         */
     public function addPropertyAction()
    
@@ -219,6 +219,9 @@ class AccountController extends ControllerBase
                 $val->propertyID=$pPropertyID;
                 $val->userID=$loggedInUser;
                 $val->enabled=0;
+                $val->street=$pStreet;
+                $val->town=$pTown;
+                $val->postcode=$pPostcode;
                 $val->date->date;
                 $val->save();
             }

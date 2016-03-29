@@ -1,7 +1,5 @@
 <div class="container">
-	<h2>Contact Us</h2>
-
-	<p>If you have any question about our services or not sure about something, feel free to contact us</p>
+	<h2 class="text-center"><strong>Contact Us</strong></h2>
 
 	<div class="row">
 		<di class= "col-md-6">
@@ -48,7 +46,7 @@
 	 <div class="row">
 	 	<div class="col-md-6">
 	 			<div class="jumbotron">
-				  	<p><strong>ESate Ltd</strong><br>
+				  	<p><strong>eSate Ltd</strong><br>
 				  	43 Low Lane<br>
 				  	Leeds<br>
 				  	LS76 7TH<br>

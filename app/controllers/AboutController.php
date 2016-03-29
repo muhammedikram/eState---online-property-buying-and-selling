@@ -134,73 +134,13 @@ class AboutController extends ControllerBase
 
 	}
 */
-	public function productsAction() {
+	public function servicesAction() {
 
-		$sap = new \SAP();
+	}
 
+	public function valuationAction() {
 		
-$this->view->category = $sap->getCategory();
-
-
-
-		if($this->request->isPost()) {
-
-			$category = $this->request->getPost('category');
-		$products = $sap->getProducts( $category);
-	
-			
-			
-
-
-
-			if($this->request->getPost('action') == 'download') {
-				$this->view->disable();
-
-				$settings = $this->formatSpreadsheetSettings();
-
-				$headings = array(
-	            	'Customer Name',
-	            	'Quote No',
-	            	'Quote Data',
-	            	'Quote Total',
-	            	'Sales Order No ',
-	            	
-	            );
-
-				if($settings['outputType'] == 'csv') {
-		
-		            $this->response->setHeader('Content-Type',        'text/csv');
-		            $this->response->setHeader('Cache-Control',       'no-store, no-cache');
-		            $this->response->setHeader('Content-Disposition', 'attachment; filename="QuotesOrders.csv"');
-
-		            $outputStream = fopen('php://output', 'w');
-
-		            fputcsv($outputStream, $headings, ',', '"');
-
-		            foreach ($products as $d) {
-		                fputcsv($outputStream, $d, ',', '"');
-		            }
-
-		            fclose($outputStream);
-		        } else {
-		            $xlsx = new \File\XLSX();
-
-		            $content = array();
-
-		            $content[] = $headings;
-		            foreach($products as $d) {
-		                $content[] = array_values($d);
-		            }
-		            $xlsx->generateSpreadsheet($content, 'profitability', array(), $settings['options']);
-		        }
-
-
-			} else {
-
-				$this->view->products = $products;
-			}
-}
-}
+	}
 
 	
 	

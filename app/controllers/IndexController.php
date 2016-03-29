@@ -190,7 +190,7 @@ class IndexController extends ControllerBase
         $products = Rooms::find($parameters);
 
         if (count($products) == 0) {
-            $this->flash->notice('No products are been found');
+            $this->flash->notice('No rooms are been found based on your search');
             return $this->forward("index");
         }
 
