@@ -50,7 +50,7 @@
 		  	<div class="row">
 		  		<div class="col-md-12">
 		  			<img src="/images/roomforrent2.png" class="roompic">
-		  			 <p><a class="learn btn btn-success btn-lg" href="/account/addproperty" role="button">Post free add >></a></p>
+		  			 <p><a class="learn btn btn-success btn-lg" href="/account/roomforrent" role="button">Post free add >></a></p>
 
 		  		</div>
 
