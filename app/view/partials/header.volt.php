@@ -11,8 +11,13 @@
 
 
         <li class="dropdown  yamm-fw">  
-         <a class=" dropdown-toggle fa fa-user fa-2x" data-toggle="dropdown"></a>
+            <a class=" dropdown-toggle fa fa-user fa-2x" data-toggle="dropdown"></a>
 
+          <ul class="dropdown-menu">
+            <li><a href="/signup/end">Sign Out</a></li>
+            <li role="separator" class="divider"></li>
+            
+          </ul>
         <a class="fa fa-plus-circle fa-2x" href="/account/addproperty">&nbsp;Add Property</a>
 
         <a class="fa fa-comment fa-2x   " href="/blog">&nbsp;Blog</a>
@@ -91,10 +96,17 @@
       <ul class="nav navbar-nav">
        
         <li><a href="/index">Home</a></li>
-        <li><a href="/index">Our Service</a></li>
-        <li><a href="/">Valuation</a></li>
+  <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services <span class="caret"></span>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="/about/services/#targetname1">Sell you home</a></li>
+                      <li><a href="/about/services/#targetname2">Spare room</a></li>
+                      <li><a href="/about/services/#targetname3">Customer care</a></li>
+
+                    </ul>
+                  </a>
+                </li>        <li><a href="/about/valuation">Valuation</a></li>
         <li><a href="/">Advice</a></li>
-        <li><a href="/">Students</a></li>
         <li><a href="/about/contact">Contact Us</a></li>
 
       </ul>
