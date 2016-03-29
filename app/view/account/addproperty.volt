@@ -1,7 +1,7 @@
 {{ partial('account/partials/accountNavBar') }}
 
 
-<div class="container">
+	<div class="container">
 	<h3>Add a property</h3>
 
 	
