@@ -257,9 +257,11 @@
                        <h4 >
                         <a href="/index/propertydetails/<?php echo $entry->getPropertyID(); ?>">
                                 <?php echo ucwords($entry->getStreet()); ?>,  <?php echo ucwords($entry->getTown()); ?><!--Put first letter as capital -->
-                                
-                           </a>
+                                </a>
+                              &nbsp;  <span style="color:green; font-weight:bold;">For <?php echo ucwords($entry->getPurpose()); ?></div>
+
                           </h4>
+                           
                         </td>
                       </tr>
                     <?php } ?>
