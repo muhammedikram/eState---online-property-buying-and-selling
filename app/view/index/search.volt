@@ -13,6 +13,7 @@
      <div class="col-md-8">
       <h4><?php echo ($this->length($roomsearch)) ?> properties found</h4>
       <hr>
+       {% if roomsearch is defined %}
             {% if roomsearch|length > 0 %}
                     {% for row in roomsearch %}
                     
@@ -48,6 +49,7 @@
                       No properties found based on your criteria's. Try refining your search to find properties.  
                   </p>
                   {% endif %}
+                {% endif %}
           </div>
         </div>
     </div>
