@@ -70,11 +70,11 @@ class IndexController extends ControllerBase
          $this->view->rentpropertyType=$type;
 
          //blogs
-         // $showblogs = Blog::find(
-         //    array(
-         //        'limit'=>3
-         //        )
-         //    );
+         $showblogs = Blog::find(
+            array(
+                'limit'=>3
+                )
+            );
                 
          $this->view->blog = $showblogs;
 
@@ -174,6 +174,7 @@ class IndexController extends ControllerBase
     {
    
            //search for the properties
+      
         $numberPage = (int) $_GET["page"];
         if ($this->request->getQuery()) {
             $query = Criteria::fromInput($this->di, "rooms", $this->request->getQuery());
