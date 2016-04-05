@@ -9,7 +9,7 @@ class DashboardController extends ControllerBase
 	
 			Public function indexAction()
 			{
-                $alltheproperties = properties::find();
+                $alltheproperties = Properties::find();
                 $this->view->allproperties = $alltheproperties;
 
                 $rent = Rents::find();
