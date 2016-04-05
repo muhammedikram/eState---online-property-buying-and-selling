@@ -14,28 +14,21 @@
 
 					  				<h2><?php echo $row->getpropertyID(); ?></h2>
 
-					  				<img src="<?php echo $row->getproperties()->getImage1(); ?>" width="160" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="<?php echo $row->getproperties()->getPropertyID(); ?>" />
-
+					  		
 								</div>
 							<div class="col-md-6">
 								<div class="display">
-									<h2 class="text2">&pound;<?php echo number_format($row->getproperties()->getPrice(), 2); ?></h2>
+								
 										<span class='help-block'>Price Includes ...</span>
 
 										<h3><?php echo $row->getProperties()->getStreet(); ?></h3>
-
-										<h4><?php echo $row->getProperties()->getTown(); ?></h4>
-
-										<h4><?php echo $row->getProperties()->getType(); ?></h4>
-								</div>
+<!-- 
+								</div> -->
 							</div>
 						</div>	
 
 				<!-- Delete favurite form -->
-					 <form action="account/viewfavurites" method="post">
-						<input type="hidden" name="propertyID" value="<?php echo $row->getpropertyID(); ?>">
-						<button type="submit" value="<?php echo $row->getpropertyID(); ?>" class="btn btn-danger glyphicon glyphicon-remove" title="<?php echo $row->getpropertyID(); ?>"> Remove</button>
-					</form>	 
+				
 					
 					</div> 
 				

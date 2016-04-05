@@ -1,5 +1,5 @@
   <h4>Refine your search</h4>
-   <form action="/index/search" method="post">   
+   <form action="index/search" method="post">   
    
    <!-- GEt the property types -->
         <div class="form-group">

@@ -215,7 +215,7 @@ class AccountController extends ControllerBase
             //if customer require valuation, Add entry in valuation tabele
 
             if($valuation=="Yes") {
-                $val = new valuation();
+                $val = new Valuation();
                 $val->propertyID=$pPropertyID;
                 $val->userID=$loggedInUser;
                 $val->enabled=0;
