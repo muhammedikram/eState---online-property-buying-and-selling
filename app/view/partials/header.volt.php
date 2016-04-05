@@ -111,19 +111,7 @@
 
       </ul>
       <!-- Form on the header -->
-    <div class="hidden-xs">
-      <!-- <?php echo $this->tag->form(array('products/search')); ?>
-        <ul class="nav navbar-nav navbar-right">
-            <?php foreach ($formInNavBar as $name) { ?>
-          <div class="style">
-            <?php echo $name; ?>
-              <button type="submit" class="btn btn-default" aria-label="Left Align">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              </button>  
-          </div>
-          <?php } ?>
-        </ul>
-    </form> -->
+
 
     </div>
    </div><!-- /.navbar-collapse -->

@@ -256,7 +256,7 @@
                       <td >
                        <h4 >
                         <a href="/index/propertydetails/{{entry.getPropertyID()}}">
-                                {{ entry.getStreet()|capitalize}}, <!--Put first letter as capital -->
+                                {{ entry.getStreet()|capitalize}},  {{ entry.getTown()|capitalize}}<!--Put first letter as capital -->
                                 
                            </a>
                           </h4>

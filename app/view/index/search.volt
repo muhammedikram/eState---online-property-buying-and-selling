@@ -11,11 +11,11 @@
      </div>     
 
      <div class="col-md-8">
-      <h4><?php echo ($this->length($roomsearch)) ?> properties found</h4>
+      <h4><?php echo ($this->length($propertysearch)) ?> properties found</h4>
       <hr>
-       {% if roomsearch is defined %}
-            {% if roomsearch|length > 0 %}
-                    {% for row in roomsearch %}
+       {% if propertysearch is defined %}
+            {% if propertysearch|length > 0 %}
+                    {% for row in propertysearch %}
                     
                 <!-- Getting  Image-->
 

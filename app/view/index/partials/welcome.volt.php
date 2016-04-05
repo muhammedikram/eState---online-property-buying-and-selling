@@ -256,7 +256,7 @@
                       <td >
                        <h4 >
                         <a href="/index/propertydetails/<?php echo $entry->getPropertyID(); ?>">
-                                <?php echo ucwords($entry->getStreet()); ?>, <!--Put first letter as capital -->
+                                <?php echo ucwords($entry->getStreet()); ?>,  <?php echo ucwords($entry->getTown()); ?><!--Put first letter as capital -->
                                 
                            </a>
                           </h4>

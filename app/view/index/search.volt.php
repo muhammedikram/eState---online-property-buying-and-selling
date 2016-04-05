@@ -13,6 +13,7 @@
      <div class="col-md-8">
       <h4><?php echo ($this->length($propertysearch)) ?> properties found</h4>
       <hr>
+       <?php if (isset($propertysearch)) { ?>
             <?php if ($this->length($propertysearch) > 0) { ?>
                     <?php foreach ($propertysearch as $row) { ?>
                     
@@ -48,6 +49,7 @@
                       No properties found based on your criteria's. Try refining your search to find properties.  
                   </p>
                   <?php } ?>
+                <?php } ?>
           </div>
         </div>
     </div>

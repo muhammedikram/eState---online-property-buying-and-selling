@@ -111,19 +111,7 @@
 
       </ul>
       <!-- Form on the header -->
-    <div class="hidden-xs">
-      <!-- {{ form("products/search") }}
-        <ul class="nav navbar-nav navbar-right">
-            {% for name in formInNavBar %}
-          <div class="style">
-            {{ name }}
-              <button type="submit" class="btn btn-default" aria-label="Left Align">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              </button>  
-          </div>
-          {% endfor %}
-        </ul>
-    </form> -->
+
 
     </div>
    </div><!-- /.navbar-collapse -->
