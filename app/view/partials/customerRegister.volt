@@ -8,7 +8,7 @@
       <div class="modal-body">
         <div class='modal-container'>
            <div class="row">
-              <form  action="signup/clientRegister" method="post"role="form">
+              <form  action="/signup/clientRegister" method="post"role="form">
                   <div class="col-lg-12">
                       <div class="form-group">
                           <label for="name">Name</label>
