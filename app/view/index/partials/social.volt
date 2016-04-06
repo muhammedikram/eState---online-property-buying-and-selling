@@ -21,7 +21,21 @@
 				<h2>Sweet Service</h2>
 					<div class="panel panel-default	">
 		  				<div class="panel-body">
-		    				Panel content
+		    			{% if ratings is defined %}
+						{% if ratings|length > 0 %}
+				
+						{% for entry in ratings %}
+							<div class="container">
+							<strong>{{entry.getName()|capitalize}}</strong>	&nbsp;	&nbsp;	&nbsp;&nbsp;<img src="/images/stars/{{entry.getRating()}}"><br>
+								<em>"{{entry.getComments()}}</em>"
+								</div>
+								<hr>
+								{% endfor %} 
+
+							{% else %}
+							<div class='jumbotron text-center'>No Ratings to display.</div>
+						{% endif %}
+					{% endif %}
 		  				</div>
 					</div>
 				</div>
@@ -33,9 +47,10 @@
 						{% if blog|length > 0 %}
 				
 						{% for entry in blog %}
+							<div class="container">
 							<strong>{{entry.getTitle()}}</strong><br>
 								<span>{{entry.getDescription()}}</span><br>
-								
+								</div>
 								<hr>
 								{% endfor %} 
 

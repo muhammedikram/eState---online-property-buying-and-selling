@@ -136,6 +136,47 @@ class AboutController extends ControllerBase
 */
 	public function servicesAction() {
 
+		  $reviews = Rating::find(
+                 array(
+                    'enabled = :enabled:',
+                    'limit' => 3,
+                    'bind'=>array(
+                    'enabled' => 1
+                    )
+                )
+            );
+         $this->view->ratings=$reviews;
+
+         		     //get the url of the pagE
+            $url = $_SERVER['HTTP_REFERER'];
+
+            $request = $this->request;
+            if ($request->isPost()) {
+
+            $rName = $request->getPost('name');
+            $remail = $request->getPost('email');
+            $rComments = $request->getPost('comments');
+            $rRating = $request->getPost('rating');
+
+            $user = new Rating();
+        
+            $user->name = $rName;
+            $user->email = $remail;
+            $user->rating = $rRating.".png";
+            $user->comments = $rComments;
+
+            $user->save(); 
+
+            if ($user->save()) {
+                         $this->flash->success('Thank you for your feedback');
+
+
+                         return $this->forward($url);
+
+
+            }
+
+        }
 	}
 
 	public function valuationAction() {

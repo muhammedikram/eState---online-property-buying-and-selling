@@ -433,6 +433,21 @@ class DashboardController extends ControllerBase
                 $this->view->blog = $showblogs;
     }
 
+    public function ratingAction()
+    {
+
+        $reviews = Rating::find(
+                 array(
+                    'enabled = :enabled:',
+                    'limit' => 3,
+                    'bind'=>array(
+                    'enabled' => 1
+                    )
+                )
+            );
+         $this->view->ratings=$reviews;
+    }
+
 
 } 
 

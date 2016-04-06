@@ -13,6 +13,7 @@
 				            <li><a href="/dashboard/addproperty">Add property</a></li>
 				            <li><a href="/dashboard/enableproperty">Approve property</a></li>
 				            <li><a href="/dashboard/valuation">valuation Requests</a></li>
+				            <li><a href="/dashboard/rating">Customer ratings</a></li>
 
 ,					<li class="dropdown">
           				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog <span class="caret"></span>

@@ -89,6 +89,19 @@ class IndexController extends ControllerBase
          $this->view->roomforhire = $room;
 
 
+         $reviews = Rating::find(
+                 array(
+                    'enabled = :enabled:',
+                    'limit' => 3,
+                    'bind'=>array(
+                    'enabled' => 1
+                    )
+                )
+            );
+         $this->view->ratings=$reviews;
+    
+
+
     } 
 
     public function searchAction()
@@ -459,7 +472,7 @@ public function roomdetailsaction()
 
                     $this->flash->success('Email been sent'); 
             
-                    return $this->forward("index/propertydetails/".$propertyID);
+                        return $this->forward("index/propertydetails/".$propertyID);
             
             }
         }
@@ -468,28 +481,42 @@ public function roomdetailsaction()
     //this method will handle reviews processed by customers. 
         public function customerReviewsAction()
         {
-            
+
+            //get the url of the page
+
+
+            $url = $_SERVER['HTTP_REFERER'];
+
+            $request = $this->request;
+            if ($request->isPost()) {
+
+            $rName = $request->getPost('name');
+            $remail = $request->getPost('email');
+            $rComments = $request->getPost('comments');
+            $rRating = $request->getPost('rating');
+
+            $user = new Rating();
+        
+            $user->name = $rName;
+            $user->email = $remail;
+            $user->rating = $rRating;
+            $user->comments = $rComments;
+
+            $user->save(); 
+
+            if ($user->save()) {
+
+
+                         return $this->forward($url);
+
+                         $this->flash->success('Thank you for your feedback');
+
+            }
 
         }
+}
 
-        //arrange viewing method
 
-        // public function arrangeviewingsAction()
-        // {
-        //     $propertyID= $this->dispatcher->getParam("propertyID");
-
-        //      $properties = Properties::find(
-        //         array(
-        //                     'propertyID = :propertyID:',
-        //                     'bind'=>array(
-        //                     'propertyID' => $propertyID
-
-        //                     )
-        //                 )
-        //             );
-        //      $this->view->arrangeviewproperties = $properties;
-
-        // }
 
 
         public function mysearchAction()

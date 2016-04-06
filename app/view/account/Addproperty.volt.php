@@ -3,6 +3,7 @@
 
 	<div class="container">
 	<h3>Add a property</h3>
+<?php echo $this->partial('index/partials/reviews'); ?>
 
 	
 	<div clss="row" style="margin-top:3%;">
