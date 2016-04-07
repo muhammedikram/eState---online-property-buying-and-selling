@@ -15,3 +15,4 @@
 <!--output the social partial. which includes news/blogs/twitter  -->
 {{ partial('index/partials/social') }}
 
+<p>HELLO MUFI</p>
