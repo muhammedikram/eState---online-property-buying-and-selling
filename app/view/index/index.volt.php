@@ -15,4 +15,3 @@
 <!--output the social partial. which includes news/blogs/twitter  -->
 <?php echo $this->partial('index/partials/social'); ?>
 
-<p>HELLO MUFI</p>

@@ -190,7 +190,7 @@ class IndexController extends ControllerBase
       
         $numberPage = (int) $_GET["page"];
         if ($this->request->getQuery()) {
-            $query = Criteria::fromInput($this->di, "rooms", $this->request->getQuery());
+            $query = Criteria::fromInput($this->di, "Rooms", $this->request->getQuery());
             $this->persistent->searchParams = $query->getParams();
         } else {
             $numberPage = $this->request->getQuery("page", "int");
