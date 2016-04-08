@@ -43,17 +43,22 @@
 
 	<h2><a name="targetname2" style="color:white;">dfdf</a></h2>
 	<div name="targetname2"class="jumbotron">
-	  <h3 class="text-center"><strong>Have you got a spare room? <span class="rentroom">Rent it with us</span></strong></h3>
+	  <h3 class="text-center"><strong>Have you got a spare room? <a  href="/account/roomforrent" class="rentroom">Rent it with us</a></strong></h3>
 
 	  <div class="panel panel-default">
 		  <div class="panel-body">
 		  	<div class="row">
 		  		<div class="col-md-12">
-		  			<img src="/images/roomforrent2.png" class="roompic hidden-xs hidden-sm">
-		  			 <p>&nbsp;&nbsp;<a class="learn btn btn-success btn-lg" href="/account/roomforrent" role="button">Post free add >></a></p>
+		  			<img src="/images/rent.png" class="roompic hidden-xs hidden-sm">
+		  			 <p>&nbsp;&nbsp;<a class="learn btn btn-success btn-lg hidden-lg hidden-md" href="/account/roomforrent" role="button">Post free add >></a></p>
+
+		  			
+
+		  			<a href="/account/roomforrent" class="roombtn btn btn-secondary btn-lg hidden-sm hidden-md">Post free add here >></a>
+
+
 
 		  		</div>
-
 		  </div>
 	</div>
 	</div>
@@ -152,6 +157,12 @@
 		width: 980px;
 
 	}
-
+	.roombtn {
+	width: 207px;
+    height: 71px;
+    background-color: white;
+    margin-top: -274px;
+    margin-left: 700px;
+	}
 
 </style>

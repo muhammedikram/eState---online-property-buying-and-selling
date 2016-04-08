@@ -48,6 +48,7 @@
 				</div>
 		{% endif %}
 	{% endif %}
+	</div>
 </div><!-- End of container -->
 
 <style>

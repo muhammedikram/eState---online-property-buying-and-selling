@@ -15,10 +15,10 @@
 			<div class="col-md-12"><strong>
 				<label class="radio-inline selltype" name="purpose"  >
 			         <input type="radio" name="purpose" id="radio1" value="sell"> Selling a property
-			     </label>
+			     </label><br><br>
 			     <label class="radio-inline selltype" name="purpose">
 			         <input type="radio" name="purpose" id="radio2" value="rent">Renting a property
-			      </label>
+			      </label><br><br>
 
 			      <a href="/account/roomforrent">Renting a room</a>
 			      </strong>
@@ -208,6 +208,48 @@
 			</form>
 			<br><br>
 		</div>	
+ 		
+				<div class="col-md-4">
+				<h2>Sweet Service</h2>
+					<div class="panel panel-default	">
+		  				<div class="panel-body">
+		    			<?php if (isset($ratings)) { ?>
+						<?php if ($this->length($ratings) > 0) { ?>
+				
+						<?php foreach ($ratings as $entry) { ?>
+							<strong><?php echo ucwords($entry->getName()); ?></strong>	&nbsp;	&nbsp;	&nbsp;&nbsp;<img src="/images/stars/<?php echo $entry->getRating(); ?>"><br>
+								<em>"<?php echo $entry->getComments(); ?></em>"
+								<hr>
+								<?php } ?> 
+
+							<?php } else { ?>
+							<div class='jumbotron text-center'>No Ratings to display.</div>
+						<?php } ?>
+					<?php } ?>
+		  				</div>
+					</div>
+				</div>
+ 	</div>
+
+
+	<div class="col-md-4">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Follow us</h3>
+		  </div>
+		  <div class="panel-body">
+		  		<a class="btn btn-block ">
+			   		<i class="fa fa-facebook-square fa-4x"></i> 
+			  </a>
+
+			  <a class="btn btn-block ">
+			   		<i class="fa fa-twitter-square fa-4x"></i> 
+			  </a>
+
+			
+		  </div>
+		</div>
+	</div>
 	</div>
 </div>
 

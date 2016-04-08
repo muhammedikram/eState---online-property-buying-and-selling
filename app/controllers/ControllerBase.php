@@ -39,6 +39,21 @@ class ControllerBase extends Controller
             //if the session is not started, display the main layout. 
            $this->view->setTemplateAfter('main');
     }
+
+
+//sweet service 
+     $reviews = Rating::find(
+                 array(
+                    'enabled = :enabled:',
+                    'limit' => 3,
+                    'bind'=>array(
+                    'enabled' => 1
+                    )
+                )
+            );
+         $this->view->ratings=$reviews;
+
+
 }
 
 /**

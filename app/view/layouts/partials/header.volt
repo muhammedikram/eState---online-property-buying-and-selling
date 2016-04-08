@@ -1,4 +1,4 @@
- 
+
  <?php 
         $auth = $this->session->get('auth');
         $user = MemberRegister::find($auth['id']);
@@ -57,12 +57,12 @@
                     <ul class="dropdown-menu" role="menu">
                       <li><a href="/about/services/#targetname1">Sell you home</a></li>
                       <li><a href="/about/services/#targetname2">Spare room</a></li>
-                      <li><a href="/about/services/#targetname3">Customer caret</a></li>
+                      <li><a href="/about/services/#targetname3">Sweet Service</a></li>
 
                     </ul>
                   </a>
                 </li>        <li><a href="/about/valuation">Valuation</a></li>
-        <li><a href="/">Advice</a></li>
+        <li><a href="/advice/index">Advice</a></li>
         <li><a href="/account"> My Account</a></li>
 
         <li><a href="/about/contact">Contact Us</a></li>

@@ -136,18 +136,9 @@ class AboutController extends ControllerBase
 */
 	public function servicesAction() {
 
-		  $reviews = Rating::find(
-                 array(
-                    'enabled = :enabled:',
-                    'limit' => 3,
-                    'bind'=>array(
-                    'enabled' => 1
-                    )
-                )
-            );
-         $this->view->ratings=$reviews;
+		          //get the url of the page
 
-         		     //get the url of the pagE
+
             $url = $_SERVER['HTTP_REFERER'];
 
             $request = $this->request;
@@ -162,21 +153,22 @@ class AboutController extends ControllerBase
         
             $user->name = $rName;
             $user->email = $remail;
-            $user->rating = $rRating.".png";
+            $user->rating = $rRating;
             $user->comments = $rComments;
 
             $user->save(); 
 
             if ($user->save()) {
-                         $this->flash->success('Thank you for your feedback');
 
 
                          return $this->forward($url);
 
+                         $this->flash->success('Thank you for your feedback');
 
             }
 
         }
+
 	}
 
 	public function valuationAction() {
