@@ -3,8 +3,6 @@
 
 	<div class="container">
 	<h3>Add a property</h3>
-{{ partial('index/partials/reviews') }}
-
 	
 	<div clss="row" style="margin-top:3%;">
 		<div class="col-md-8 addform">
@@ -159,6 +157,16 @@
 
 
 	   			<hr>
+	   			<div class="alert alert-info" role="alert"><strong>Property Description Tips</strong><br>
+
+	   			<p>Please add description about property</p>
+	   			<li>Location features</li>
+	   			<li>Decrotaion</li>
+	   			<li>History</li>	
+	   			<p></p>
+
+	   			</div>
+
 			   	<p><strong>Provide us with your property or room description</strong></p>
 					<div class="row">
 						<div class="col-md-12">
@@ -211,6 +219,10 @@
  		
 				<div class="col-md-4">
 				<h2>Sweet Service</h2>
+					<div class="panel-body">
+						{{ partial('index/partials/reviews') }}
+					</div>
+
 					<div class="panel panel-default	">
 		  				<div class="panel-body">
 		    			{% if ratings is defined %}
