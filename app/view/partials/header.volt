@@ -106,7 +106,7 @@
                     </ul>
                   </a>
                 </li>        <li><a href="/about/valuation">Valuation</a></li>
-        <li><a href="/">Advice</a></li>
+        <li><a href="/advice/index">Advice</a></li>
         <li><a href="/about/contact">Contact Us</a></li>
 
       </ul>
