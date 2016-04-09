@@ -261,7 +261,7 @@
                         <a href="/index/propertydetails/{{entry.getPropertyID()}}">
                                 {{ entry.getStreet()|capitalize}},  {{ entry.getTown()|capitalize}}<!--Put first letter as capital -->
                                 </a>
-                              &nbsp;  <span style="color:green; font-weight:bold;">For {{ entry.getPurpose()|capitalize}}</div>
+                              &nbsp;  <span style="color:green; font-weight:bold;">To {{ entry.getPurpose()|capitalize}}</div>
 
                           </h4>
                            
