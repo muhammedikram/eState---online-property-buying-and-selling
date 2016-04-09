@@ -50,27 +50,6 @@
                 {% endif %}
           </div>
         </div>
-
-          <div class="col-md-4">
-        <h2>Sweet Service</h2>
-          <div class="panel panel-default ">
-              <div class="panel-body">
-              {% if ratings is defined %}
-            {% if ratings|length > 0 %}
-        
-            {% for entry in ratings %}
-              <strong>{{entry.getName()|capitalize}}</strong> &nbsp;  &nbsp;  &nbsp;&nbsp;<img src="/images/stars/{{entry.getRating()}}"><br>
-                <em>"{{entry.getComments()}}</em>"
-                <hr>
-                {% endfor %} 
-
-              {% else %}
-              <div class='jumbotron text-center'>No Ratings to display.</div>
-            {% endif %}
-          {% endif %}
-              </div>
-          </div>
-        </div>
     </div>
 </div>
 
