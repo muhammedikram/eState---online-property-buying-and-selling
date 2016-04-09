@@ -155,17 +155,17 @@ class DashboardController extends ControllerBase
 
 
         //this will get rents properties
-         $enabled = 0;
+        //  $enabled = 0;
 
-        $notenabledRents = RentsListinings::find(
-            array(
-                'enabled = :enabled: ',
-                'bind' => array (
-                    'enabled' => $enabled
-                    )
-                )
-            );
-        $this->view->notenabledrentsproperties = $notenabledRents;
+        // $notenabledRents = RentsListinings::find(
+        //     array(
+        //         'enabled = :enabled: ',
+        //         'bind' => array (
+        //             'enabled' => $enabled
+        //             )
+        //         )
+        //     );
+        // $this->view->notenabledrentsproperties = $notenabledRents;
 
         }
 

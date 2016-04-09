@@ -1,7 +1,7 @@
 {{ partial('account/partials/accountNavBar') }}
 
 <div class="container">
-	<h2>My favurites properties</h2>
+	<h2>My favorites properties</h2>
 
 	{% if myfavurites is defined %}
 		{% if myfavurites|length > 0 %}
