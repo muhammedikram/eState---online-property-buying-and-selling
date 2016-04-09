@@ -99,7 +99,7 @@
   <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services <span class="caret"></span>
                     <ul class="dropdown-menu" role="menu">
-                      <li><a href="/about/services/#targetname1">Sell you home</a></li>
+                      <li><a href="/about/services/#targetname1">Sell your home</a></li>
                       <li><a href="/about/services/#targetname2">Spare room</a></li>
                       <li><a href="/about/services/#targetname3">Sweet service</a></li>
 
