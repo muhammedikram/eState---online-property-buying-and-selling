@@ -17,8 +17,12 @@
  					 <span class="glyphicon glyphicon-star"></span><p class="star">Fast listining</p>
 
  					 <hr>
+ 					 <a class="btn btn-success fa fa-plus-circle fa-2x" href="/account/addproperty">&nbsp;Sell or Rent</a>
  					 <br>
  					 <p class="star text-center"><strong>FREE</strong></p>
+
+
+
 		  		</div>
 
 		  		<div class="col-md-6">
