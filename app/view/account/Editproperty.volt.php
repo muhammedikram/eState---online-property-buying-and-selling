@@ -30,10 +30,10 @@
             </div>
 
                <div class="form-group">
-                <label for="county" class="col-md-2 control-label">County</label>
+                <label for="county" class="col-md-2 control-label">Type</label>
                 
                 <div class="col-md-10">
-                    <input type="text" id="county" name="county" placeholder="County"  class="form-control" value="<?php echo $ud->getCounty(); ?>" />
+                    <input type="text" id="type" name="type" placeholder="Type"  class="form-control" value="<?php echo $ud->getType(); ?>" />
                 </div>
             </div>
 

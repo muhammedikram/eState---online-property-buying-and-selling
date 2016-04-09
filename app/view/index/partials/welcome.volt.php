@@ -73,18 +73,12 @@
                        <i class="fa fa-money fa-2x icon"></i>
                         <select  type="text"name='price' class='form-control dropdown'>
                          <option >Max Price</option>
-                          <option>10000</option>
-                          <option>20000</option>
-                          <option>30000</option>
                           <option>40000</option>
                           <option>50000</option>
                           <option>60000</option>
                           <option>70000</option>
                           <option>80000</option>
-                          <option>90000</option>
-                          <option>100000</option>
-                          <option>110000</option>
-                          <option>120000</option>
+                          <option>90000</option>  
                         </select> 
                      </div> 
                     </div>  
@@ -152,19 +146,13 @@
                       <div class="col-sm-5 formLabel">
                        <i class="fa fa-money fa-2x icon"></i>
                         <select  type="text"name='price' class='form-control dropdown'>
-                         <option >Max Price</option>
-                          <option>10000</option>
-                          <option>20000</option>
-                          <option>30000</option>
+                         <option >Max Price</option>             
                           <option>40000</option>
                           <option>50000</option>
                           <option>60000</option>
                           <option>70000</option>
                           <option>80000</option>
                           <option>90000</option>
-                          <option>100000</option>
-                          <option>110000</option>
-                          <option>120000</option>
                         </select> 
                      </div> 
                     </div>  
@@ -261,7 +249,7 @@
                         <a href="/index/propertydetails/<?php echo $entry->getPropertyID(); ?>">
                                 <?php echo ucwords($entry->getStreet()); ?>,  <?php echo ucwords($entry->getTown()); ?><!--Put first letter as capital -->
                                 </a>
-                              &nbsp;  <span style="color:green; font-weight:bold;">For <?php echo ucwords($entry->getPurpose()); ?></div>
+                              &nbsp;  <span style="color:green; font-weight:bold;">To <?php echo ucwords($entry->getPurpose()); ?></div>
 
                           </h4>
                            

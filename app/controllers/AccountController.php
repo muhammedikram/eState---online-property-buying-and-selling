@@ -473,7 +473,7 @@ class AccountController extends ControllerBase
             $ud->setTown($this->request->getPost('town'));
             $ud->setPostcode($this->request->getPost('postcode'));
             $ud->setBedroom($this->request->getPost('bedroom'));
-            $ud->setCounty($this->request->getPost('county'));
+            $ud->setType($this->request->getPost('type'));
             $ud->setDescription($this->request->getPost('description'));
           
             $ud->save();
