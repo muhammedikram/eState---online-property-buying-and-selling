@@ -37,7 +37,15 @@
 				<div class="col-md-8">
 					{% for part in properties %}
 					<div class="hidden-xs">
+					 <?php  
+					 	 $image = $part->getImage1();
+					 	if  ($image) {?>
 						<img src="/images/{{ part.getImage1() }}"  width="740" height="450" style="margin-left: 10px;" alt="" title="{{ part.getPropertyID()  }}" />
+
+						<?php } else {?>
+						<img src="/images/noimage.png"  width="260" height="250" style="margin-left: 130px;" alt="" title="{{ part.getPropertyID()  }}" />
+
+						<?php }?>
 					</div>
 				</div>
 			</div>
