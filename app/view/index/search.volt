@@ -5,10 +5,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-3 jumbotron">
-        <!-- get the refine search partial, which is saved in /views/index/partials/refinesearch -->
-        {{ partial('index/partials/refinesearch') }}
-     </div>     
+      
 
      <div class="col-md-8">
       <h4><?php echo ($this->length($propertysearch)) ?> properties found</h4>
@@ -46,10 +43,32 @@
 
           <div class="jumbotron">
                   <p>
-                      No properties found based on your criteria's. Try refining your search to find properties.  
+                      No properties found based on your criteria's. Try searching again<br><br>
+                      <a href="/index" class="btn btn-default"> Go back</a> 
                   </p>
                   {% endif %}
                 {% endif %}
+          </div>
+        </div>
+
+          <div class="col-md-4">
+        <h2>Sweet Service</h2>
+          <div class="panel panel-default ">
+              <div class="panel-body">
+              {% if ratings is defined %}
+            {% if ratings|length > 0 %}
+        
+            {% for entry in ratings %}
+              <strong>{{entry.getName()|capitalize}}</strong> &nbsp;  &nbsp;  &nbsp;&nbsp;<img src="/images/stars/{{entry.getRating()}}"><br>
+                <em>"{{entry.getComments()}}</em>"
+                <hr>
+                {% endfor %} 
+
+              {% else %}
+              <div class='jumbotron text-center'>No Ratings to display.</div>
+            {% endif %}
+          {% endif %}
+              </div>
           </div>
         </div>
     </div>

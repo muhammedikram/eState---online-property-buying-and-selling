@@ -5,10 +5,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-3 jumbotron">
-        <!-- get the refine search partial, which is saved in /views/index/partials/refinesearch -->
-        <?php echo $this->partial('index/partials/refinesearch'); ?>
-     </div>     
+      
 
      <div class="col-md-8">
       <h4><?php echo ($this->length($propertysearch)) ?> properties found</h4>
@@ -46,10 +43,32 @@
 
           <div class="jumbotron">
                   <p>
-                      No properties found based on your criteria's. Try refining your search to find properties.  
+                      No properties found based on your criteria's. Try searching again<br><br>
+                      <a href="/index" class="btn btn-default"> Go back</a> 
                   </p>
                   <?php } ?>
                 <?php } ?>
+          </div>
+        </div>
+
+          <div class="col-md-4">
+        <h2>Sweet Service</h2>
+          <div class="panel panel-default ">
+              <div class="panel-body">
+              <?php if (isset($ratings)) { ?>
+            <?php if ($this->length($ratings) > 0) { ?>
+        
+            <?php foreach ($ratings as $entry) { ?>
+              <strong><?php echo ucwords($entry->getName()); ?></strong> &nbsp;  &nbsp;  &nbsp;&nbsp;<img src="/images/stars/<?php echo $entry->getRating(); ?>"><br>
+                <em>"<?php echo $entry->getComments(); ?></em>"
+                <hr>
+                <?php } ?> 
+
+              <?php } else { ?>
+              <div class='jumbotron text-center'>No Ratings to display.</div>
+            <?php } ?>
+          <?php } ?>
+              </div>
           </div>
         </div>
     </div>
