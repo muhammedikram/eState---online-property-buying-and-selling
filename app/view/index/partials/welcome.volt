@@ -5,7 +5,7 @@
        <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <div class="alert alert-info" role="alert"><strong>Please note:<br>This is an test website. All the informaton about properties is made up.</strong><br></div>
+    <!--         <div class="alert alert-info" role="alert"><strong>Please note:<br>This is an test website. All the informaton about properties is made up.</strong><br></div> -->
 
            <div class="jumbtron topJumbtron">
           <!-- This the search form -->

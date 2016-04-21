@@ -28,18 +28,18 @@
  <div class="row">
   <div class="col-md-4">  
 
-<form class="form-horizontal login" role="form" id="login" action="/signup/start" method="post">
+<form class="form-horizontal login" data-toggle="validator" role="form" id="login" action="/signup/start" method="post">
   <h3 id="signin">Sign In</h3>  
   <div class="form-group">
     <!--<label for="name" class="col-sm-2 control-label">Name</label>-->
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="name" id="name" placeholder="Email">
+      <input type="text" class="form-control" name="name" id="name" placeholder="Email" required>
     </div>
   </div>
   <div class="form-group">
     <!--<label for="password" class="col-sm-2 control-label">Password</label>-->
     <div class="col-sm-10">
-      <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="password" placeholder="Password" required >
     </div>
   </div>
   <div class="form-group">
@@ -80,13 +80,17 @@
   <nav class="navbar yamm   navbar-default">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <div class="navbar-header ">
+      <div class="topnavheader">
+          <img src="/images/logo.png" class="logotop hidden-md hidden-lg">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+        </div>
 <!--       <img class="mainlogo" src="/images/logo.png" alt="log"/>
  -->    </div>
 
@@ -124,6 +128,12 @@
 </div>
 
     <style>
+    .logotop{
+      width: 30%;
+    }
+   .topnavheader{
+      margin-top:10%;
+    }
 
     .style input{
       height: 30px;
