@@ -191,6 +191,8 @@ class AccountController extends ControllerBase
 
             //save property
              $user->save();
+               $this->flash->success($user->street=$pStreet. " "."has been successfully saved");
+
 
              //add entry to listining table
 
@@ -225,9 +227,7 @@ class AccountController extends ControllerBase
                 $val->date->date;
                 $val->save();
             }
-        
-            $this->flash->success($user->street=$pStreet. " "."has been successfully saved");
-            
+                
             return $this->forward("account/addproperty");
             
                 }

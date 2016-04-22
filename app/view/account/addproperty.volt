@@ -31,17 +31,17 @@
 			   		<div class="col-md-6">
 			   			<div class="form-group">
 				   			 <label for="street">* Street</label>
-				    		 <input type="text" class="form-control" name="street" id="street" placeholder="Street Name">
+				    		 <input type="text" class="form-control" name="street" id="street" required placeholder="Street Name">
 				 		</div>
 
 				 		 <div class="form-group">
 						    <label for="town">* Town</label>
-						    <input type="text" class="form-control" name="town" id="town" placeholder="Town Name">
+						    <input type="text" class="form-control" name="town" id="town" required placeholder="Town Name">
 						 </div>
 
 						 <div class="form-group">
 				    		<label for="postcode">* Postcode</label>
-				    		<input type="text" class="form-control" name="postcode" id="postcode" placeholder="Postcode">
+				    		<input type="text" class="form-control" name="postcode" id="postcode" required placeholder="Postcode">
 				 		</div>
 
 			   		</div>
@@ -49,11 +49,11 @@
 			   		<div class="col-md-6">
 						 <div class="form-group">
 						    <label for="county">* County</label>
-						    <input type="text" class="form-control" name="county" id="county" placeholder="County">
+						    <input type="text" class="form-control" name="county" id="county" required placeholder="County">
 						 </div>
 
 						 <div class="form-group">
-						    <label for="county" name="type" id="type">* Type</label>
+						    <label for="county" required name="type" id="type">* Type</label>
 							 <select class="form-control" name="type">
 							 	  <option>Please select...</option>
 								  <option>House</option>
@@ -64,7 +64,7 @@
 						</div>
 
 						<div class="form-group">
-						    <label for="county" name="bedroom" id="bedroom">* Bedrooms</label>
+						    <label for="county" required name="bedroom" id="bedroom">* Bedrooms</label>
 							 <select class="form-control" name="bedroom">
 							 <option>Please select...</option>
 								  <option>1</option>
@@ -157,7 +157,7 @@
 
 
 	   			<hr>
-	   			<div class="alert alert-info" role="alert"><strong>Property Description Tips</strong><br>
+	   			<div class="alert alert-info" required role="alert"><strong>Property Description Tips</strong><br>
 
 	   			<p>Please add description about property</p>
 	   			<li>Location features</li>

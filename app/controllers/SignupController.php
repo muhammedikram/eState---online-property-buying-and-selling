@@ -1,5 +1,10 @@
  <?php
 
+/**
+ * signup Controller which will handle register and login functions of the website.
+ * @version 1
+ * @author muhammed ikram <ikimuhammed@hotmail.com>
+ */
 
  class SignupController extends ControllerBase
  {
