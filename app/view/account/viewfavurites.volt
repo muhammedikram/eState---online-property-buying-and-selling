@@ -14,7 +14,7 @@
 
 					  				<h2>{{row.getpropertyID()}}</h2>
 
-					  				<img src="{{ row.getproperties().getImage1() }}" width="160" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{ row.getproperties().getPropertyID()  }}" />
+					  				<img src="/images/{{ row.getproperties().getImage1() }}" width="160" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="{{ row.getproperties().getPropertyID()  }}" />
 
 								</div>
 							<div class="col-md-6">
