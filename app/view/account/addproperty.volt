@@ -6,19 +6,19 @@
 	
 	<div clss="row" style="margin-top:3%;">
 		<div class="col-md-8 addform">
-			<p><strong>What you doing with your property today?</strong></p>
+			<p><strong>Do you want to sell or rent</strong></p>
 			<br>
 			<form action="addproperty" method="post" enctype="multipart/form-data">
 			<div class="row">
 			<div class="col-md-12"><strong>
 				<label class="radio-inline selltype" name="purpose"  >
-			         <input type="radio" name="purpose" id="radio1" value="sell"> Selling a property
+			         <input type="radio" name="purpose" id="radio1" value="sell"> Sell property
 			     </label><br><br>
 			     <label class="radio-inline selltype" name="purpose">
-			         <input type="radio" name="purpose" id="radio2" value="rent">Renting a property
+			         <input type="radio" name="purpose" id="radio2" value="rent">Rent property
 			      </label><br><br>
 
-			      <a href="/account/roomforrent">Renting a room</a>
+			      <a href="/account/roomforrent" class="btn btn-primary">Rent a room</a>
 			      </strong>
 			      </div>
 			      </div>
@@ -157,12 +157,15 @@
 
 
 	   			<hr>
-	   			<div class="alert alert-info" required role="alert"><strong>Property Description Tips</strong><br>
-
-	   			<p>Please add description about property</p>
-	   			<li>Location features</li>
-	   			<li>Decrotaion</li>
-	   			<li>History</li>	
+	   			<div class="alert alert-info" required role="alert"><strong>Property Description Tips</strong>
+	   			<br>
+				<li>Square Footage of the Building</li>
+				<li>Size of the Property (typically in acres)</li>
+				<li>Location/Neighborhood/Schools</li>
+				<li>Garage (if any), Number of Stalls</li>
+				<li>Extras, e.g. – Pool, Patio, Yard, Deck, Fireplace, etc.</li>
+				<li>Any Recent Updates or Renovations, e.g. – windows, doors, appliances</li>
+				<li>Any Unique Characteristics, e.g. – scenic overlook, basketball court, lakefront lot</li>
 	   			<p></p>
 
 	   			</div>
@@ -212,7 +215,8 @@
 		        <div id="dvPreview"></div>
 	    	</div>
 	    	<br>
-			<input type="submit"  value="submit">
+	    	<hr>	
+			<input type="submit"  class="btn btn-lg btn-success submitbutton"value="Submit Ad">
 			</form>
 			<br><br>
 		</div>	
@@ -265,6 +269,38 @@
 	</div>
 </div>
 
+<script language="javascript" type="text/javascript">
+        window.onload = function () {
+            var fileUpload = document.getElementById("image1");
+            fileUpload.onchange = function () {
+                if (typeof (FileReader) != "undefined") {
+                    var dvPreview = document.getElementById("dvPreview");
+                    dvPreview.innerHTML = "";
+                    var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                    for (var i = 0; i < fileUpload.files.length; i++) {
+                        var file = fileUpload.files[i];
+                        if (regex.test(file.name.toLowerCase())) {
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                var img = document.createElement("IMG");
+                                img.height = "300";
+                                img.width = "300";
+                                img.src = e.target.result;
+                                dvPreview.appendChild(img);
+                            }
+                            reader.readAsDataURL(file);
+                        } else {
+                            alert(file.name + " is not a valid image file.");
+                            dvPreview.innerHTML = "";
+                            return false;
+                        }
+                    }
+                } else {
+                    alert("This browser does not support HTML5 FileReader.");
+                }
+            }
+        };
+    </script>
 
 <style>
 .selltype{
@@ -280,6 +316,13 @@
 
 .addform .form-group select {
 	height: 50px;
+}
+.roomlink{
+
+}
+.submitbutton {
+	margin-left: 50%;
+
 }
 </style>
 

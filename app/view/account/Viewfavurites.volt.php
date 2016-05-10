@@ -1,7 +1,7 @@
 <?php echo $this->partial('account/partials/accountNavBar'); ?>
 
 <div class="container">
-	<h2>My favurites properties</h2>
+	<h2>My favorites properties</h2>
 
 	<?php if (isset($myfavurites)) { ?>
 		<?php if ($this->length($myfavurites) > 0) { ?>
@@ -14,7 +14,7 @@
 
 					  				<h2><?php echo $row->getpropertyID(); ?></h2>
 
-					  				<img src="<?php echo $row->getproperties()->getImage1(); ?>" width="160" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="<?php echo $row->getproperties()->getPropertyID(); ?>" />
+					  				<img src="/images/<?php echo $row->getproperties()->getImage1(); ?>" width="160" height="150" class="thumbnail" style="margin-bottom: 0;" alt="" title="<?php echo $row->getproperties()->getPropertyID(); ?>" />
 
 								</div>
 							<div class="col-md-6">
@@ -30,13 +30,14 @@
 								</div>
 							</div>
 						</div>	
-
+						<hr>
 				<!-- Delete favurite form -->
 					 <form action="account/viewfavurites" method="post">
 						<input type="hidden" name="propertyID" value="<?php echo $row->getpropertyID(); ?>">
-						<button type="submit" value="<?php echo $row->getpropertyID(); ?>" class="btn btn-danger glyphicon glyphicon-remove" title="<?php echo $row->getpropertyID(); ?>"> Remove</button>
+						<button type="submit" value="<?php echo $row->getpropertyID(); ?>" class="btn btn-danger btn-lg " title="<?php echo $row->getpropertyID(); ?>"> Remove</button>
 					</form>	 
-					
+					<a href="/index/propertydetails/<?php echo $row->getPropertyID(); ?>" class="btn btn-lg btn-default detailbutton">View Details</a>
+
 					</div> 
 				
 					
@@ -62,5 +63,10 @@
 	}
 	.display{
 		margin-top: 35px;
+	}
+
+	.detailbutton {
+		margin-top: -13%;
+		margin-left:60%;
 	}
 </style>

@@ -165,12 +165,12 @@
 
 						 <div class="form-group">
 				    		<label for="date">* Preferred Date</label>
-				    		<input type="text" class="form-control" name="date" id="date" placeholder="Date">
+				    		<input type="date" class="form-control" name="date" id="date" placeholder="Date">
 				 		</div>
 
 				 		<div class="form-group">
 				    		<label for="time">* Preferred Time</label>
-				    		<input type="text" class="form-control" name="time" id="time" placeholder="Time">
+				    		<input type="time" class="form-control" name="time" id="time" placeholder="Time">
 				 		</div>
 
 			   		</div>
@@ -376,7 +376,4 @@
 </style>
 	
 	
-
-
-
 

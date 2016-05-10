@@ -121,6 +121,8 @@ class IndexController extends ControllerBase
             )
         );
 
+        
+
          $this->view->propertyType=$type;
 
 

@@ -30,13 +30,14 @@
 								</div>
 							</div>
 						</div>	
-
+						<hr>
 				<!-- Delete favurite form -->
 					 <form action="account/viewfavurites" method="post">
 						<input type="hidden" name="propertyID" value="{{row.getpropertyID()}}">
-						<button type="submit" value="{{row.getpropertyID()}}" class="btn btn-danger glyphicon glyphicon-remove" title="{{row.getpropertyID()}}"> Remove</button>
+						<button type="submit" value="{{row.getpropertyID()}}" class="btn btn-danger btn-lg " title="{{row.getpropertyID()}}"> Remove</button>
 					</form>	 
-					
+					<a href="/index/propertydetails/{{row.getPropertyID()}}" class="btn btn-lg btn-default detailbutton">View Details</a>
+
 					</div> 
 				
 					
@@ -62,5 +63,10 @@
 	}
 	.display{
 		margin-top: 35px;
+	}
+
+	.detailbutton {
+		margin-top: -13%;
+		margin-left:60%;
 	}
 </style>

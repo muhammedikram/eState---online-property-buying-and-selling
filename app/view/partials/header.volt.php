@@ -1,7 +1,7 @@
   <?php echo $this->partial('partials/customerRegister'); ?>
 
 <header>
- <div class="navbar yamm  topbar  hidden-xs hidden-sm">
+ <div class="navbar yamm  topbar  hidden-xs hidden-sm ">
   <div class="container">
   <ul class="nav navbar-nav navbar-left">
   <h3 class="number"> <i class="fa fa-phone number"></i> 0844 087 4896</h3>
@@ -18,7 +18,9 @@
             <li role="separator" class="divider"></li>
             
           </ul>
-        <a class="fa fa-plus-circle fa-2x" href="/account/addproperty">&nbsp;Add Property</a>
+        <a class="fa fa-plus-circle fa-2x" href="/account/addproperty">&nbsp;Sell / Rent Property</a>
+                <a class="fa fa-plus-circle fa-2x" href="/account/addproperty">&nbsp;Rent Room</a>
+
 
         <a class="fa fa-comment fa-2x   " href="/blog">&nbsp;Blog</a>
         
@@ -33,12 +35,14 @@
   <div class="form-group">
     <!--<label for="name" class="col-sm-2 control-label">Name</label>-->
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="name" id="name" placeholder="Email" required>
+    <label class="loginname">Username</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Username" required>
     </div>
   </div>
   <div class="form-group">
     <!--<label for="password" class="col-sm-2 control-label">Password</label>-->
     <div class="col-sm-10">
+    <label class="loginname">Password</label>
       <input type="password" name="password" class="form-control" id="password" placeholder="Password" required >
     </div>
   </div>
@@ -62,7 +66,8 @@
 <div class="col-md-3">
 <div class="register">
 <h3 class="text-center">New Customer</h3>
-<p class="text-center">New to our website? Create an account<br> today to treat yourself withnew property</p>
+<br>
+<p class="text-center">New to our website? Create an account today to treat yourself withnew property</p><br>
 <button type="submit"data-toggle='modal' data-target='#customerRegister' class="btn btn-success registerButton">New Customer</button>
 </div>
 </div>
@@ -109,9 +114,13 @@
 
                     </ul>
                   </a>
-                </li>        <li><a href="/about/valuation">Valuation</a></li>
+                </li>        
+
+        <li><a href="/about/valuation">Valuation</a></li>
         <li><a href="/advice/index">Advice</a></li>
         <li><a href="/about/contact">Contact Us</a></li>
+        <li><a href="/account">My Account</a></li>
+
 
       </ul>
       <!-- Form on the header -->
@@ -128,6 +137,10 @@
 </div>
 
     <style>
+.loginname {
+  margin-left: 20%;
+}
+
     .logotop{
       width: 30%;
     }
@@ -209,7 +222,7 @@ margin-top: 20px;
 margin-bottom: 40px;
 }
 .registerButton {
-  margin-top: 60px;
+  margin-top: 50px;
   margin-left: 80px;
 
 }
