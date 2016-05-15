@@ -26,7 +26,7 @@ class Rooms extends \Phalcon\Mvc\Model
 	protected $space;
 	protected $ready;
 	protected $roomavailable;
-	protected $roomsixe;
+	protected $roomsize;
 	protected $deposit;
 	protected $petsallowed;
 	protected $minimumcontract;
