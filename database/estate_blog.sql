@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -34,7 +32,7 @@ CREATE TABLE `blog` (
   `image1` varchar(45) DEFAULT NULL,
   `image2` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`blogID`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +41,7 @@ CREATE TABLE `blog` (
 
 LOCK TABLES `blog` WRITE;
 /*!40000 ALTER TABLE `blog` DISABLE KEYS */;
-INSERT INTO `blog` VALUES (14,'Muhammed Ikram',NULL,'First blog: project under development stages','13-02-16','This is new and exciting project; eState. now save thousands on selling your property online with us ','b.jpg',NULL),(15,'Muhammed Ikram',NULL,'our new logo is here. ','13-02-16','Our new logo is been designed and finalized. It looks great on our website and hope you guys will like it too. ','logo2.png',NULL);
+INSERT INTO `blog` VALUES (14,'Muhammed Ikram',NULL,'First blog: project under development stages','13-02-16','This is new and exciting project; eState. now save thousands on selling your property online with us ','b.jpg',NULL),(15,'Muhammed Ikram',NULL,'our new logo is here. ','13-02-16','Our new logo is been designed and finalized. It looks great on our website and hope you guys will like it too. ','logo2.png',NULL),(16,'balal mohammed',NULL,'balals blog','15-02-16','i dont like this website at all','images.jpg',NULL),(17,'Muhammed Ikram',NULL,'changed the  database structure','18-02-16','Today. i worked changing on the database structure of the website. ','Smiley_Face3-298x300.png',NULL);
 /*!40000 ALTER TABLE `blog` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-13  9:13:19
+-- Dump completed on 2016-05-15 22:04:30

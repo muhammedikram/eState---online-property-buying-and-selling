@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -28,10 +26,8 @@ CREATE TABLE `favurites` (
   `favuriteID` int(11) NOT NULL AUTO_INCREMENT,
   `id` int(20) DEFAULT NULL,
   `propertyID` int(20) DEFAULT NULL,
-  PRIMARY KEY (`favuriteID`),
-  KEY `favurites_idx` (`propertyID`),
-  CONSTRAINT `favurites` FOREIGN KEY (`propertyID`) REFERENCES `properties` (`propertyID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`favuriteID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +36,7 @@ CREATE TABLE `favurites` (
 
 LOCK TABLES `favurites` WRITE;
 /*!40000 ALTER TABLE `favurites` DISABLE KEYS */;
+INSERT INTO `favurites` VALUES (3,35,114),(4,33,114),(5,33,151),(6,35,193);
 /*!40000 ALTER TABLE `favurites` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-13  9:13:14
+-- Dump completed on 2016-05-15 22:04:26

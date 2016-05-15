@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -32,7 +30,7 @@ CREATE TABLE `contacts` (
   `message` varchar(100) DEFAULT NULL,
   `propertyID` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`contactID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +39,7 @@ CREATE TABLE `contacts` (
 
 LOCK TABLES `contacts` WRITE;
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
-INSERT INTO `contacts` VALUES (1,'144',NULL,NULL,NULL,NULL),(2,'muhammed bilal','bilal@bmail.com','46e5656fdgrtddfb','fgd','144'),(3,'c','muhammed.pk@hotmail.com','kjhvv','khgv','147');
+INSERT INTO `contacts` VALUES (1,'144',NULL,NULL,NULL,NULL),(2,'muhammed bilal','bilal@bmail.com','46e5656fdgrtddfb','fgd','144'),(3,'c','muhammed.pk@hotmail.com','kjhvv','khgv','147'),(4,'ikram','muhammed.pk@hotmail.com','ffg','hello','142'),(5,'ik','ik@GMAIL.CIOM','TY','TYTTYTYTYTYTY','144'),(6,'ik','ik@GMAIL.CIOM','TY','TYTTYTYTYTYTY','144'),(7,'mmmmm','ik@GMAIL.CIOM','saerterq4t4r','4334qt65543265y','144'),(8,'mmmmm','ik@GMAIL.CIOM','saerterq4t4r','4334qt65543265y','144'),(9,'ik','ik@GMAIL.CIOM','saerterq4t4r','eRTYUIUYTR','144'),(10,'mmmmm','ik@GMAIL.CIOM','rtret','etertretre','144'),(11,'SE','ik@GMAIL.CIOM','RERTERERT','ERTERTERT',NULL),(12,'SE','ik@GMAIL.CIOM','RERTERERT','ERTERTERT',NULL),(13,'mmmmm','ik@GMAIL.CIOM','4543t536','56546543646',NULL),(14,'mmmmm','ik@GMAIL.CIOM','TY','eWRAEGHJKJYTRE',NULL),(15,'ik','ik@GMAIL.CIOM','ere','er','144'),(16,'f','f@GMAIL.CIOMf','f','f','144'),(17,'f','f@GMAIL.CIOMf','f','f','144'),(18,'f','f@GMAIL.CIOMf','f','f','144'),(19,'ik','f@GMAIL.CIOMf','saerterq4t4r','3','151'),(20,'mmmmm','wqewrw@thjtyh','werwe','terwt','144'),(21,'3r','f@GMAIL.CIOMf','ew','erwr','144'),(22,'3r','f@GMAIL.CIOMf','ew','erwr','144'),(23,'mmmmm','f@GMAIL.CIOMf','sqh','jrewhy','144'),(24,'mmmmm','f@GMAIL.CIOMf','dfgsddsf','df','144'),(25,'mmmmm','f@GMAIL.CIOMf','dfgsddsf','df','144'),(26,'mmmmm','f@GMAIL.CIOMf','dfgsddsf','df','144'),(27,'df','rtrrtte@gmail.com','ds','got it working','144'),(28,'df','rtrrtte@gmail.com','ds','got it working','144'),(29,'df','rtrrtte@gmail.com','ds','got it working','144'),(30,'df','rtrrtte@gmail.com','ds','got it working','144'),(31,'mmmmm','f@GMAIL.CIOMf','TY','e','144'),(32,'mmmmm','f@GMAIL.CIOMf','TY','e','144'),(33,'ik','wqewrw@thjtyh','RERTERERT','efr','170'),(34,'ik','wqewrw@thjtyh','RERTERERT','efr','170'),(35,'ik','wqewrw@thjtyh','RERTERERT','efr','170'),(36,'ik','wqewrw@thjtyh','RERTERERT','efr','170'),(37,'ik','omg@gmail.com','e','e','170'),(38,'mmmmm','ik@GMAIL.CIOM','saerterq4t4r','rent','171'),(39,'kjho','rtrrtte@gmail.com','kjbjihiuy','eQWE','143'),(40,'choudrie','ererwe@hotmail.com','er','bookig ??????????','114');
 /*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-13  9:13:13
+-- Dump completed on 2016-05-15 22:04:24

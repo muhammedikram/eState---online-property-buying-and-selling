@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -27,7 +25,7 @@ DROP TABLE IF EXISTS `properties`;
 CREATE TABLE `properties` (
   `propertyID` int(20) NOT NULL DEFAULT '0',
   `type` varchar(45) DEFAULT NULL,
-  `description` varchar(45) DEFAULT NULL,
+  `description` text,
   `street` varchar(45) DEFAULT NULL,
   `county` varchar(45) DEFAULT NULL,
   `postcode` varchar(45) DEFAULT NULL,
@@ -45,6 +43,7 @@ CREATE TABLE `properties` (
   `bathroom` varchar(45) DEFAULT NULL,
   `parking` varchar(45) DEFAULT NULL,
   `space` varchar(45) DEFAULT NULL,
+  `purpose` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`propertyID`),
   KEY `fk_propertylines_idx` (`type`),
   KEY `hg_idx` (`price`),
@@ -60,7 +59,7 @@ CREATE TABLE `properties` (
 
 LOCK TABLES `properties` WRITE;
 /*!40000 ALTER TABLE `properties` DISABLE KEYS */;
-INSERT INTO `properties` VALUES (128,'House','','54 new hey road','','WF61jg','Normanton','3434',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(134,'House','','asfewgwegqw',NULL,'','','',2,NULL,NULL,'0','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(142,'House','','223','','22','2','34344',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(151,'Bungalows','','123','','','Halifax','66666',5,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(161,'House','','dddd',NULL,'','','56565',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(167,'House','','84 new hey road',NULL,'WF61jg','Normanton','60000',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(171,'House','','54 newry road',NULL,'WF61jg','Normanton','989',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(173,'House','','eefgqregfwd',NULL,'','','',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(179,'House','','etyes',NULL,'','dfdsdf','888888',3,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(182,'House','','dvsdfb',NULL,'','wet2','34342',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(183,'Flat','','retetwrq3',NULL,'','','555',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(191,'House','','lghjgiuy',NULL,'dsf','sdfdsfsd','456',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...'),(200,'Flat','','efherherymt',NULL,'','','235436',2,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...');
+INSERT INTO `properties` VALUES (114,'Bungalows','heating','76 clarket cresent','','wf133ps','Normanton','50000',3,NULL,2016,'1','download.jpg',NULL,NULL,'Kitchen/Dinner','6','2','Street parking','Patio','Sell'),(129,'house','Super house ','78 clarket cresent',NULL,'wf133ps','Dewsbury','76000',3,NULL,2016,'1','download.jpg',NULL,NULL,'Kitchen/Dinner','1','1','Street parking','Roof Terrace','sell'),(136,'House','2 bed room house, located next to all service','43 Craven Road','','wf133ps','leeds','60000',2,NULL,2016,'1','download.jpg',NULL,NULL,'Kitchen(Seperate)','1','1','Street parking','None','rent'),(151,'House','djfhaofhdjashf;skhs;ofeha\'fheOWh','88 low road','','wf133ps','dewsbury','90000',3,NULL,NULL,'1','arc-wise.png',NULL,NULL,'Kitchen(Seperate)','1','2','Street parking','Patio','sell'),(154,'Please select...','','huvdfbdss street',NULL,'wf133ps','huddesfield','',0,NULL,2016,'0','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...',NULL),(184,'Please select...','','mghjg','','th','dgnf','',0,NULL,2016,'1','',NULL,NULL,'Please select...','Please select...','Please select...','Please select...','Please select...',NULL);
 /*!40000 ALTER TABLE `properties` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -73,4 +72,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-13  9:13:11
+-- Dump completed on 2016-05-15 22:04:22

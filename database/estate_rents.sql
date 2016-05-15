@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -41,8 +39,13 @@ CREATE TABLE `rents` (
   `image1` varchar(45) DEFAULT NULL,
   `image2` varchar(45) DEFAULT NULL,
   `image3` varchar(45) DEFAULT NULL,
+  `kitchen` varchar(45) DEFAULT NULL,
+  `reception` varchar(45) DEFAULT NULL,
+  `bathroom` varchar(45) DEFAULT NULL,
+  `parking` varchar(45) DEFAULT NULL,
+  `space` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`propertyID`)
-) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,7 +54,6 @@ CREATE TABLE `rents` (
 
 LOCK TABLES `rents` WRITE;
 /*!40000 ALTER TABLE `rents` DISABLE KEYS */;
-INSERT INTO `rents` VALUES (137,'House','','54 sadfnew hey road','Normanton','WF61jg','',NULL,'','2','2016-02-08',NULL,'1','',NULL,NULL);
 /*!40000 ALTER TABLE `rents` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -64,4 +66,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-13  9:13:04
+-- Dump completed on 2016-05-15 22:04:12

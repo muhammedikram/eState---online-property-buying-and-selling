@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -30,8 +28,12 @@ CREATE TABLE `valuation` (
   `date` varchar(45) DEFAULT NULL,
   `enabled` varchar(45) DEFAULT NULL,
   `userID` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`valuationID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `street` varchar(45) DEFAULT NULL,
+  `postcode` varchar(45) DEFAULT NULL,
+  `town` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`valuationID`),
+  KEY `d_idx` (`propertyID`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +42,7 @@ CREATE TABLE `valuation` (
 
 LOCK TABLES `valuation` WRITE;
 /*!40000 ALTER TABLE `valuation` DISABLE KEYS */;
+INSERT INTO `valuation` VALUES (11,'151','30-03-16','1','33','96  LOW ROAD','wf133ps','Dewsbury'),(12,'136','30-03-16','1','33','43 Craven Road','wf133ps','leeds'),(13,'114','30-03-16','1','46','76 clarket cresent','wf133ps','Normanton'),(14,'129','09-04-16','1','35','78 clarket cresent','wf133ps','Dewsbury'),(15,'178','22-04-16','1','35','mghjg','th','dgnf'),(16,'140','29-04-16','0','35','76 clarket cresent','wf133ps','Normanton'),(17,'151','11-05-16','0','48','88 low road','wf133ps','dewsbury');
 /*!40000 ALTER TABLE `valuation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-13  9:13:10
+-- Dump completed on 2016-05-15 22:04:21

@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -39,7 +37,7 @@ CREATE TABLE `access_list` (
 
 LOCK TABLES `access_list` WRITE;
 /*!40000 ALTER TABLE `access_list` DISABLE KEYS */;
-INSERT INTO `access_list` VALUES ('Users','account','addproperty',1),('Users','account','changedetails',1),('Users','account','deleteproperty',1),('Users','account','editproperty',1),('Users','account','editrentproperty',1),('Users','account','index',1),('Users','account','showlistings',1),('Users','account','viewfavurites',1),('Users','admin','new',1),('Users','admin','save',1),('Users','admin','search',1),('Users','company','*',0),('Users','company','companyRegister',1),('Users','company','create',1),('Users','company','edit',1),('Users','company','index',1),('Users','company','new',1),('Users','company','save',1),('Users','company','search',1),('Users','company','updateRecord',1),('Users','dashboard','valuation',1),('Users','parts','*',0),('Users','parts','create',1),('Users','parts','delete',1),('Users','parts','edit',1),('Users','parts','index',1),('Users','parts','new',1),('Users','parts','save',1),('Users','parts','search',1),('Users','stocksearch','index',1);
+INSERT INTO `access_list` VALUES ('Users','account','addproperty',1),('Users','account','bookingrequests',1),('Users','account','changedetails',1),('Users','account','deleteproperty',1),('Users','account','editproperty',1),('Users','account','editrentproperty',1),('Users','account','index',1),('Users','account','roomforrent',1),('Users','account','sentrequests',1),('Users','account','showlistings',1),('Users','account','viewfavurites',1),('Users','admin','save',1),('Users','company','*',0),('Users','company','create',1),('Users','company','edit',1),('Users','company','index',1),('Users','company','new',1),('Users','company','save',1),('Users','company','search',1),('Users','company','updateRecord',1),('Users','dashboard','addprice',1),('Users','dashboard','valuation',1),('Users','parts','create',1),('Users','parts','delete',1),('Users','parts','edit',1),('Users','parts','index',1),('Users','parts','new',1),('Users','parts','save',1),('Users','parts','search',1),('Users','stocksearch','index',1);
 /*!40000 ALTER TABLE `access_list` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-13  9:13:18
+-- Dump completed on 2016-05-15 22:04:29

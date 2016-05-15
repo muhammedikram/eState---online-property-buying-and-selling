@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `estate` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `estate`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: estate
@@ -31,7 +29,7 @@ CREATE TABLE `member_register` (
   `password` varchar(500) DEFAULT NULL,
   `confirm_password` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +38,7 @@ CREATE TABLE `member_register` (
 
 LOCK TABLES `member_register` WRITE;
 /*!40000 ALTER TABLE `member_register` DISABLE KEYS */;
-INSERT INTO `member_register` VALUES (33,'ikram','ikram@gmail.com','ikram','ikram'),(35,'c','ikimuhammed@hotmail.com','c','c'),(44,'d','d@d','p',NULL),(45,'naveeddhakoo','naveeddhakoo@hotmail.com','123','123');
+INSERT INTO `member_register` VALUES (33,'ikram','ikram@gmail.com','ikram','ikram'),(35,'c','ikimuhammed@hotmail.com','c','c'),(44,'d','d@d','p',NULL),(45,'naveeddhakoo','naveeddhakoo@hotmail.com','123','123'),(46,'umar mitha','dhththcy@hotmail.com','password','password'),(47,'w','w@w','w','w'),(48,'ziarat','ziarat@gmail.com','12','12');
 /*!40000 ALTER TABLE `member_register` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-13  9:13:26
+-- Dump completed on 2016-05-15 22:04:38
