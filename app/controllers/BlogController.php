@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * The Blog controller will handle blog class. Admin will be able to post new blog
+ * @version 1
+ * @author Muhammed Ikram <ikimuhammed@hotmail.com>
+ */
 class BlogController extends ControllerBase
 
 {

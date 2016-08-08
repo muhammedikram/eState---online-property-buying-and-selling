@@ -1,5 +1,10 @@
-    <?php
+<?php
 
+/**
+ * The Account controller will handle all the work regarding user account
+ * @version 1
+ * @author Muhammed Ikram <ikimuhammed@hotmail.com>
+ */
 class AccountController extends ControllerBase
 
 {

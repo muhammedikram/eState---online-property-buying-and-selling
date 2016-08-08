@@ -3,6 +3,12 @@ use Phalcon\Mvc\Model\Criteria;
 use Phalcon\Paginator\Adapter\Model as Paginator;
 use Phalcon\Mvc\Model\Query;
 
+/**
+ * The Dashboard controller will handle all the admin dashboard content. 
+ * For example, approve property, valuation and add property
+ * @version 1
+ * @author Muhammed Ikram <ikimuhammed@hotmail.com>
+ */
 class DashboardController extends ControllerBase
 
 {

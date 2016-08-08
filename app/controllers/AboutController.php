@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * The About controller will handle static pages such as about, contact 
+ * PLEASE NOTE: This controller will also handle some of the dummy code. 
+ * @version 1
+ * @author Muhammed Ikram <ikimuhammed@hotmail.com>
+ */
 class AboutController extends ControllerBase
 
 {
